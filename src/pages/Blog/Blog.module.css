@@ -1,2 +1,28 @@
   /* Estilização da página do blog */
 
+.container{
+  padding-top: 12%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image{
+  height: 18rem;
+  width: 20rem;
+}
+
+.content{
+   display: grid;
+   gap: 20px;
+}
+
+.p{
+  text-align: justify;
+}
+
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,2 +1,35 @@
   /* Estilização da Navbar */
 
+.container{
+  padding-top: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  height: 70px;
+  gap: 28px;
+  /*font-family: "Quicksand", sans-serif;*/
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  transition: all .5s ease;
+}
+
+a:hover{
+  color: green;
+}
+
+select{
+  cursor: pointer;
+  height: 1.7rem;
+  width: 7rem;
+  font-size: 16px;
+}
