@@ -1,6 +1,6 @@
   /* Estilização da Navbar */
 
-.container{
+.containerNavbar{
   padding-top: 2%;
   display: flex;
   justify-content: space-between;

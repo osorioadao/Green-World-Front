@@ -12,7 +12,7 @@ export const Home: React.FC = () => {
    const navigate = useNavigate()
   return (
 
-    <div className={styles.container}>
+    <div className={styles.containerHome}>
  <Header />
  <Navbar />
      

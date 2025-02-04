@@ -12,7 +12,7 @@ function ErrorPage() {
   
 
   return (
-    <div className={styles.container}>
+    <div className={styles.containerError}>
 
        <div className={styles.image}>
             <img className={styles.img} src={image} alt="notfoundpage" />

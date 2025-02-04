@@ -3,7 +3,7 @@ import styles from './Enterprises.module.css'
 
 export function Enterprises() {
   return (
-    <div>Empresas</div>
+    <div className={styles.containerEnterprises}>Empresas</div>
   )
 }
 

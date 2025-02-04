@@ -1,6 +1,6 @@
   /* Estilização da página de erro */
 
-  .container{
+  .containerError{
     display: flex;
     align-items: center;
     justify-content: center;

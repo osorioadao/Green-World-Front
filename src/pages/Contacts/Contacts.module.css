@@ -1,1 +1,41 @@
   /* Estilização da página de contactos */
+
+.image{
+  position: relative;
+  height: 24rem;
+  width: 100%;
+}
+
+.subtitle{
+  position: absolute;
+  left: 100px;
+  top: 200px;
+  z-index: 1;
+  color: #fff;
+  font-size: 40px;
+}
+
+.cards{
+  text-align: center;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini_footer{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 12px;
+  background-color: black;
+}
+
+h4{
+  font-size: 20px;
+}
+
+.who{
+  color: #fff;
+}
+

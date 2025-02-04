@@ -19,7 +19,7 @@ function Navbar() {
   // ]
   
   return (
-    <nav className={styles.container}>
+    <nav className={styles.containerNavbar}>
       <Link to="/">Início</Link>
       <Link to="/blog">Blog</Link>
       <Link to="/enterprises">Empresas</Link>

@@ -1,2 +1,84 @@
   /* Estilização do Login */
 
+.containerLogin{
+  padding-top: 6%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center
+}
+
+.containerForm{
+  padding-top: 4%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+form{
+  height: 30rem;
+  width: 32rem;
+  padding: 12px;
+  background-color: #C2FFA8;
+}
+
+hr{
+  width: 100%;
+}
+
+.logo{
+  padding-right: 420px;
+}
+
+.inputs{
+  display: grid;
+  gap: 14px;
+}
+
+input{
+  height: 2.5rem;
+  width: 28rem;
+}
+
+.buttonEntrar{
+  height: 3rem;
+  width: 28rem;
+  border: none;
+  font-weight: 525;
+  cursor: pointer;
+  font-size: 16px;
+  border: 8px;
+  transition: all .3s ease;
+  background-color: #3E9F32;
+}
+
+.buttonEntrar:hover{
+  background-color:#297a1f;
+} 
+
+.buttonCadastrar{
+  height: 3rem;
+  width: 12rem;
+  border: none;
+  font-weight: 525;
+  cursor: pointer;
+  font-size: 16px;
+  border: 8px;
+  transition: all .3s ease;
+  background-color: red;
+}
+
+.buttonCadastrar:hover{
+  background-color: rgb(220, 7, 7);
+} 
+
+.mini_footer{
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  width: 32rem;
+  justify-content: space-between;
+  background-color: #c2ffa8ae;
+}

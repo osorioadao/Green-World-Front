@@ -1,4 +1,3 @@
-import Navbar from './components/Navbar'
 import './index.css'
 
 // import axios form 'axios'
@@ -11,11 +10,13 @@ function App() {
 
   // server.get('/users'.then(( response) => {
   //   console.log(response)
-  // }))
+  // })).catch((error) => {
+  //console.error('Erro na requisição:', error);
+//});
 
   return (
     <>
-      <Navbar  />
+
     </>
   )
 }

@@ -5,7 +5,7 @@ import logo from '../assets/logosemfundo.png'
 
 function Footer() {
   return (
-    <div className={styles.container}>
+    <div className={styles.containerFooter}>
 
       <div className={styles.image}>
         <img className={styles.image} src={logo} alt="" />

@@ -1,6 +1,6 @@
   /* Estilização do Header */
 
-.container{
+.containerHeader{
   width: 100%;
   padding: 2px;
   display: flex;
@@ -22,7 +22,7 @@ img{
   width: 2.5rem;
 }
 
-button{
+.button{
   height: 2.4rem;
   width: 12rem;
   border: none;
@@ -33,7 +33,7 @@ button{
   background-color: rgba(172, 255, 47, 0.733);
 }
 
-button:hover{
+.button:hover{
   background-color: #72e316;
 }
 
@@ -51,3 +51,29 @@ button:hover{
 .icon{
   cursor: pointer;
 }
+
+/* Estilos padrões para o modo claro */
+body .light {
+  background-color: white;
+  color: black;
+}
+
+/* Estilos para o modo escuro */
+body .dark {
+  background-color: #121212;
+  color: white;
+}
+
+.icons {
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: #000;
+}
+
+.icons:hover {
+  transform: scale(1.2);
+}
+
+
