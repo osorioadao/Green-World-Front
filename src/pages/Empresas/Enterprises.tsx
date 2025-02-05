@@ -1,10 +1,8 @@
-import React from 'react'
-import styles from './Enterprises.module.css'
+import React from 'react';
+import styles from './Enterprises.module.css';
 
-export function Enterprises() {
-  return (
-    <div className={styles.containerEnterprises}>Empresas</div>
-  )
-}
+const Enterprises: React.FC = () => {
+  return <div className={styles.containerEnterprises}>Empresas</div>;
+};
 
 export default Enterprises;

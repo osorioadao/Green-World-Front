@@ -5,19 +5,18 @@ import logo from '../assets/logosemfundo.png';
 import flag from '../assets/flag.png';
 import { FaRegMoon, FaRegSun } from 'react-icons/fa';
 
-function Header() {
+const Header: React.FC = () => {
   // Definir o estado do tema (pode ser 'light' ou 'dark')
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  // Persistir o tema entre sessões
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
     if (savedTheme) {
       setTheme(savedTheme);
-      document.body.classList.add(savedTheme); // Adiciona a classe ao body
+      document.body.classList.add(savedTheme); // Adicionando a classe ao body
     } else {
-      document.body.classList.add('light'); // Define o tema padrão como claro
+      document.body.classList.add('light'); // Definindo o tema padrão como claro
     }
   }, []);
 
@@ -25,16 +24,14 @@ function Header() {
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
-    document.body.classList.remove('light', 'dark'); // Remove as classes existentes
-    document.body.classList.add(newTheme); // Adiciona o novo tema
-    localStorage.setItem('theme', newTheme); // Salva o tema no localStorage
-
+    document.body.classList.remove('light', 'dark'); // Removendo as classes existentes
+    document.body.classList.add(newTheme); // Adicionando o novo tema
+    localStorage.setItem('theme', newTheme); // Salvando o tema no localStorage
   };
 
   const navigateToLogin = () => {
-    navigate('/Login')
-  }
-
+    navigate('/Login');
+  };
 
   return (
     <div className={styles.containerHeader}>
@@ -56,6 +53,7 @@ function Header() {
       </div>
     </div>
   );
-}
+};
 
 export default Header;
+

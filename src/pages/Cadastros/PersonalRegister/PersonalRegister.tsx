@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './PersonalRegister.module.css'
 
-function PersonalRegister() {
+const PersonalRegister: React.FC = () => {
   return (
     <div className={styles.containerPersonal}>PersonalRegister</div>
   )

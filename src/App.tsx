@@ -6,7 +6,7 @@ import './index.css'
 // })
 
 
-function App() {
+ const App: React.FC = () => {
 
   // server.get('/users'.then(( response) => {
   //   console.log(response)

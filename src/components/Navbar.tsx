@@ -1,9 +1,10 @@
-import React from 'react'
-import styles from './Navbar.module.css'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import styles from './Navbar.module.css';
+import { Link } from 'react-router-dom';
 
-function Navbar() {
-  // const items = [
+const Navbar: React.FC = () => {
+
+    // const items = [
   //   {
   //     value:"Início",
   //     link:"/"
@@ -17,7 +18,7 @@ function Navbar() {
   //     link:"/enterprises"
   //   },
   // ]
-  
+
   return (
     <nav className={styles.containerNavbar}>
       <Link to="/">Início</Link>
@@ -29,7 +30,7 @@ function Navbar() {
       </select>
       <Link to="/contacts">Contactos</Link>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

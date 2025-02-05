@@ -1,11 +1,10 @@
 import React from 'react'
 import styles from '../TypeRegister/TypeRegister.module.css'
 
-function TypeRegister() {
-
+const TypeRegister: React.FC = () => {
   return (
     <div className={styles.containerType}>
-      <h1>Typeregister</h1>
+      <h1>TypeRegister</h1>
     </div>
   )
 }
