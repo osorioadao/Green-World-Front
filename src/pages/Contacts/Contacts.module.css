@@ -2,7 +2,7 @@
 
 .image{
   position: relative;
-  height: 24rem;
+  height: 26rem;
   width: 100%;
 }
 
@@ -12,10 +12,11 @@
   top: 200px;
   z-index: 1;
   color: #fff;
-  font-size: 40px;
+  font-size: 50px;
 }
 
 .cards{
+  background: rgba(255, 255, 255, 0.803);
   text-align: center;
   display: flex;
   gap: 50px;
@@ -38,4 +39,17 @@ h4{
 .who{
   color: #fff;
 }
+
+/* Dimensão Asus Zenbook Fold */
+@media (max-width: 750px){
+  .subtitle{
+    font-size: 40px;
+    left: 30px;
+    top: 200px;
+  } 
+  h4{
+    font-size: 18px;
+  }
+}
+
 

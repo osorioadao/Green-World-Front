@@ -1,0 +1,47 @@
+  /* Estilização do Letter */
+
+.marqueeContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #00FF48;
+    height: 4rem;
+  }
+  
+  /* Criando a animação do efeito marquee */
+  @keyframes marqueeAnimation {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .marquee {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .text {
+    display: flex;
+    gap: 2rem;
+    animation: marqueeAnimation 18s linear infinite;
+  }
+  
+  .text h2 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+  }
+  
+  @media (max-width: 750px){
+    .text h2{
+      font-size: 1rem;
+    }
+  }

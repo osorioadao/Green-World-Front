@@ -6,6 +6,7 @@ import cardImage2 from '../../assets/recolha.jpg'
 import { useNavigate } from 'react-router-dom'
 import Header from '../../components/Header'
 import Navbar from '../../components/Navbar'
+import Letter from '../../components/Letter'
 import Footer from '../../components/Footer'
 
 export const Home: React.FC = () => {  
@@ -25,6 +26,8 @@ export const Home: React.FC = () => {
      <button className={styles.btn} onClick={() => navigate('/blog')}>Saiba mais</button>
      </div>
      </div>
+
+     <Letter></Letter>
 
      <div className={styles.container_card}>
 

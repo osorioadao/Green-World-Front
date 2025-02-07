@@ -21,14 +21,14 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className={styles.containerNavbar}>
-      <Link to="/">Início</Link>
-      <Link to="/blog">Blog</Link>
-      <Link to="/enterprises">Empresas</Link>
+      <Link className={styles.link} to="/">Início</Link>
+      <Link className={styles.link}  to="/blog">Blog</Link>
+      <Link className={styles.link}  to="/enterprises">Empresas</Link>
       <select name="options" id="options">
         <option value="Parcerias">Parcerias</option>
         <option value="Muito mais">Muito mais</option>
       </select>
-      <Link to="/contacts">Contactos</Link>
+      <Link className={styles.link}  to="/contacts">Contactos</Link>
     </nav>
   );
 };

@@ -1,6 +1,12 @@
   /* Estilização da página do blog */
 
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
 .containerBlog{
+  padding: 120px;
   padding-top: 12%;
   display: flex;
   align-items: center;
@@ -25,4 +31,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 740px){
+  .containerBlog{
+    display: grid;
+    gap: 12px;
+  }
 }

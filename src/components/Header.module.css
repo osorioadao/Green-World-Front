@@ -29,6 +29,7 @@ img{
   border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
+  font-weight: 500;
   transition: .2s ease-in-out;
   background-color: rgba(172, 255, 47, 0.733);
 }
@@ -45,10 +46,6 @@ img{
 .img_flag{
   height: 2rem;
   width: 2rem;
-  cursor: pointer;
-}
-
-.icon{
   cursor: pointer;
 }
 
@@ -70,6 +67,7 @@ body .dark {
   cursor: pointer;
   background-color: transparent;
   color: #000;
+  transition: .5s ease;
 }
 
 .icons:hover {
@@ -77,3 +75,22 @@ body .dark {
 }
 
 
+/* Dispositivos Asus Zoobook Fold */
+@media (max-width: 750px){
+  .container_child{
+    gap: 30px;
+  } 
+  .button{
+    height: 2rem;
+    width: 10rem;
+    font-size: 14px;
+  }
+  .img_flag{
+    height: 1.6rem;
+    width: 1.6rem;
+  }
+  .logo{
+    height: 3rem;
+    width: 3rem;
+  }
+}
