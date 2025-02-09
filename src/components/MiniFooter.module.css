@@ -1,0 +1,21 @@
+  /* Estilização do Mini-Footer */
+
+  .containerMiniFooter{
+    padding-top: 8%;
+  }
+
+  .mini_footer{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 18px;
+    background-color: black;
+  }
+  
+  h4{
+    font-size: 20px;
+  }
+  
+  .who{
+    color: #fff;
+  }

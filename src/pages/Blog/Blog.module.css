@@ -1,41 +1,88 @@
   /* Estilização da página do blog */
 
-  html, body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-.containerBlog{
-  padding: 120px;
-  padding-top: 12%;
+.imageColeta{
+  padding-top: 2.5%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.image{
-  height: 18rem;
-  width: 20rem;
+  height: 26rem;
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 2.5%;
 }
 
 .content{
-   display: grid;
-   gap: 20px;
+  display: grid;
+  gap: 12px;
+  padding: 12px;
 }
 
-.p{
+.paragraph{
+  padding: 18px;
   text-align: justify;
 }
 
-.btn{
+h1{
+  padding-left: 120px;
+}
+
+.cardFolhas{
+  padding-top: 2%;
+  padding-bottom: 4%;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
+
+.card1, .card2, .card3, .card4, .card5, .card6, .card7{
+  height: 26.7rem;
+  width: 20rem;
+  padding: 12px;
+  text-align: center;
+}
+
+.card1{
+  background-color: yellow;
+}
+
+.card2{
+  background-color: orange;
+}
+.card3{
+  background-color:rgba(255, 0, 0, 0.868);
+}
+.card4{
+  background-color: green;
+}
+.card5{
+  background-color: blue;
+}
+.card6{
+  background-color: rgb(149, 148, 148);
+}
+.card7{
+  background-color: rgba(0, 0, 0, 0.671);
+}
+
+h5{
+  font-size: 18px;
+}
+
+.imageCard{
+  height: 8rem;
+  width: 8rem;
+}
+
+
 
 @media (max-width: 740px){
   .containerBlog{
-    display: grid;
-    gap: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  h1{
+    padding-left: 18px;
   }
 }

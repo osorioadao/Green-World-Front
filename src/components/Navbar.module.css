@@ -1,8 +1,8 @@
   /* Estilização da Navbar */
 
 .containerNavbar{
-  padding-top: 2%;
-  padding-bottom: 2%;
+  padding-top: 4%;
+  padding-bottom: 4%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,7 +19,7 @@ ul{
 a{
   text-decoration: none;
   color: black;
-  font-size: 16px;
+  font-size: 18px;
   transition: all .5s ease;
 }
 

@@ -1,4 +1,4 @@
-  /* Estilização da página de contactos */
+  /* Estilização da página de contactos */ 
 
 .image{
   position: relative;
@@ -9,7 +9,7 @@
 .subtitle{
   position: absolute;
   left: 100px;
-  top: 200px;
+  top: 270px;
   z-index: 1;
   color: #fff;
   font-size: 50px;
@@ -22,25 +22,80 @@
   gap: 50px;
   align-items: center;
   justify-content: center;
+  padding-bottom: 5%;
 }
 
-.mini_footer{
+.global{
   display: flex;
-  gap: 20px;
   align-items: center;
-  padding: 12px;
-  background-color: black;
+  justify-content: center;
+  flex-direction: column;
 }
 
-h4{
-  font-size: 20px;
+.form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  height: 30rem;
+  width: 42rem;
+  padding-bottom: 5%;
 }
 
-.who{
+.text{
+  gap: 10px;
+  display: grid;
+  text-align: center;
+}
+
+.inputs{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 26px;
+}
+
+#email,#nome{
+  height: 2.5rem;
+  width: 40rem;
+  font-size: 16px;
+  max-width: 1024px;
+  outline-style: none;
+}
+
+textarea{
+  font-size: 16px;
+  height: 6rem;
+  width: 40rem;
+  outline-style: none;
+  max-width: 1024px;
+}
+
+#icon1, #icon2{
+  font-size: 70px;
+}
+
+.btn0{
+  height: 2.6rem;
+  width: 40rem;
+  max-width: 1024px;
+  cursor: pointer;
+  border: none;
   color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 2px;
+  transition: .3s ease;
+  background-color: rgb(11, 11, 201);
 }
 
-/* Dimensão Asus Zenbook Fold */
+.btn0:hover{
+  background-color: rgb(9, 9, 156);
+}
+
+
 @media (max-width: 750px){
   .subtitle{
     font-size: 40px;
@@ -50,6 +105,21 @@ h4{
   h4{
     font-size: 18px;
   }
+  #email,#nome{
+    width: 28rem;
+    font-size: 14px;
+  }
+  
+  textarea{
+    font-size: 14px;
+    width: 28rem;
+  }
+  
+  .btn0{
+    width: 28rem;
+    font-size: 14px;
+  }
+  #icon1, #icon2{
+    font-size: 50px;
+  }
 }
-
-

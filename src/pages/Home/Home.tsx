@@ -19,12 +19,15 @@ export const Home: React.FC = () => {
      
      <div className={styles.container_card}>
      <img className={styles.bodyimage} src={bodyImage} alt="bodyImage" />
+
      <div className={styles.text}>
-     <strong>Localizamos com precisão os amontoados de lixo perto de si.</strong>
+     <strong className={styles.strong}>Localizamos com precisão os amontoados de lixo perto de si.</strong>
      </div>
-     <div>
-     <button className={styles.btn} onClick={() => navigate('/blog')}>Saiba mais</button>
+
+     <div className={styles.btn}>
+     <button className={styles.button} onClick={() => navigate('/blog')}>Saiba mais</button>
      </div>
+     
      </div>
 
      <Letter></Letter>

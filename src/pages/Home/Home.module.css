@@ -12,17 +12,17 @@
   .bodyimage{
     height: auto;
     width: 100%;
-    max-width: 50rem;
     margin: 0 auto;
   }
   
-  .btn{
+  .button{
     position: absolute;
     left: 50%;
     top: 50%;
+    height: 2.5rem;
+    width: 16rem;
     transform: translate(-50%, -560%);
-    height: 2.6rem;
-    width: 14rem;
+    max-width: 300px;
     border: none;
     border-radius: 10px;
     font-weight: 600;
@@ -33,7 +33,7 @@
     background-color: red;
   }
   
-  .btn:hover{
+  .button:hover{
     background-color: #e40808e9;
   }
   
@@ -45,8 +45,7 @@
     text-transform: uppercase;
     text-align: center;
     transform: translate(-50%, -500%);
-    font-size: 32px;
-    padding: 0 20px;
+    font-size: clamp(1rem, 2.5vw, 2rem);
   }
 
   .container_card{
@@ -54,13 +53,14 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 50px;
-    padding-top: 6%;
+    padding-top: 8%;
     padding-bottom: 4%;
   }
 
   .card{
     height: 20rem;
     width: 22rem;
+    max-width: 400px;
   }
 
   .cardImage{
@@ -77,25 +77,46 @@
     font-size: 22px;
     text-transform: uppercase;
   }
-  
- /* Dimensão Asus Zenbook Fold */
-  @media (max-width: 750px){
-    .text{
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -620%);
-      font-size: 18px;
+
+     /* Iphone, Samsung */
+     @media (max-width: 881px){
+      .button{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -400%);
+        width: 50%; 
+        font-size: 12px;
+      }
+      .strong{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        color: black;
+        transform: translate(-50%, -250%);
+        font-size: 24px;
+      }
     }
-    .btn{
+
+  
+ /* Iphone, Samsung */
+  @media (max-width: 916px){
+    .button{
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(-50%, -980%);
-      width: 45%; 
+      transform: translate(-50%, -920%);
+      width: 50%; 
       font-size: 12px;
     }
-    .content h3{
+    .strong{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      color: black;
+      transform: translate(-50%, -443%);
       font-size: 18px;
     }
   }
+
+
