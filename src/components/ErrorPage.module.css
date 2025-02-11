@@ -5,7 +5,6 @@
     justify-content: center;
     padding-top: 12%;
     gap: 20px;
-    font-family: "Quicksand", sans-serif;
 }
 
 .content{
@@ -25,13 +24,11 @@ h3{
     text-align: center;
     font-size: 2.3rem;
     color: rgb(2, 78, 2);
-    font-family: "Quicksand", sans-serif;
 }
 
 p{
     font-size: 18px;
     text-align: center;
-    font-family: "Quicksand", sans-serif;
 }
 
 .btn{
@@ -40,7 +37,6 @@ p{
   justify-content: center;
   flex-direction: column;
   padding-top: 20px;
-  font-family: "Quicksand", sans-serif;
 }
 
 .button{
@@ -71,12 +67,8 @@ p{
 /* Samsung */
 @media (max-width: 750px){
   .containerError{
-    padding: 10px;
-    padding-top: 30%;
+    height: 100vh;
     gap: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
 }
 h3{
@@ -88,11 +80,8 @@ h3{
 /* Ipad Air 5 */
 @media (max-width: 820px){
   .containerError{
-    padding-top: 35%;
-    gap: 26px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 100vh;
+    gap: 16px;
     flex-wrap: wrap;
 }
 h3{

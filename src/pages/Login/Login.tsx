@@ -1,10 +1,15 @@
 import React from 'react'
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
+import { FaEyeSlash,FaEye } from "react-icons/fa";
 import styles from './Login.module.css'
 import logo from '../../assets/logosemfundo.png'
 
 // Tipando o componente como um componente funcional
 const Login: React.FC = () => {
+
+   const [isTyping, setIsTyping] = useState(false)
+   const [isShowPassword, setIsShowPassword] = useState(false)
 
   const navigate = useNavigate()
 
@@ -22,29 +27,40 @@ const Login: React.FC = () => {
       <form className={styles.containerForm}>
 
         <div className={styles.logo}>
-          <img src={logo} alt="logo" />
+          <img className={styles.logo} src={logo} alt="logo" />
         </div>
 
         <div className={styles.text}>
           <h3>Green World Login</h3>
         </div>
 
-        <hr />
-
         <div className={styles.inputs}>
           <label htmlFor="email">Seu e-mail</label>
           <input 
-            type="email"
+            type= "email"
             autoComplete='on'
             required
             id="email"
+            className={isTyping ? styles.Type : styles.Default}
+            onFocus={() => setIsTyping(true)}
+            onBlur={() => setIsTyping(false)}
           />
           <label htmlFor="senha">Sua senha</label>
           <input 
-            type="password" 
+            type={isShowPassword ? "text" : "password"}
             required 
             id="senha"
+            className={isTyping ? styles.Type : styles.Default}
+            onFocus={() => setIsTyping(true)}
+            onBlur={() => setIsTyping(false)}
           />
+          <button 
+          type="button"
+          className={styles.eyeButton}
+          onClick={() => setIsShowPassword(!isShowPassword)}
+          >
+           {isShowPassword ? <FaEyeSlash /> : <FaEye /> }
+          </button>
         </div>
 
         <div className={styles.btn}>

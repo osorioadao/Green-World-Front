@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import logo from '../assets/logosemfundo.png';
-import flag from '../assets/flag.png';
 import { FaRegMoon, FaRegSun } from 'react-icons/fa';
 
 const Header: React.FC = () => {
   // Definir o estado do tema (pode ser 'light' ou 'dark')
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Estado para o menu móvel
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,16 +34,32 @@ const Header: React.FC = () => {
     navigate('/Login');
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen); // Alternar o estado do menu móvel
+  };
+
   return (
-    <div className={styles.containerHeader}>
+    <header className={styles.containerHeader}>
       <div>
         <img className={styles.logo} src={logo} alt="logo" />
       </div>
 
       <div className={styles.container_child}>
-        <img className={styles.img_flag} src={flag} alt="flagUK" />
+        {/* Menu Hamburguer */}
+        <button className={styles.hamburgerIcon} onClick={toggleMobileMenu}>
+          <div className={styles.hamburgerLine}></div>
+          <div className={styles.hamburgerLine}></div>
+          <div className={styles.hamburgerLine}></div>
+        </button>
+
+        <nav className={`${styles.containerNavbar} ${isMobileMenuOpen ? styles.mobileMenuOpen : ''}`}>
+          <Link className={styles.link} to="/">Início</Link>
+          <Link className={styles.link} to="/blog">Blog</Link>
+          <Link className={styles.link} to="/enterprises">Empresas</Link>
+          <Link className={styles.link} to="/contacts">Contactos</Link>
+
         <button className={styles.button} onClick={navigateToLogin}>Relatar Amontoados</button>
-      
+
         <button className={styles.icons} onClick={toggleTheme}>
           {theme === 'light' ? (
             <FaRegMoon className={styles.icon} size={25} />
@@ -50,10 +67,12 @@ const Header: React.FC = () => {
             <FaRegSun className={styles.icon} size={25} />
           )}
         </button>
+        </nav>
+
+        
       </div>
-    </div>
+    </header>
   );
 };
 
 export default Header;
-

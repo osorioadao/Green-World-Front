@@ -5,8 +5,6 @@ import cardImage1 from '../../assets/mapa.jpg'
 import cardImage2 from '../../assets/recolha.jpg'
 import { useNavigate } from 'react-router-dom'
 import Header from '../../components/Header'
-import Navbar from '../../components/Navbar'
-import Letter from '../../components/Letter'
 import Footer from '../../components/Footer'
 
 export const Home: React.FC = () => {  
@@ -15,7 +13,6 @@ export const Home: React.FC = () => {
 
     <div className={styles.containerHome}>
  <Header />
- <Navbar />
      
      <div className={styles.container_card}>
      <img className={styles.bodyimage} src={bodyImage} alt="bodyImage" />
@@ -30,7 +27,6 @@ export const Home: React.FC = () => {
      
      </div>
 
-     <Letter></Letter>
 
      <div className={styles.container_card}>
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Contacts.module.css';
 import Header from '../../components/Header';
-import Navbar from '../../components/Navbar';
 import logo from '../../assets/logosemfundo.png'
 import image from '../../assets/Abre-PERFIL-BRASIL-17.jpg';
 import { FiPhone } from 'react-icons/fi';
@@ -14,7 +13,6 @@ const Contacts: React.FC = () => {
     <div className={styles.containerContacts}>
 
       <Header />
-      <Navbar />
 
       <h2 className={styles.subtitle}>Contacte-nos</h2>
       <img className={styles.image} src={image} alt="Alguém ao telefone" />

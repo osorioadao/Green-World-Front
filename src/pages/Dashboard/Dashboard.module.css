@@ -1,2 +1,49 @@
   /* Estilização da Dashboard */
 
+.containerDashboard {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 200px; 
+  height: 100vh; 
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px; 
+}
+
+.logoContainer {
+  position: absolute;
+  left: 50px;
+  top: 20px;
+  gap: 50px;
+  display: flex;
+  cursor: pointer;
+  color: #fff;
+  transition: .3s ease;
+  align-items: center;
+}
+
+.logoContainer:hover{
+  color: rgb(2, 34, 2);
+}
+
+img {
+  width: 40px; 
+  height: 40px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  transition: .8s ease;
+  color: white; 
+}
+
+.icons svg:hover {
+  color: rgb(2, 34, 2); 
+  cursor: pointer;
+}
