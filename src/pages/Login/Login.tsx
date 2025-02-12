@@ -8,6 +8,8 @@ import logo from '../../assets/logosemfundo.png'
 // Tipando o componente como um componente funcional
 const Login: React.FC = () => {
 
+
+   
    const [isTyping, setIsTyping] = useState(false)
    const [isShowPassword, setIsShowPassword] = useState(false)
 
@@ -17,10 +19,11 @@ const Login: React.FC = () => {
     navigate('/TypeRegister')
   }
 
-  const navigateToDashboard = () => {
-    navigate('/Dashboard')
+  const async navigateToDashboard() => {
+    if (login == true) {
+      await navigate("/Dashboard")
+    }
   }
-
   return (
     <div className={styles.containerLogin}>
 
