@@ -5,11 +5,9 @@ import { FaEyeSlash,FaEye } from "react-icons/fa";
 import styles from './Login.module.css'
 import logo from '../../assets/logosemfundo.png'
 
-// Tipando o componente como um componente funcional
+
 const Login: React.FC = () => {
 
-
-   
    const [isTyping, setIsTyping] = useState(false)
    const [isShowPassword, setIsShowPassword] = useState(false)
 
@@ -19,11 +17,10 @@ const Login: React.FC = () => {
     navigate('/TypeRegister')
   }
 
-  const async navigateToDashboard() => {
-    if (login == true) {
-      await navigate("/Dashboard")
-    }
-  }
+   const navigateToDashboard = () => {
+    navigate('/Dashboard')
+   }
+
   return (
     <div className={styles.containerLogin}>
 
@@ -91,6 +88,6 @@ const Login: React.FC = () => {
 
     </div>
   )
-}
 
+}
 export default Login

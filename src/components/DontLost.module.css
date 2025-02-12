@@ -7,6 +7,15 @@
     justify-content: center;
 }
 
+.link0{
+  color: #000;
+  transition: all .5s ease;
+}
+
+.link0:hover{
+  color: #72e316;
+}
+
 .h6{
     font-size: 39px;
     font-size: 2rem;

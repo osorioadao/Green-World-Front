@@ -1,4 +1,11 @@
   /* Estilização da página de tipos de registo0 */
 
 
-  
+.back{
+  transition: .3s ease;
+  cursor: pointer;
+}
+
+.back:hover{
+  color: rgb(90, 90, 90);
+}

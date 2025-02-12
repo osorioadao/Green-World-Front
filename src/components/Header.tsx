@@ -6,8 +6,8 @@ import logo from '../assets/logosemfundo.png';
 import { FaRegMoon, FaRegSun } from 'react-icons/fa';
 
 const Header: React.FC = () => {
-  // Definir o estado do tema (pode ser 'light' ou 'dark')
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  
+  const [theme, setTheme] = useState<'light' | 'dark'>('light'); // Definir o estado do tema (pode ser 'light' ou 'dark')
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Estado para o menu móvel
   const navigate = useNavigate();
 
@@ -45,7 +45,9 @@ const Header: React.FC = () => {
       </div>
 
       <div className={styles.container_child}>
+
         {/* Menu Hamburguer */}
+        
         <button className={styles.hamburgerIcon} onClick={toggleMobileMenu}>
           <div className={styles.hamburgerLine}></div>
           <div className={styles.hamburgerLine}></div>

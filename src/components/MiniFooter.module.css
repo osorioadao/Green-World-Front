@@ -9,6 +9,8 @@
     gap: 20px;
     align-items: center;
     padding: 18px;
+    width: 100%;
+    max-width: 100%;
     background-color: black;
   }
   
