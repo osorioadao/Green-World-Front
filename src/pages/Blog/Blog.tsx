@@ -42,7 +42,7 @@ const Blog: React.FC = () => {
   };
 
   const cards = [
-    { image: imageCard1, title: 'Símbolo da folha Amarela', text: 'Descrição do resíduo perigoso.' },
+    { image: imageCard1, title: 'Campanha de Recolha de Lixo', text: 'Descrição do resíduo perigoso.' },
     { image: imageCard5, title: 'Símbolo da folha Laranja', text: 'Descrição do resíduo perigoso.' },
     { image: imageCard6, title: 'Símbolo da folha Vermelha', text: 'Descrição do resíduo perigoso.' },
     { image: imageCard7, title: 'Símbolo da folha Verde', text: 'Descrição do resíduo perigoso.' },
@@ -53,19 +53,23 @@ const Blog: React.FC = () => {
 
   return (
     <div className={styles.containerBlog}>
+
       <Header />
+
       <div className={styles.content}>
         <h1>O que é a Green World?</h1>
         <p className={styles.paragraph}>
           A Green World é uma plataforma de geolocalização de amontoados de lixo...
         </p>
       </div>
+
       <img className={styles.imageColeta} src={imageColeta} alt="" />
       <div className={styles.content1}>
         <p className={styles.paragraph}>
           A Green World destaca-se com uma logo representando a coleta seletiva.
         </p>
       </div>
+      
       <div className={styles.carouselContainer}>
         <Slider {...settings}>
           {cards.map((card, index) => (

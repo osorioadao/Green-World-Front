@@ -22,6 +22,8 @@ form{
   max-width: 90%;
   padding: 12px;
   background-color: #C2FFA8;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .logo{
@@ -65,6 +67,7 @@ input{
   border: 8px;
   transition: all .3s ease;
   background-color: #3E9F32;
+  color: var(--white);
 }
 
 .eyeButton {
@@ -104,6 +107,7 @@ p{
   border: 8px;
   transition: all .3s ease;
   background-color: #196911;
+  color: var(--white);
 }
 
 .buttonCadastrar:hover{
@@ -111,13 +115,16 @@ p{
 } 
 
 .mini_footer{
-  text-align: center;
-  padding: 10px;
   display: flex;
+  padding-bottom: 30px;
   width: 36%;
-  max-width: 90%;
-  justify-content: space-between;
-  background-color: #c2ffa8ae;
+  text-align: center;
+  justify-content: center;
+  background-color: #C2FFA8;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  align-items: center;
+  gap: 20px;
 }
 
 

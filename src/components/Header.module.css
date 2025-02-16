@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: green;
+  background-color: var(--green);
 }
 
 .container_child{
@@ -30,7 +30,7 @@ img{
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
-  color: #fff;
+  color: var(--white);
   transition: .2s ease-in-out;
   background-color: rgba(172, 255, 47, 0.733);
 }
@@ -46,14 +46,14 @@ img{
 
 /* Estilos padrões para o modo claro */
 body .light {
-  background-color: white;
-  color: black;
+  background-color: var(--white);
+  color: var(--black);
 }
 
 /* Estilos para o modo escuro */
 body .dark {
   background-color: #121212;
-  color: white;
+  color: var(--white);
 }
 
 .icons {
@@ -61,7 +61,7 @@ body .dark {
   border: none;
   cursor: pointer;
   background-color: transparent;
-  color: #000;
+  color: var(--black);
   transition: .5s ease;
 }
 
@@ -84,7 +84,7 @@ ul{
 
 .link{
   text-decoration: none;
-  color: #fff;
+  color: var(--white);
   font-size: 16px;
   transition: all .5s ease;
 }

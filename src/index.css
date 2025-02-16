@@ -8,3 +8,17 @@ body *{
     font-family: "Quicksand", sans-serif;
     text-decoration: none;
 }
+
+:root{
+    --white: #fff;
+    --black: #000;
+    --green: green;
+    --font-size: 16px;
+    --link-color: rgb(2, 85, 2);
+    --link-color-hover: rgb(3, 60, 3);
+    --button-color-contacts: rgb(11, 11, 201);
+    --button-color-hover-contacts: rgb(9, 9, 156);
+    --color-text-contacts: rgba(22, 89, 5, 0.775);
+    --bg-cards-contact: rgba(255, 255, 255, 0.803);
+
+}

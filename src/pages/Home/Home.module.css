@@ -41,7 +41,7 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    color: #fff;
+    color: var(--white);
     text-transform: uppercase;
     text-align: center;
     transform: translate(-50%, -500%);
@@ -92,7 +92,7 @@
         position: absolute;
         left: 50%;
         top: 50%;
-        color: black;
+        color: var(--black);
         transform: translate(-50%, -250%);
         font-size: 24px;
       }
@@ -113,7 +113,7 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      color: black;
+      color: var(--black);
       transform: translate(-50%, -443%);
       font-size: 18px;
     }

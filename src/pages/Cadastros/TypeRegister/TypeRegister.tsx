@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../TypeRegister/TypeRegister.module.css'
-import MiniSidebar from '../../../components/MiniSidebar'
+import MiniSidebar from '../../../components/SidebarContacts'
 import { IoArrowBack } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
 import logo from '../../../assets/logosemfundo.png'

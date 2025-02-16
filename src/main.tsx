@@ -12,6 +12,7 @@ import Login from '../src/pages/Login/Login'
 import PersonalRegister from './pages/Cadastros/TypeRegister/TypeRegister'
 import TypeRegister from './pages/Cadastros/TypeRegister/TypeRegister'
 import Dashboard from "./pages/Dashboard/Dashboard";
+import Relatar from './pages/Relatar/Relatar'
 
 
 const router = createBrowserRouter([
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
   {
     path: '/Dashboard',
     element: <Dashboard />
+  },
+  {
+    path: '/Relatar',
+    element: <Relatar />
   }
 ])
 

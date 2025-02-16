@@ -43,7 +43,7 @@ const Contacts: React.FC = () => {
 <h6 className={styles.h6}>Entre em contacto conosco</h6>
    <p className={styles.p}>Caso haja alguma dúvida,não exite 
    estamos aqui para esclarece-lo.  Acesse também nossa 
-   <a href="" target='_blank'>Central de Ajuda.</a>
+   <a href="" target='_blank' className={styles.link}>Central de Ajuda.</a>
    </p>
 
 </div>
