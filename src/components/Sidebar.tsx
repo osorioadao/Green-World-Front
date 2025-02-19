@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Sidebar.module.css';
 import { useNavigate } from 'react-router-dom';
-import { TfiControlSkipBackward } from "react-icons/tfi";
+import { IoMdArrowBack } from "react-icons/io";
 import { SiEnterprisedb } from "react-icons/si";
 import { GrBlog } from "react-icons/gr";
 import { MdOutlineSpaceDashboard } from "react-icons/md";
@@ -35,7 +35,7 @@ const Sidebar: React.FC = () => {
  
  <div className={styles.mainIcons}>
  <RxHamburgerMenu onClick={toggleMenu} size={30} className={styles.expandir} />
- <TfiControlSkipBackward size={30} className={styles.back} onClick={() => navigate(-1)}  />
+ <IoMdArrowBack size={30} className={styles.back} onClick={() => navigate(-1)}  />
  </div>
 
 

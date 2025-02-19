@@ -1,6 +1,6 @@
     import React from 'react'
     import styles from './DontLost.module.css'
-    import logo from '../assets/logosemfundo.png'
+    import logo from '../../public/greenworld.svg'
 
     function DontLost() {
       return (

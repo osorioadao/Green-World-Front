@@ -4,8 +4,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  flex-direction: column;
-  justify-content: center
+  justify-content: center;
 }
 
 .containerForm{
@@ -17,13 +16,17 @@
 }
 
 form{
-  height: 30rem;
+  height: 34rem;
   width: 36%;
   max-width: 90%;
   padding: 12px;
-  background-color: #C2FFA8;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-radius: 4px;
+}
+
+.background{
+  height: 34rem;
+  width: 36%;
+  background-image: url(../../assets/Fingerprint-bro.svg);
 }
 
 .logo{
@@ -45,15 +48,19 @@ input{
   border-radius: 4px;
 }
 
-.Default{
-  transition: border-color 1.5s ease-in-out;
-  border: 3px solid #ccc;
-  outline-style: none;
+.eyeButton {
+  position: absolute;
+  top: 417px;
+  right: 280px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
 }
 
-.Type{
-  border-color: green !important;
-  outline-color: green;
+.eyeButton:hover {
+  color: #297a1f;
 }
 
 .buttonEntrar{
@@ -63,26 +70,10 @@ input{
   border-radius: 4px;
   font-weight: 525;
   cursor: pointer;
-  font-size: 16px;
-  border: 8px;
+  font-size: var(--font-size);
   transition: all .3s ease;
   background-color: #3E9F32;
   color: var(--white);
-}
-
-.eyeButton {
-  position: absolute;
-  top: 445px;
-  right: 560px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  color: #333;
-}
-
-.eyeButton:hover {
-  color: #007bff;
 }
 
 .buttonEntrar:hover{
@@ -94,6 +85,23 @@ h3{
 }
 p{
   font-size: 16px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link a{
+  color: var(--black);
+  transition: all .5s ease;
+}
+
+.link{
+  padding-left: 290px;
+}
+
+.link a:hover{
+  color: #297a1f;
 }
 
 .buttonCadastrar{
@@ -103,47 +111,56 @@ p{
   border-radius: 4px;
   font-weight: 525;
   cursor: pointer;
-  font-size: 16px;
-  border: 8px;
+  font-size: var(--font-size);
   transition: all .3s ease;
-  background-color: #196911;
+  background-color: #3E9F32;
   color: var(--white);
 }
 
 .buttonCadastrar:hover{
-  background-color: #0f5009;
+  background-color: #297a1f;
 } 
 
 .mini_footer{
   display: flex;
-  padding-bottom: 30px;
-  width: 36%;
-  text-align: center;
-  justify-content: center;
-  background-color: #C2FFA8;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  align-items: center;
-  gap: 20px;
+  padding-top: 30px;
+  gap: 50px;
 }
 
 
 @media (max-width: 768px){
+  .containerLogin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
   form{
     width: 26rem;
+    height: 36rem;
     font-size: 12px;
+    background-color: #C2FFA8;
   }
-  .mini_footer{
-    text-align: center;
-    padding: 10px;
-    display: flex;
-    width: 26rem;
+  .eyeButton {
+    position: absolute;
+    top: 425px;
+    right: 75px;
+  }
+  .link a{
+    padding-right: 60px;
+  }
+  .background{
+    display: none;
   }
   h3{
     font-size: 16px;
   }
   p{
     font-size: 14px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
   label{
     font-size: 14px;

@@ -1,14 +1,12 @@
-import React from "react";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { FaEyeSlash, FaEye } from "react-icons/fa";
-import styles from "./Login.module.css";
-import logo from "../../assets/logosemfundo.png";
+import React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { FaEyeSlash, FaEye } from 'react-icons/fa';
+import styles from './Login.module.css';
+import logo from '../../../public/greenworld.svg'
 
 const Login: React.FC = () => {
-  const [isTyping, setIsTyping] = useState(false);
   const [isShowPassword, setIsShowPassword] = useState(false);
-
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
@@ -24,6 +22,9 @@ const Login: React.FC = () => {
 
   return (
     <div className={styles.containerLogin}>
+
+     <div className={styles.background}></div>
+
       <form className={styles.containerForm}>
 
         <div className={styles.logo}>
@@ -41,18 +42,12 @@ const Login: React.FC = () => {
             autoComplete="on"
             required
             id="email"
-            className={isTyping ? styles.Type : styles.Default}
-            onFocus={() => setIsTyping(true)}
-            onBlur={() => setIsTyping(false)}
           />
           <label htmlFor="senha">Sua senha</label>
           <input
             type={isShowPassword ? "text" : "password"}
             required
             id="senha"
-            className={isTyping ? styles.Type : styles.Default}
-            onFocus={() => setIsTyping(true)}
-            onBlur={() => setIsTyping(false)}
           />
           <button
             type="button"
@@ -61,6 +56,11 @@ const Login: React.FC = () => {
           >
             {isShowPassword ? <FaEyeSlash /> : <FaEye />}
           </button>
+          
+        <div className={styles.link}>
+         <a href="#">Esqueci minha senha</a>
+        </div>
+
         </div>
 
         <div className={styles.btn}>
@@ -72,11 +72,11 @@ const Login: React.FC = () => {
             Entrar
           </button>
         </div>
-        
-      </form>
 
-      <div className={styles.mini_footer}>
+        <div className={styles.mini_footer}>
+
         <p>Ainda não tem uma conta?</p>
+
         <div className={styles.btn0}>
           <button
             className={styles.buttonCadastrar}
@@ -86,7 +86,11 @@ const Login: React.FC = () => {
             Cadastrar-se
           </button>
         </div>
+
       </div>
+        
+      </form>
+
     </div>
   );
 };

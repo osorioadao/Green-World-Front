@@ -1,72 +1,44 @@
   /* Estilização do Header */
 
 .containerHeader{
+  position: fixed;
   width: 100%;
-  padding: 2px;
+  padding-left: 26px;
+  padding-right: 26px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--green);
+  background-color: rgba(206, 204, 204, 0.463);
 }
 
 .container_child{
-  padding: 12px;
+  padding: 14px;
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 210px;
   justify-content: space-between;
 }
 
-img{
-  height: 2.5rem;
-  width: 2.5rem;
+.logo{
+  height: 5rem;
+  width: 5rem;
 }
 
 .button{
   height: 2.4rem;
   width: 12rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
   color: var(--white);
   transition: .2s ease-in-out;
-  background-color: rgba(172, 255, 47, 0.733);
-}
-
-.button:hover{
   background-color: #72e316;
 }
 
-.logo{
-  height: 4rem;
-  width: 4rem;
-}
-
-/* Estilos padrões para o modo claro */
-body .light {
-  background-color: var(--white);
-  color: var(--black);
-}
-
-/* Estilos para o modo escuro */
-body .dark {
-  background-color: #121212;
-  color: var(--white);
-}
-
-.icons {
-  padding: 8px 16px;
-  border: none;
-  cursor: pointer;
-  background-color: transparent;
-  color: var(--black);
-  transition: .5s ease;
-}
-
-.icons:hover {
-  transform: scale(1.2);
+.button:hover{
+  background-color: #6ada0e;
 }
 
 .containerNavbar{
@@ -74,7 +46,6 @@ body .dark {
   justify-content: space-between;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
   gap: 28px;
 }
 
@@ -84,15 +55,15 @@ ul{
 
 .link{
   text-decoration: none;
-  color: var(--white);
+  color: var(--black);
   font-size: 16px;
+  font-weight: 490;
   transition: all .5s ease;
 }
 
 .link:hover{
   color: #72e316;
 }
-
 
 .hamburgerIcon {
   display: none;
@@ -112,9 +83,13 @@ ul{
 /* Escondendo o menu de navegação em telas pequenas */
 @media (max-width: 768px) {
   .containerNavbar {
-    display: none;
     flex-direction: column;
+    display: none;
     gap: 15px;
+  }
+
+  .icons{
+    display: none;
   }
 
   /* Exibir o botão de hambúrguer em telas pequenas */
@@ -125,8 +100,5 @@ ul{
   /* Quando o menu estiver aberto, mostrar a navegação */
   .mobileMenuOpen {
     display: flex !important;
-  }
-  .logo{
-    display: none;
   }
 }

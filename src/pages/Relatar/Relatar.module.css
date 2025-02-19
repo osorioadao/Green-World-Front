@@ -23,7 +23,6 @@
 }
 
 .par{
-  padding-bottom: 5%;
   font-weight: 500;
 }
 
@@ -33,10 +32,6 @@ label{
 
 b{
   color: red;
-}
-
-.text{
-  padding: 8px;
 }
 
 select,option{

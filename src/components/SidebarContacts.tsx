@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './SidebarContacts.module.css'
-import logo from '../assets/logosemfundo.png'
+import React from 'react';
+import styles from './SidebarContacts.module.css';
+import logo from '../../public/greenworld.svg';
 import { SiEnterprisedb } from "react-icons/si";
 import { FaBlog, FaHome } from "react-icons/fa";
 import { IoIosHelpCircleOutline } from "react-icons/io";

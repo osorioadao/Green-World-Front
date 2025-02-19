@@ -11,12 +11,12 @@ function Relatar() {
         <form className={styles.form} action="">
 
             <div className={styles.texto}>
-                <p className={styles.par}>Relate aqui os amontoados perto de si. Campos obrigatórios <b>*</b></p>
+                <p className={styles.par}>Relate aqui os amontoados perto de si. Campos obrigatórios <b>*</b> </p>
             </div>
 
             <div className={styles.inputs}>
-                <label htmlFor="tipodeamontoado">Tipo de Lixo ♻️ <b>*</b></label>
-                <select name="selectGarbage" id="selectGarbage">
+                <label htmlFor="categoria">Tipo de Lixo ♻️ <b>*</b></label>
+                <select name="categoria" id="selectGarbage">
                     <option value="1">Orgânico</option>
                     <option value="2">Reciclável</option>
                     <option value="3">Perigoso</option>
@@ -25,7 +25,7 @@ function Relatar() {
                 </select>
 
                  <label htmlFor="localidade">Qual é a sua localidade ? 📍 <b>*</b></label>
-                <select name="selectPlace" id="selectPlace">
+                <select name="localidade" id="selectPlace">
                     <option value="1">Luanda</option>
                     <option value="2">Cazenga</option>
                     <option value="3">Viana</option>
@@ -44,7 +44,7 @@ function Relatar() {
                 </select>
 
                 <label htmlFor="quantidade">Quantidade de lixo 📈 <b>*</b></label>
-                <select name="selectAmount" id="selectAmount" className={styles.amount}>
+                <select name="quantidade" id="quantidade" className={styles.amount}>
                     <option value="1">Pequeno ( Até 1 saco de lixo)</option>
                     <option value="2">Médio (1 a 5 sacos de lixo)</option>
                     <option value="3">Grande (Muitos sacos de lixo)</option>

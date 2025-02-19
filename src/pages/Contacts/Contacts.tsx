@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Contacts.module.css';
 import Header from '../../components/Header';
-import logo from '../../assets/logosemfundo.png'
+import logo from '../../../public/greenworld.svg'
 import image from '../../assets/Abre-PERFIL-BRASIL-17.jpg';
 import { FiPhone } from 'react-icons/fi';
 import { MdOutlineEmail } from 'react-icons/md';

@@ -1,10 +1,13 @@
   /* Estilização da página de erro */
 
   .containerError{
+    height: 100vh;
     display: flex;
+    align-items: center;
+    flex-direction: row;
     justify-content: center;
-    padding-top: 12%;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .content{
@@ -17,7 +20,7 @@
 .img{
     height: 26rem;
     width: 28rem;
-    animation: moves 5s ease-out infinite;
+    animation: moves 2s ease-out infinite alternate;
 }
 
 h3{
@@ -42,7 +45,7 @@ p{
 .button{
   height: 2.5rem;
   width: 14rem;
-  border-radius: 5px;
+  border-radius: 4px;
   color: var(white);
   border: none;
   cursor: pointer;
@@ -60,16 +63,14 @@ p{
       transform: translateY(0px);
     }
     100%{
-      transform: translateY(-32px);
+      transform: translateY(32px);
     }
 }
 
 /* Samsung */
 @media (max-width: 750px){
   .containerError{
-    height: 100vh;
     gap: 22px;
-    flex-wrap: wrap;
 }
 h3{
   font-size: 2rem;
@@ -80,11 +81,6 @@ h3{
 /* Ipad Air 5 */
 @media (max-width: 820px){
   .containerError{
-    height: 100vh;
     gap: 16px;
-    flex-wrap: wrap;
-}
-h3{
-  font-size: 2rem;
 }
 }
