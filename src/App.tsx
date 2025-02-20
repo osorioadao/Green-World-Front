@@ -1,41 +1,29 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import WorldFlag from "react-world-flags";
-import "./Language/i18n";
+import Empresas from './pages/Enterprises'
+import Contactos from './pages/Contacts'
+import ErrorPage from './pages/ErrorPage'
+import Home from './pages/Home'
+import Blog from './pages/Blog'
+import Login from './pages/Login'
+import Dashboard from "./pages/Dashboard";
+import Relatar from './pages/Relatar'
+import { Routes, Route } from 'react-router-dom'
 
-// import axios form 'axios'
-// const server = axios.create({
-//   baseURL: 'http//localhost:3002'
-// })
-
-
- const App: React.FC = () => {
-
-  const { t, i18n } = useTranslation()
-
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng)
-  }
-
-  // server.get('/users'.then(( response) => {
-  //   console.log(response)
-  // })).catch((error) => {
-  //console.error('Erro na requisição:', error);
-//});
+ export default function App() {
 
   return (
     <>
-       <button onClick={() => changeLanguage("en")}>
-        <WorldFlag code="GB" style={{width: 30, height: 20, margin: "0 10px"}}></WorldFlag>
-       </button>
-       <button onClick={() => changeLanguage("pt")}>
-        <WorldFlag code="BR" style={{ width: 30, height: 20, margin: "0 10px" }} />
-      </button>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="dashboard" element={<Dashboard />} />
+      <Route path="empresas" element={<Empresas />} />
+      <Route path="contactos" element={<Contactos />} />
+      <Route path="blog" element={<Blog />} />
+      <Route path="login" element={<Login />} />
+      <Route path="relatar" element={<Relatar />} />
       
-      <h1>{t("title")}</h1>
-      <p>{t("description")}</p>
+      <Route path="*" element={<ErrorPage />} />
+    </Routes>
     </>
   )
 }
 
-export default App
