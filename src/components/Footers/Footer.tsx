@@ -1,9 +1,8 @@
-import React from "react";
 import { Link,useNavigate } from "react-router-dom";
 import { IoLogoInstagram } from "react-icons/io";
 import { CiFacebook } from "react-icons/ci";
-import styles from './Footer.module.css'
-import logo from '../../public/greenworld.svg'
+import styles from './Styles/Footer.module.css'
+import logo from '../../assets/growing.svg'
 
 function Footer() {
 

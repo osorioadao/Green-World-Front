@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import styles from './Header.module.css';
+import styles from './Styles/Header.module.css';
 import logo from '/greenworld.svg';
 
-const Header: React.FC = () => {
+const Header = () => {
   
    
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); 

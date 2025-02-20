@@ -1,14 +1,13 @@
-import React from 'react'
-import styles from '../Home/Home.module.css'
+import styles from './Styles/Home.module.css'
 import { useNavigate } from 'react-router-dom'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-import image from '../../assets/old-new-ways-travel.jpg'
-import image2 from '../../assets/Paper map-cuate.png'
-import Blog from '../../pages/Blog/Blog'
-import Contacts from '../../pages/Contacts/Contacts'
+import Header from '../components/Headers/Header'
+import Footer from '../components/Footers/Footer'
+import image from '../assets/old-new-ways-travel.jpg'
+import image2 from '../assets/Paper map-cuate.png'
+import Blog from './Blog'
+import Contacts from './Contacts'
 
-export const Home: React.FC = () => {  
+export default function Home () {  
 
    const navigate = useNavigate()
 
@@ -102,5 +101,3 @@ export const Home: React.FC = () => {
     </main>
   )
 }
-
-export default Home

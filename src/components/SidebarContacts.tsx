@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './SidebarContacts.module.css';
+import styles from './Styles/SidebarContacts.module.css';
 import logo from '../../public/greenworld.svg';
 import { SiEnterprisedb } from "react-icons/si";
 import { FaBlog, FaHome } from "react-icons/fa";

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import styles from './Sidebar.module.css';
+import { useState } from 'react';
+import styles from './Styles/Sidebar.module.css';
 import { useNavigate } from 'react-router-dom';
 import { IoMdArrowBack } from "react-icons/io";
 import { SiEnterprisedb } from "react-icons/si";

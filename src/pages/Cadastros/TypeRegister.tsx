@@ -1,5 +1,4 @@
-import React from 'react'
-import styles from './TypeRegister.module.css'
+import styles from '../Styles/TypeRegister.module.css'
 
 function TypeRegister() {
 

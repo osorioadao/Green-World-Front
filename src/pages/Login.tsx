@@ -1,22 +1,21 @@
-import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
-import styles from './Login.module.css';
+import styles from './Styles/Login.module.css';
 import logo from '/greenworld.svg'
-import background from './../../assets/Login-pana.png';
+import background from '../assets/Login-pana.png';
 
-const Login: React.FC = () => {
+export default function Login() {
   const [isShowPassword, setIsShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
   function Enter() {
     if (!email) {
-     return alert("Por favor, insira o email.")
+      return alert("Por favor, insira o email.")
     }
-    if(!senha){
-    return alert("Por favor, insira a senha")
+    if (!senha) {
+      return alert("Por favor, insira a senha")
     }
 
     alert(`Email: ${email} | Senha: ${senha}`)
@@ -36,9 +35,9 @@ const Login: React.FC = () => {
   return (
     <div className={styles.containerLogin}>
 
-     <div>
-      <img src={background} className={styles.background} alt="" />
-     </div>
+      <div>
+        <img src={background} className={styles.background} alt="" />
+      </div>
 
       <form className={styles.containerForm} onSubmit={(e) => e.preventDefault()}>
 
@@ -70,7 +69,7 @@ const Login: React.FC = () => {
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
           />
-          
+
           <button
             type="button"
             className={styles.eyeButton}
@@ -78,10 +77,10 @@ const Login: React.FC = () => {
           >
             {isShowPassword ? <FaEyeSlash /> : <FaEye />}
           </button>
-          
-        <div className={styles.link}>
-         <a href="#">Esqueci minha senha</a>
-        </div>
+
+          <div className={styles.link}>
+            <a href="#">Esqueci minha senha</a>
+          </div>
 
         </div>
 
@@ -89,7 +88,7 @@ const Login: React.FC = () => {
           <button
             className={styles.buttonEntrar}
             type="button"
-             onClick={Enter}
+            onClick={Enter}
           >
             Entrar
           </button>
@@ -97,23 +96,23 @@ const Login: React.FC = () => {
 
         <div className={styles.mini_footer}>
 
-        <p>Ainda não tem uma conta?</p>
+          <p>Ainda não tem uma conta?</p>
 
-        <div className={styles.btn0}>
-          <button
-            className={styles.buttonCadastrar}
-            type="button"
-            onClick={navigateToTypeRegister}
-          >
-            Cadastrar-se
-          </button>
+          <div className={styles.btn0}>
+            <button
+              className={styles.buttonCadastrar}
+              type="button"
+              onClick={navigateToTypeRegister}
+            >
+              Cadastrar-se
+            </button>
+          </div>
+
         </div>
 
-      </div>
-        
       </form>
 
     </div>
   );
 };
-export default Login;
+

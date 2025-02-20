@@ -1,6 +1,6 @@
 import React from 'react'
 import { MdCopyright } from 'react-icons/md'
-import styles from './MiniFooter.module.css'
+import styles from './Styles/MiniFooter.module.css'
 
 function MiniFooter() {
   return (

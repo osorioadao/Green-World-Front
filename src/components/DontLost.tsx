@@ -1,36 +1,35 @@
-    import React from 'react'
-    import styles from './DontLost.module.css'
-    import logo from '../../public/greenworld.svg'
+import styles from './Styles/DontLost.module.css'
+import logo from '../../public/greenworld.svg'
 
-    function DontLost() {
-      return (
-        <div className={styles.containerDontLost}>
-        <div className={styles.Links}>
+function DontLost() {
+  return (
+    <div className={styles.containerDontLost}>
+      <div className={styles.Links}>
 
-    <img className={styles.logo} src={logo} alt="logo" />
+        <img className={styles.logo} src={logo} alt="logo" />
 
-    <div className={styles.links}>
+        <div className={styles.links}>
 
-    <p className={styles.par}>Não se perca</p>
-    <a className={styles.link0} href="/">Início</a>
-    <a className={styles.link0} href="/blog">Blog</a>
-    <a className={styles.link0} href="/empresas">Empresas</a>
-    <a className={styles.link0} href="/contacts">Contactos</a>
+          <p className={styles.par}>Não se perca</p>
+          <a className={styles.link0} href="/">Início</a>
+          <a className={styles.link0} href="/blog">Blog</a>
+          <a className={styles.link0} href="/empresas">Empresas</a>
+          <a className={styles.link0} href="/contacts">Contactos</a>
 
-    </div>
-
-    <div className= {styles.linksUteis}>
-
-    <p className={styles.par}>Links Utéis</p>
-    <div className={styles.link}>
-    <a className={styles.link0} href="">Contactos</a>
-    <a className={styles.link0} href="/termos">Política de Privacidade</a>
-
-    </div>
-    </div>
         </div>
-        </div>
-      )
-    }
 
-    export default DontLost;
+        <div className={styles.linksUteis}>
+
+          <p className={styles.par}>Links Utéis</p>
+          <div className={styles.link}>
+            <a className={styles.link0} href="">Contactos</a>
+            <a className={styles.link0} href="/termos">Política de Privacidade</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default DontLost;

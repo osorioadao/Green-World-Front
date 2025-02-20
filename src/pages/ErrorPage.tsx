@@ -1,11 +1,10 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './ErrorPage.module.css';
+import styles from './Styles/ErrorPage.module.css';
 import image from '../assets/error.svg'
 
-const ErrorPage: React.FC = () => {
+export default function ErrorPage() {
     const navigate = useNavigate();
-    
+
     const handleInicio = (): void => {
         navigate('/');
     };
@@ -27,5 +26,3 @@ const ErrorPage: React.FC = () => {
         </div>
     );
 };
-
-export default ErrorPage;

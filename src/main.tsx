@@ -1,16 +1,15 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-
-import Empresas from './pages/Empresas/Enterprises'
-import Contactos from './pages/Contacts/Contacts.jsx'
-import ErrorPage from './components/ErrorPage.jsx'
-import Home from './pages/Home/Home'
-import Blog from './pages/Blog/Blog'
-import Login from '../src/pages/Login/Login'
-import Dashboard from "./pages/Dashboard/Dashboard";
-import Relatar from './pages/Relatar/Relatar'
+import Empresas from './pages/Enterprises'
+import Contactos from './pages/Contacts'
+import ErrorPage from './pages/ErrorPage'
+import Home from './pages/Home'
+import Blog from './pages/Blog'
+import Login from './pages/Login'
+import Dashboard from "./pages/Dashboard";
+import Relatar from './pages/Relatar'
+import './index.css'
 
 
 const router = createBrowserRouter([
@@ -42,10 +41,14 @@ const router = createBrowserRouter([
   {
     path: '/relatar',
     element: <Relatar />
-  }
+  },
+  {
+    path: '/*',
+    element: <ErrorPage />
+  },
 ])
 
-createRoot(document.getElementById('root') as HTMLElement ).render(
+createRoot(document.querySelector('#root') as HTMLElement).render(
   <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>,
