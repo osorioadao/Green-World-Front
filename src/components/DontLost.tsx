@@ -7,7 +7,7 @@
         <div className={styles.containerDontLost}>
         <div className={styles.Links}>
 
-    <img src={logo} alt="logo" />
+    <img className={styles.logo} src={logo} alt="logo" />
 
     <div className={styles.links}>
 

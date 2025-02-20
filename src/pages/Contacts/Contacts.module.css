@@ -1,21 +1,23 @@
   /* Estilização da página de contactos */ 
 
 .image{
+  padding-top: 14%;
   position: relative;
-  height: 26rem;
+  height: 34rem;
   width: 100%;
 }
 
 .subtitle{
   position: absolute;
   left: 100px;
-  top: 270px;
+  top: 300px;
   z-index: 1;
   color: var(--white);
   font-size: 50px;
 }
 
 .cards{
+  margin-top: 8%;
   background: var(--bg-cards-contact);
   text-align: center;
   display: flex;
@@ -47,6 +49,10 @@
   gap: 10px;
   display: grid;
   text-align: center;
+}
+
+.text h6{
+  font-size: 20px;
 }
 
 .inputs{

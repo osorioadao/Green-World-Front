@@ -3,12 +3,24 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
 import styles from './Login.module.css';
-import logo from '../../../public/greenworld.svg'
+import logo from '/greenworld.svg'
 
 const Login: React.FC = () => {
   const [isShowPassword, setIsShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+
+  function Enter() {
+    if (!email) {
+     return alert("Por favor, insira o email.")
+    }
+    if(!senha){
+    return alert("Por favor, insira a senha")
+    }
+
+    alert(`Email: ${email} | Senha: ${senha}`)
+    navigate('/dashboard')
+  }
 
   const navigate = useNavigate();
 
@@ -16,16 +28,16 @@ const Login: React.FC = () => {
     navigate("/TypeRegister");
   };
 
-  const navigateToDashboard = () => {
-    navigate("/Dashboard");
-  };
+  // const navigateToDashboard = () => {
+  //   navigate("/Dashboard");
+  // };
 
   return (
     <div className={styles.containerLogin}>
 
      <div className={styles.background}></div>
 
-      <form className={styles.containerForm}>
+      <form className={styles.containerForm} onSubmit={(e) => e.preventDefault()}>
 
         <div className={styles.logo}>
           <img className={styles.logo} src={logo} alt="logo" />
@@ -42,12 +54,17 @@ const Login: React.FC = () => {
             autoComplete="on"
             required
             id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <label htmlFor="senha">Sua senha</label>
           <input
             type={isShowPassword ? "text" : "password"}
             required
+            autoComplete='on'
             id="senha"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
           />
           <button
             type="button"
@@ -67,7 +84,7 @@ const Login: React.FC = () => {
           <button
             className={styles.buttonEntrar}
             type="button"
-            onClick={navigateToDashboard}
+             onClick={Enter}
           >
             Entrar
           </button>

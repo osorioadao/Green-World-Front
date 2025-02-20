@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Contacts.module.css';
 import Header from '../../components/Header';
-import logo from '../../../public/greenworld.svg'
 import image from '../../assets/Abre-PERFIL-BRASIL-17.jpg';
 import { FiPhone } from 'react-icons/fi';
 import { MdOutlineEmail } from 'react-icons/md';
@@ -41,10 +40,10 @@ const Contacts: React.FC = () => {
 <div className={styles.text}>
 
 <h6 className={styles.h6}>Entre em contacto conosco</h6>
-   <p className={styles.p}>Caso haja alguma dúvida,não exite 
-   estamos aqui para esclarece-lo.  Acesse também nossa 
-   <a href="" target='_blank' className={styles.link}>Central de Ajuda.</a>
-   </p>
+   <p>Caso haja alguma dúvida,não exite 
+   estamos aqui para esclarece-lo. Acesse também nossa </p>
+   <a href="#" target='_blank' className={styles.link}>Central de Ajuda.</a>
+   
 
 </div>
 

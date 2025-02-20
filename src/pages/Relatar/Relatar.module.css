@@ -53,11 +53,11 @@ select,option{
   font-size: var(--font-size);
   font-weight: 500;
   color: var(--white);
-  background-color: firebrick;
+  background-color: rgb(221, 146, 6);
   border-radius: 4px;
-  transition: all .4s ease;
+  transition: .3s ease;
 }
 
 .button:hover{ 
-  background-color: rgb(143, 25, 25);
+  background-color: rgb(235, 153, 1);
 }

@@ -12,6 +12,11 @@
   transition: all .5s ease;
 }
 
+.logo{
+  height: 5rem;
+  width: 5rem;
+}
+
 .link0:hover{
   color: #72e316;
 }

@@ -6,6 +6,7 @@
   padding-left: 26px;
   padding-right: 26px;
   display: flex;
+  z-index: 1;
   justify-content: space-between;
   align-items: center;
   background-color: rgba(206, 204, 204, 0.463);
@@ -20,7 +21,7 @@
 }
 
 .logo{
-  height: 5rem;
+  height: 5em;
   width: 5rem;
 }
 

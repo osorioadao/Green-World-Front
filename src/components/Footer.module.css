@@ -1,35 +1,88 @@
-  /* Estilização do footer ou rodapé */
+.Foot{
+    background-color: var(--black);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 14rem;
+    padding: 100px;
+    margin-top: 60%;
+    flex-direction: row;
+}
 
-.containerFooter{
-  padding-top: 4%;
-  width: 100%;
-  height: 4%;
-  display: flex;
-  background-color: var(--black);
-  justify-content: space-around;
+.Foot::before{
+    content: "";
+    height: 14rem;
+    width: 1.3px;
+    background-color: var(--green);
+}
+
+a{
+    transition: .2s ease;
+    color: var(--white);
+}
+a:hover{
+    color: var(--green);
 }
 
 .image{
-  height: 6rem;
-  width: 6rem;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
 }
 
-.container_list{  
-  display: grid;
-  gap: 10px;
+.logo{
+    background-color: var(--white);
+    height: 4rem;
+    width: 4rem;
+    border-radius: 4px;
 }
 
-.links_uteis{  
-  display: grid;
-  gap: 12px;
+.button{
+    height: 2.4rem;
+    width: 16rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white);
+    transition: .2s ease;
+    background-color: #57ad10;
+  }
+  
+  .button:hover{
+    background-color: #48930a;
+  }
+
+  .icons{
+    transition: .5s ease;
+    display: flex;
+    gap: 20px;
+  }
+
+  .icons svg:hover{
+    transform: scale(1.1);
+    color: rgb(3, 93, 3);
+  }
+
+.List h4{
+    color: var(--green);
 }
 
-.link{
-  padding-bottom: 20px;
-  color: var(--white);
-  transition: all .5s ease;
+.List{
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
 }
 
-.link:hover{
-  color: var(--green);
+.Links h4{
+    color: var(--green);
+}
+
+.Links{
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
 }

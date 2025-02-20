@@ -32,15 +32,15 @@ const router = createBrowserRouter([
     element: <Empresas />
   },
   {
-    path: '/Login',
+    path: '/login',
     element: <Login />
   },
   {
-    path: '/Dashboard',
+    path: '/dashboard',
     element: <Dashboard />
   },
   {
-    path: '/Relatar',
+    path: '/relatar',
     element: <Relatar />
   }
 ])

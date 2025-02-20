@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
-import logo from '../../public/greenworld.svg';
+import logo from '/greenworld.svg';
 
 const Header: React.FC = () => {
   
