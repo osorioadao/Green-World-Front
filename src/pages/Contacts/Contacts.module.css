@@ -1,18 +1,11 @@
   /* Estilização da página de contactos */ 
 
-.image{
-  padding-top: 14%;
-  position: relative;
-  height: 34rem;
-  width: 100%;
-}
-
 .subtitle{
-  position: absolute;
+  position: relative;
   left: 100px;
-  top: 300px;
+  top: 30px;
   z-index: 1;
-  color: var(--white);
+  color: var(--black);
   font-size: 50px;
 }
 

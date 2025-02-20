@@ -5,6 +5,8 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import image from '../../assets/old-new-ways-travel.jpg'
 import image2 from '../../assets/Paper map-cuate.png'
+import Blog from '../../pages/Blog/Blog'
+import Contacts from '../../pages/Contacts/Contacts'
 
 export const Home: React.FC = () => {  
 
@@ -33,7 +35,7 @@ export const Home: React.FC = () => {
             </div>
      </div> 
 
-      <div className={styles.par}><h3>Como actuamos</h3></div>
+      <div className={styles.par}><h3>Como actuamos ?</h3></div>
       <div className={styles.Cards}>
 
        <div className={styles.box_card1}>
@@ -92,6 +94,9 @@ export const Home: React.FC = () => {
       
 
       </div>
+      <Blog />
+
+      <Contacts />
 
      <Footer /> 
     </main>

@@ -2,13 +2,14 @@
 
 .Blog2{
   padding-top: 10%;
+  margin-top: 430px;
 }
 
 .imageColeta{
   padding-top: 5%;
   display: flex;
   height: 26rem;
-  width: 50%;
+  width: 30%;
   margin: 0 auto;
   padding-bottom: 2.5%;
 }

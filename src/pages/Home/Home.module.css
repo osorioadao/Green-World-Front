@@ -11,6 +11,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  top: 180px;
+  position: relative;
 }
 
 .content_one{
@@ -20,6 +22,7 @@
   justify-content: center;
   align-items: center;
   display: flex;
+  flex-direction: column;
 }
 
 .text{
@@ -38,7 +41,7 @@
 .img{
   animation: moves 2s ease-in-out infinite alternate;
   height: 26rem;
-  width: 16rem;
+  width: 26rem;
 }
 
 .button{
@@ -117,4 +120,12 @@
 
 .box_card1 button:hover{
   background-color: rgb(238, 158, 10);
+}
+
+@media (max-width: 740px){
+    .content_one{
+      margin-top: 260%;
+      margin-left: 12px;
+      margin-right: 12px;
+    }
 }

@@ -14,8 +14,8 @@ const Contacts: React.FC = () => {
       <Header />
 
       <h2 className={styles.subtitle}>Contacte-nos</h2>
-      <img className={styles.image} src={image} alt="Alguém ao telefone" />
-      <br /> <br /> <br />
+      {/* <img className={styles.image} src={image} alt="Alguém ao telefone" /> */}
+      {/* <br /> <br /> <br /> */}
 
       <div className={styles.cards}>
 
@@ -81,9 +81,9 @@ const Contacts: React.FC = () => {
 
       </div>
     </div>   
-       
+{/*        
         <DontLost></DontLost>
-        <MiniFooter></MiniFooter>
+        <MiniFooter></MiniFooter> */}
 
     </div>
   );

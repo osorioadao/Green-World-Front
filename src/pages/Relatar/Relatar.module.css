@@ -53,7 +53,7 @@ select,option{
   font-size: var(--font-size);
   font-weight: 500;
   color: var(--white);
-  background-color: rgb(221, 146, 6);
+  background-color: green;
   border-radius: 4px;
   transition: .3s ease;
 }

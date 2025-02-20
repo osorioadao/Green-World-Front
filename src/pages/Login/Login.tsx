@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
 import styles from './Login.module.css';
 import logo from '/greenworld.svg'
+import background from './../../assets/Login-pana.png';
 
 const Login: React.FC = () => {
   const [isShowPassword, setIsShowPassword] = useState(false);
@@ -35,7 +36,9 @@ const Login: React.FC = () => {
   return (
     <div className={styles.containerLogin}>
 
-     <div className={styles.background}></div>
+     <div>
+      <img src={background} className={styles.background} alt="" />
+     </div>
 
       <form className={styles.containerForm} onSubmit={(e) => e.preventDefault()}>
 
@@ -57,6 +60,7 @@ const Login: React.FC = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+
           <label htmlFor="senha">Sua senha</label>
           <input
             type={isShowPassword ? "text" : "password"}
@@ -66,6 +70,7 @@ const Login: React.FC = () => {
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
           />
+          
           <button
             type="button"
             className={styles.eyeButton}

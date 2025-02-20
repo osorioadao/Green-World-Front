@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 50px;
 }
 
 .containerForm{
@@ -24,9 +25,8 @@ form{
 }
 
 .background{
-  height: 34rem;
-  width: 36%;
-  background-image: url(../../assets/Fingerprint-bro.svg);
+  height: 40rem;
+  width: 40rem;
 }
 
 .logo{
@@ -51,7 +51,7 @@ input{
 .eyeButton {
   position: absolute;
   top: 417px;
-  right: 280px;
+  right: 220px;
   background: none;
   border: none;
   cursor: pointer;
@@ -139,7 +139,7 @@ p{
     width: 26rem;
     height: 36rem;
     font-size: 12px;
-    background-color: #C2FFA8;
+    background-color: transparent;
   }
   .eyeButton {
     position: absolute;
