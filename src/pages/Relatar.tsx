@@ -1,19 +1,18 @@
-import styles from './Styles/Blog.module.css'
 import Sidebar from '../components/Sidebar'
 
 
 export default function Relatar() {
 
     return (
-        <div className={styles.containerRelatar}>
+        <div className=''>
 
-            <form className={styles.form} action="">
+            <form className='' action="">
 
-                <div className={styles.texto}>
-                    <p className={styles.par}>Relate aqui os amontoados perto de si. Campos obrigatórios <b>*</b> </p>
+                <div className=''>
+                    <p className=''>Relate aqui os amontoados perto de si. Campos obrigatórios <b>*</b> </p>
                 </div>
 
-                <div className={styles.inputs}>
+                <div className=''>
                     <label htmlFor="categoria">Tipo de Lixo ♻️ <b>*</b></label>
                     <select name="categoria" id="selectGarbage">
                         <option value="1">Orgânico</option>
@@ -43,14 +42,14 @@ export default function Relatar() {
                     </select>
 
                     <label htmlFor="quantidade">Quantidade de lixo 📈 <b>*</b></label>
-                    <select name="quantidade" id="quantidade" className={styles.amount}>
+                    <select name="quantidade" id="quantidade" className=''>
                         <option value="1">Pequeno ( Até 1 saco de lixo)</option>
                         <option value="2">Médio (1 a 5 sacos de lixo)</option>
                         <option value="3">Grande (Muitos sacos de lixo)</option>
                     </select>
 
                     <label htmlFor="textarea">Dé uma breve descrição ✍🏼 <b>*</b></label>
-                    <textarea name="texto" id="texto" className={styles.text} placeholder='ex: A situação nesta localidade está crítica e precisa de resolução imediata.' />
+                    <textarea name="texto" id="texto" className='' placeholder='ex: A situação nesta localidade está crítica e precisa de resolução imediata.' />
 
                     <label htmlFor="foto">Carregue o ficheiro 📁 <b>*</b></label>
                     <input type="file" name="foto" id="foto" />
@@ -58,8 +57,8 @@ export default function Relatar() {
                     {/*<input type="datetime-local" name="shbn" id="" />  =>  Pega a data actual e somente se colocará a hora*/}
                 </div>
 
-                <div className={styles.btn}>
-                    <button type='button' className={styles.button}>Relatar</button>
+                <div className=''>
+                    <button type='button' className=''>Relatar</button>
                 </div>
 
             </form>

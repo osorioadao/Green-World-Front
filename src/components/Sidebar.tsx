@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import styles from './Styles/Sidebar.module.css';
 import { useNavigate } from 'react-router-dom';
 import { IoMdArrowBack } from "react-icons/io";
 import { SiEnterprisedb } from "react-icons/si";
@@ -29,54 +28,54 @@ const Sidebar: React.FC = () => {
 
   return (
   <div 
-  className={`${styles.containerSidebar} ${
-    expandirMenu ? styles.expandido : styles.recolhido
+  className={` ${
+    expandirMenu ? '' : ''
   }`}>
  
- <div className={styles.mainIcons}>
- <RxHamburgerMenu onClick={toggleMenu} size={30} className={styles.expandir} />
- <IoMdArrowBack size={30} className={styles.back} onClick={() => navigate(-1)}  />
+ <div className=''>
+ <RxHamburgerMenu onClick={toggleMenu} size={30} className='' />
+ <IoMdArrowBack size={30} className='' onClick={() => navigate(-1)}  />
  </div>
 
 
-<nav className={styles.links}>
+<nav className=''>
 
  <ul>
   <li
    onClick={() => selectLink('/', 'Dashboard')}
-   className={itemAtivo === 'Dashboard' ? styles.ativo : ''}
+   className={itemAtivo === 'Dashboard' ? '' : ''}
    >
-    <span className={styles.icon}>
+    <span className=''>
     <MdOutlineSpaceDashboard size={30} />
     </span>
-    {expandirMenu && <span className={styles.text_link}>Dashboard</span>}
+    {expandirMenu && <span className=''>Dashboard</span>}
   </li>
 
   <li 
   onClick={() => selectLink('/Blog', 'Blog')}
-  className={itemAtivo === 'Blog' ? styles.ativo : ''}
+  className={itemAtivo === 'Blog' ? '' : ''}
   >
-    <span className={styles.icon}>
+    <span className=''>
     <GrBlog size={30} />
     </span>
-    {expandirMenu && <span className={styles.text_link}>Blog</span>}
+    {expandirMenu && <span className=''>Blog</span>}
   </li>
 
   <li 
     onClick={() => selectLink('/empresas', 'Empresas')}
-    className={itemAtivo === 'empresas' ? styles.ativo : ''}
+    className={itemAtivo === 'empresas' ? '' : ''}
     >
-    <span className={styles.icon}>
+    <span className=''>
     <SiEnterprisedb size={30} />
     </span>
-    {expandirMenu && <span className={styles.text_link}>Empresas</span>}
+    {expandirMenu && <span className=''>Empresas</span>}
   </li>
 
   <li className='item'>
-    <span className={styles.icon}>
+    <span className=''>
     <IoIosHelpCircleOutline size={30} />
     </span>
-    {expandirMenu && <span className={styles.text_link}>Ajuda</span>}
+    {expandirMenu && <span className=''>Ajuda</span>}
   </li>
 
  </ul>

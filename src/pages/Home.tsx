@@ -1,4 +1,3 @@
-import styles from './Styles/Home.module.css'
 import { useNavigate } from 'react-router-dom'
 import Header from '../components/Headers/Header'
 import Footer from '../components/Footers/Footer'
@@ -6,98 +5,88 @@ import image from '../assets/old-new-ways-travel.jpg'
 import image2 from '../assets/Paper map-cuate.png'
 import Blog from './Blog'
 import Contacts from './Contacts'
+import PrimaryButton from '../components/PrimaryButton'
+import Card from '../components/Card'
 
-export default function Home () {  
+export default function Home() {
 
-   const navigate = useNavigate()
+  const navigate = useNavigate()
+
+  const cards = [
+    {
+      image: image,
+      imageAlt: 'image',
+      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci qui minus atque nihil! Eaque dolorum, suscipit voluptatibus',
+      button: 'Ver mais',
+    },
+    {
+      image: image,
+      imageAlt: 'image',
+      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci qui minus atque nihil! Eaque dolorum, suscipit voluptatibus',
+      button: 'Ver mais',
+    },
+    {
+      image: image,
+      imageAlt: 'image',
+      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci qui minus atque nihil! Eaque dolorum, suscipit voluptatibus',
+      button: 'Ver mais',
+    },
+    {
+      image: image,
+      imageAlt: 'image',
+      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci qui minus atque nihil! Eaque dolorum, suscipit voluptatibus',
+      button: 'Ver mais',
+    },
+  ]
 
   return (
 
-    <main className={styles.Home}>
+    <div className='flex flex-col'>
 
-    <Header />
+      <Header />
 
-      <div className={styles.content}>
-      <div className={styles.content_one}>
-        
-        <div className={styles.text}>
-          <h2>Localizamos com precisão os amontoados perto de si.</h2>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci qui minus atque nihil! Eaque dolorum, suscipit voluptatibus</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci.</p>
-            <div className={styles.btn}>
-              <button className={styles.button} onClick={() => navigate('/blog')}>Saiba mais</button>
+      <div className='flex flex-col pt-[20vh] justify-center items-center top-[180px]'>
+        <div className='flex flex-col justify-center items-center gap-[10px] '>
+          <div className='flex justify-center items-center'>
+            <img className='w-[26rem]' style={{ animation: 'moves 2s ease-in-out infinite alternate', }} src={image2} alt="mapa" />
+          </div>
+          <style>
+            {`
+            @keyframes moves {
+              0% {
+              transform: translateY(0);
+              }
+              100% {
+              transform: translateY(36px);
+              }
+            }
+            `}
+          </style>
+          <div className='flex flex-col justify-center items-center gap-[10px] '>
+            <h2 className='text-[40px] font-medium' >Localizamos com precisão os amontoados perto de si.</h2>
+            <div className='flex flex-col items-center' >
+              <p className='text-wrap text-center w-[75%]' >
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci qui minus atque nihil! Eaque dolorum, suscipit voluptatibus
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci qui minus atque nihil! Eaque dolorum, suscipit voluptatibus
+              </p>
             </div>
+            <div className='m-5'>
+              <PrimaryButton onClick={() => navigate('/blog')} name={'Saiba mais'} addClassName='w-[13rem]' />
             </div>
-
-            <div className={styles.image}>
-              <img className={styles.img} src={image2} alt="mapa" />
-            </div>
-     </div> 
-
-      <div className={styles.par}><h3>Como actuamos ?</h3></div>
-      <div className={styles.Cards}>
-
-       <div className={styles.box_card1}>
-        <div>
-        <img className={styles.imageCard} src={image} alt="" />
+          </div>
         </div>
-
-         <div className={styles.textCard}><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero blanditiis obcaecati impedit pariatur quam praesentium nihil, error cumque delectus, quasi ipsam reiciendis.</p></div>
-
-        <div className="btn">
-          <button type='button'>Ver mais</button>
+        <div
+          className='m-[5px] text-[40px] '
+        >
+          <h3 className='font-bold' >Como actuamos ?</h3>
         </div>
-
-        </div>
-
-        <div className={styles.box_card2}>
-        <div>
-        <img className={styles.imageCard} src={image} alt="" />
-        </div>
-
-         <div className={styles.textCard}><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero blanditiis obcaecati impedit pariatur quam praesentium nihil, error cumque delectus, quasi ipsam reiciendis.</p></div>
-
-        <div className="btn">
-          <button type='button'>Ver mais</button>
-        </div>
-
-        </div>
-
-        <div className={styles.box_card3}>
-        <div>
-        <img className={styles.imageCard} src={image} alt="" />
-        </div>
-
-         <div className={styles.textCard}><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero blanditiis obcaecati impedit pariatur quam praesentium nihil, error cumque delectus, quasi ipsam reiciendis.</p></div>
-
-        <div className="btn">
-          <button type='button'>Ver mais</button>
-        </div>
-
-        </div>
-
-        <div className={styles.box_card4}>
-        <div>
-        <img className={styles.imageCard} src={image} alt="" />
-        </div>
-
-         <div className={styles.textCard}><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero blanditiis obcaecati impedit pariatur quam praesentium nihil, error cumque delectus, quasi ipsam reiciendis.</p></div>
-
-        <div className="btn">
-          <button type='button'>Ver mais</button>
-        </div>
-
-        </div>
-
-      </div>
-      
-
+        <Card cards={cards} />
       </div>
       <Blog />
 
       <Contacts />
 
-     <Footer /> 
-    </main>
+      <Footer />
+    </div>
   )
 }

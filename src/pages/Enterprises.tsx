@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import styles from './Styles/Enterprises.module.css';
 import image from '../assets/growing.svg';
 
 export default function Enterprises() {
@@ -10,18 +9,18 @@ export default function Enterprises() {
     navigate('/');
   };
 
-  return <div className={styles.containerEnterprises}>
-    <div className={styles.imagem}>
-      <img className={styles.image} src={image} alt="Imagem ilustrativa" />
+  return <div className=''>
+    <div className=''>
+      <img className='' src={image} alt="Imagem ilustrativa" />
     </div>
-    <div className={styles.content}>
+    <div className=''>
       <h3>Página de Empresas</h3>
-      <div className={styles.p}>
+      <div className=''>
         <p>A página que está tentando acessar encontra-se em estado de desenvolvimento.</p>
         <p>Por favor, tente acessá-la mais tarde.</p>
       </div>
-      <div className={styles.btn}>
-        <button className={styles.button} onClick={Inicio}>Voltar à Página Inicial</button>
+      <div className=''>
+        <button className='' onClick={Inicio}>Voltar à Página Inicial</button>
       </div>
     </div>
   </div>;

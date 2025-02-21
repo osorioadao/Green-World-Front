@@ -1,58 +1,56 @@
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IoLogoInstagram } from "react-icons/io";
 import { CiFacebook } from "react-icons/ci";
-import styles from './Styles/Footer.module.css'
-import logo from '../../assets/growing.svg'
+import Logo from "../../assets/Logo";
+import PrimaryButton from "../../components/PrimaryButton";
+import FooterLinks from "../../components/FooterLinks";
 
-function Footer() {
+export default function Footer() {
 
-    const navigate = useNavigate()
+  const navigate = useNavigate()
+  const groupLinks1 = {
+    title: 'Mapa do site',
+    links: [
+      { linkName: 'Inicio', link: '/s' },
+      { linkName: 'Blog', link: '/' },
+      { linkName: 'Empresas', link: '/' },
+      { linkName: 'Contactos', link: '/' },
+    ],
+  }
 
+  const groupLinks2 = {
+    title: 'Links úteis',
+    links: [
+      { linkName: 'Sites Greens', link: '/s' },
+      { linkName: 'Contacte-nos', link: '/' },
+    ],
+  }
   return (
-    <div className={styles.Foot}>
-
-      <div className={styles.image}>
-        <img className={styles.logo} src={logo} alt="Logo" />
-        <button className={styles.button} onClick={() => {navigate('/Login')}}>Relatar Amontoados</button>
-
-        <div className={styles.icons}>
-        <a
-        target="_blank" 
-        href="https://www.instagram.com/albertinafaila/">
-           <IoLogoInstagram size={40} color="green" />
-           </a>
-
-        <a href="#">
-        <CiFacebook size={40} color="green" />
-        </a>
+    <div className='flex items-center justify-between w-full p-10 text-white bg-black/75 '>
+      <div className='flex items-center gap-[100px] '>
+        <div
+          className='flex justify-center items-center flex-col gap-[10px]'
+          style={{ transition: '.5s ease' }}
+        >
+        <div className="flex justify-center items-center bg-white w-[120px] h-[70px] p-2 rounded-[5px]" >
+          <Logo width={100} />
         </div>
+        <PrimaryButton name="Relatar amontoados" addClassName="px-5" />
+          <span>Siga-nos nas redes sociais</span>
+          <div className="flex gap-4 mx-auto" >
+            <a
+              target="_blank"
+              href="https://www.instagram.com/albertinafaila/">
+              <IoLogoInstagram size={40} color="white" />
+            </a>
 
+            <a href="#">
+              <CiFacebook size={40} color="white" />
+            </a>
+          </div>
+        </div>
+        <FooterLinks data={[groupLinks1, groupLinks2]} />
       </div>
-      
-      <div className={styles.List}>
-        <h4 className={styles.text}>Mapa do Site</h4>
-        <Link className={styles.link} to="/">Início</Link>
-        <Link className={styles.link} to="/blog">Blog</Link>
-        <Link className={styles.link} to="/enterprises">Empresas</Link>
-        <Link className={styles.link} to="/contacts">Contactos</Link>
-      </div>
-
-      <div className={styles.Links}>
-      <h4 className={styles.text}>Links Utéis</h4>
-        <a 
-          className={styles.link} 
-          href="https://www.elisal.ao/" 
-          target="_blank" 
-          rel="noopener noreferrer">
-          Sites Greens
-        </a>
-
-        <Link className={styles.link} to="/contacts">Contacte-nos</Link>
-        <a className={styles.link} href="#">Suporte Técnico</a>
-      </div>
-
     </div>
   )
 }
-
-export default Footer

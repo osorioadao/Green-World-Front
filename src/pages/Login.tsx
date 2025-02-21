@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
-import styles from './Styles/Login.module.css';
-import logo from '/greenworld.svg'
 import background from '../assets/Login-pana.png';
 
 export default function Login() {
@@ -28,28 +26,24 @@ export default function Login() {
     navigate("/TypeRegister");
   };
 
-  // const navigateToDashboard = () => {
-  //   navigate("/Dashboard");
-  // };
-
   return (
-    <div className={styles.containerLogin}>
+    <div className=''>
 
       <div>
-        <img src={background} className={styles.background} alt="" />
+        <img src={background} className='' alt="" />
       </div>
 
-      <form className={styles.containerForm} onSubmit={(e) => e.preventDefault()}>
+      <form className='' onSubmit={(e) => e.preventDefault()}>
 
-        <div className={styles.logo}>
-          <img className={styles.logo} src={logo} alt="logo" />
+        <div className=''>
+
         </div>
 
-        <div className={styles.text}>
+        <div className=''>
           <h3>Green World Login</h3>
         </div>
 
-        <div className={styles.inputs}>
+        <div className=''>
           <label htmlFor="email">Seu e-mail</label>
           <input
             type="email"
@@ -72,21 +66,21 @@ export default function Login() {
 
           <button
             type="button"
-            className={styles.eyeButton}
+            className=''
             onClick={() => setIsShowPassword(!isShowPassword)}
           >
             {isShowPassword ? <FaEyeSlash /> : <FaEye />}
           </button>
 
-          <div className={styles.link}>
+          <div className=''>
             <a href="#">Esqueci minha senha</a>
           </div>
 
         </div>
 
-        <div className={styles.btn}>
+        <div className=''>
           <button
-            className={styles.buttonEntrar}
+            className=''
             type="button"
             onClick={Enter}
           >
@@ -94,13 +88,13 @@ export default function Login() {
           </button>
         </div>
 
-        <div className={styles.mini_footer}>
+        <div className=''>
 
           <p>Ainda não tem uma conta?</p>
 
-          <div className={styles.btn0}>
+          <div className=''>
             <button
-              className={styles.buttonCadastrar}
+              className=''
               type="button"
               onClick={navigateToTypeRegister}
             >

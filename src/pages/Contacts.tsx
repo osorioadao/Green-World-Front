@@ -1,89 +1,69 @@
-import styles from './styles/Contacts.module.css';
-import Header from '../components/Headers/Header';
-import image from '../assets/Abre-PERFIL-BRASIL-17.jpg';
 import { FiPhone } from 'react-icons/fi';
 import { MdOutlineEmail } from 'react-icons/md';
-import DontLost from '../components/DontLost';
-import MiniFooter from '../components/Footers/MiniFooter';
+import image from '../assets/Abre-PERFIL-BRASIL-17.jpg';
+import PrimaryButton from '../components/PrimaryButton';
+import Input from '../components/Input';
+import TextArea from '../components/TextArea';
 
 export default function Contacts() {
   return (
-    <div className={styles.containerContacts}>
-
-      <Header />
-
-      <h2 className={styles.subtitle}>Contacte-nos</h2>
-      {/* <img className={styles.image} src={image} alt="Alguém ao telefone" /> */}
-      {/* <br /> <br /> <br /> */}
-
-      <div className={styles.cards}>
-
-        <div className={styles.card1}>
-          <FiPhone id={styles.icon1} color="green" />
-          <h4>Telefone</h4>
-          <p>(+244) 934156335</p>
+    <div className='flex flex-col justify-center items-center gap-7 '>
+      <h2 className='text-title font-bold'>Contacte-nos</h2>
+      <div className='flex justify-center items-center mt-[8ox] gap-10 '>
+        <div className='flex flex-col justify-center items-center gap-3 '>
+          <FiPhone color="primary" size={30} />
+          <p>(+244) 934 156 335</p>
         </div>
-
-        <div className={styles.card2}>
-          <MdOutlineEmail id={styles.icon2} color="green" />
-          <h4>Email</h4>
-          <p>GreenWorld70@gmail.com</p>
-        </div>
-
-      </div>
-
-      <div className={styles.global}>
-
-        <div className={styles.form}>
-
-          <div className={styles.text}>
-
-            <h6 className={styles.h6}>Entre em contacto conosco</h6>
-            <p>Caso haja alguma dúvida,não exite
-              estamos aqui para esclarece-lo. Acesse também nossa </p>
-            <a href="#" target='_blank' className={styles.link}>Central de Ajuda.</a>
-
-
-          </div>
-
-          <div className={styles.inputs}>
-            <input
-              id={styles.nome}
-              className={styles.nome}
-              type="text"
-              placeholder='Nome'
-              required
-              autoComplete='on' />
-
-            <input
-              id={styles.email}
-              className={styles.email}
-              type="email"
-              placeholder='Email'
-              required
-              autoComplete='on' />
-
-            <textarea
-              name="mensagem"
-              id={styles.mensagem}
-              className={styles.mensagem}
-              placeholder="Mensagem">
-            </textarea>
-
-          </div>
-
-
-
-          <div>
-            <button className={styles.btn0}>Enviar</button>
-          </div>
-
+        <div className='flex flex-col justify-center items-center gap-3 '>
+          <MdOutlineEmail color="primary" size={30} />
+          <p>greenworld70@gmail.com</p>
         </div>
       </div>
-      {/*        
-        <DontLost></DontLost>
-        <MiniFooter></MiniFooter> */}
-
+      <div className='flex flex-col justify-center items-center gap-10 '>
+        <div className='flex flex-col justify-center items-center gap-3 p-5 '>
+          <div className='flex flex-col justify-center items-center gap-3'>
+            <h6 className='text-[20px] font-bold'>Entre em contacto conosco</h6>
+            <p>
+              Caso haja alguma dúvida, estamos aqui para esclarece-lo.
+            </p>
+            <div className='flex gap-2' >
+              <span>acesse também nossa </span>
+              <a href="#" target='_blank' className='text-primary font-bold'>Central de Ajuda.</a>
+            </div>
+          </div>
+          <form className='flex flex-col w-[50vw] gap-10' >
+            <div className='flex gap-5'>
+              <Input
+                id=''
+                type="text"
+                placeholder='Nome'
+                autoComplete='on'
+                addClassName='flex'
+              />
+              <Input
+                id=''
+                type="email"
+                placeholder='Email'
+                autoComplete='on'
+                addClassName='flex-1 w-[33.7vw]'
+              />
+            </div>
+            <div className='flex flex-col w-full gap-5'>
+              <Input
+                id=''
+                type="text"
+                placeholder='Assunto'
+                autoComplete='on'
+                addClassName='flex w-full '
+              />
+              <TextArea id={''} placeholder={'Mensagem'} />
+              <div className='flex justify-center items-center ' >
+                <PrimaryButton name='Enviar' onClick={''} addClassName='w-[15vw]' />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,29 +1,28 @@
-import styles from './Styles/DontLost.module.css'
 import logo from '../../public/greenworld.svg'
 
 function DontLost() {
   return (
-    <div className={styles.containerDontLost}>
-      <div className={styles.Links}>
+    <div className=''>
+      <div className=''>
 
-        <img className={styles.logo} src={logo} alt="logo" />
+        <img className='' src={logo} alt="logo" />
 
-        <div className={styles.links}>
+        <div className=''>
 
-          <p className={styles.par}>Não se perca</p>
-          <a className={styles.link0} href="/">Início</a>
-          <a className={styles.link0} href="/blog">Blog</a>
-          <a className={styles.link0} href="/empresas">Empresas</a>
-          <a className={styles.link0} href="/contacts">Contactos</a>
+          <p className=''>Não se perca</p>
+          <a className='placeholder:' href="/">Início</a>
+          <a className='placeholder:' href="/blog">Blog</a>
+          <a className='placeholder:' href="/empresas">Empresas</a>
+          <a className='placeholder:' href="/contacts">Contactos</a>
 
         </div>
 
-        <div className={styles.linksUteis}>
+        <div className=''>
 
-          <p className={styles.par}>Links Utéis</p>
-          <div className={styles.link}>
-            <a className={styles.link0} href="">Contactos</a>
-            <a className={styles.link0} href="/termos">Política de Privacidade</a>
+          <p className=''>Links Utéis</p>
+          <div className=''>
+            <a className='' href="">Contactos</a>
+            <a className='' href="/termos">Política de Privacidade</a>
 
           </div>
         </div>
