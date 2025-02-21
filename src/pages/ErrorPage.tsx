@@ -9,7 +9,7 @@ export default function ErrorPage() {
     };
 
     return (
-        <div className=''>
+        <div className='bg-slate-950'>
             <div className=''>
                 <img className='' src={image} alt="Página não encontrada" />
             </div>

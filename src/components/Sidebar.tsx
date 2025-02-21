@@ -34,7 +34,7 @@ const Sidebar: React.FC = () => {
  
  <div className=''>
  <RxHamburgerMenu onClick={toggleMenu} size={30} className='' />
- <IoMdArrowBack size={30} className='' onClick={() => navigate(-1)}  />
+ <IoMdArrowBack size={30} className='hover: -[#6ada0e] cursor-pointer' style={{transition: '.2 ease-in-out'}} onClick={() => navigate(-1)}  />
  </div>
 
 

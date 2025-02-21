@@ -25,7 +25,7 @@ export default function Header() {
         <Logo width={130} />
       </div>
 
-      <div className='flex justify-between p-[14px] items-center gap-[210px] '>
+      <div className='flex justify-between p-[8px] items-center gap-[210px] '>
         {/* Menu Hamburguer */}
         <div className='column gap-[4px] cursor-pointer' onClick={toggleMobileMenu}>
           <span className='w-[25px] h-[3px] bg-black'></span>
