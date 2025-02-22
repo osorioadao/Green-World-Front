@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import Header from '../components/Headers/Header'
 import Footer from '../components/Footers/Footer'
 import image from '../assets/old-new-ways-travel.jpg'
-import image2 from '../assets/Paper map-cuate.png'
+import image2 from '../assets/Paper map-pana.png'
 import Blog from './Blog'
 import Contacts from './Contacts'
 import PrimaryButton from '../components/PrimaryButton'
@@ -50,18 +50,7 @@ export default function Home() {
           <div className='flex justify-center items-center'>
             <img className='w-[26rem]' style={{ animation: 'moves 2s ease-in-out infinite alternate', }} src={image2} alt="mapa" />
           </div>
-          <style>
-            {`
-            @keyframes moves {
-              0% {
-              transform: translateY(0);
-              }
-              100% {
-              transform: translateY(36px);
-              }
-            }
-            `}
-          </style>
+          
           <div className='flex flex-col justify-center items-center gap-[10px] '>
             <h2 className='text-[40px] font-medium' >Localizamos com precisão os amontoados perto de si.</h2>
             <div className='flex flex-col items-center' >

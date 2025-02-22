@@ -1,5 +1,6 @@
 
 /** @type {import('tailwindcss').Config} */
+import { keyframes } from 'framer-motion';
 import tailwindScrollbarHide from 'tailwind-scrollbar-hide';
 
 export default {
@@ -8,6 +9,15 @@ export default {
 
   theme: {
     extend: {
+      animation: {
+        'float': 'float 1.5s ease-in-out alternate infinite',
+      },
+      keyframes:{
+        float: {
+          '0%': { transform: 'translateY(0)'},
+          '100%': { transform: 'translateY(36px)'}
+        }
+      },
       colors: {
         'primary': '#86aa4d',
         'secondary': '#6ada0e',

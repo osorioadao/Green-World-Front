@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
-import background from '../assets/Login-pana.png';
+import background from '../assets/Authentication-rafiki.png';
 
 export default function Login() {
   const [isShowPassword, setIsShowPassword] = useState(false);
