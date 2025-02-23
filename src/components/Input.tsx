@@ -13,7 +13,7 @@ export default function Input({ id, type, placeholder, autoComplete, addClassNam
     <div>
       <input
         id={id}
-        className={`text-body p-3 outline-none border-[1px] rounded-[3px] ${addClassName} `}
+        className={`text-body p-2 w-[20rem] outline-none border-[1px] rounded-[3px] ${addClassName} `}
         type={type}
         placeholder={placeholder}
         autoComplete={autoComplete} />
@@ -27,4 +27,5 @@ Input.propTypes = {
   placeholder: PropTypes.string.isRequired,
   autoComplete: PropTypes.string,
   addClassName: PropTypes.string,
+  onchange: PropTypes.func,
 }

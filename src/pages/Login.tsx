@@ -1,112 +1,96 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { FaEyeSlash, FaEye } from 'react-icons/fa';
-import background from '../assets/Authentication-rafiki.png';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { FaEyeSlash, FaEye } from "react-icons/fa";
+import Input from "../components/Input";
+import PrimaryButton from "../components/PrimaryButton";
+import background from "../assets/Authentication-rafiki.png";
 
 export default function Login() {
   const [isShowPassword, setIsShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const navigate = useNavigate();
 
   function Enter() {
     if (!email) {
-      return alert("Por favor, insira o email.")
+      alert("Por favor, insira o email.");
     }
     if (!senha) {
-      return alert("Por favor, insira a senha")
+      alert("Por favor, insira a senha");
     }
 
-    alert(`Email: ${email} | Senha: ${senha}`)
-    navigate('/dashboard')
+    alert(`Email: ${email} | Senha: ${senha}`);
+    navigate("/dashboard");
   }
-
-  const navigate = useNavigate();
 
   const navigateToTypeRegister = () => {
     navigate("/TypeRegister");
   };
 
   return (
-    <div className=''>
-
+    <div className="flex items-center justify-center h-screen gap-6 flex-wrap">
       <div>
-        <img src={background} className='' alt="" />
+        <img
+          src={background}
+          className="w-[30rem] h-[30rem]"
+          alt="loginImagem"
+        />
       </div>
 
-      <form className='' onSubmit={(e) => e.preventDefault()}>
+      <form
+        className="flex items-center flex-col justify-center w-[30rem] h-[30rem] gap-6"
+        onSubmit={(e) => e.preventDefault()}
+      >
+        <h3 className="text-4xl font-semibold text-lime-800">Green World Login</h3>
 
-        <div className=''>
-
-        </div>
-
-        <div className=''>
-          <h3>Green World Login</h3>
-        </div>
-
-        <div className=''>
-          <label htmlFor="email">Seu e-mail</label>
-          <input
-            type="email"
-            autoComplete="on"
-            required
+        <div className="flex flex-col gap-1">
+          <label htmlFor="email" className="p-1">Seu e-mail</label>
+          <Input
             id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="Email"
+            autoComplete="on"
+            addClassName="items-center w-[22rem]"
+            
           />
 
-          <label htmlFor="senha">Sua senha</label>
-          <input
-            type={isShowPassword ? "text" : "password"}
-            required
-            autoComplete='on'
-            id="senha"
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
-          />
-
-          <button
-            type="button"
-            className=''
-            onClick={() => setIsShowPassword(!isShowPassword)}
-          >
-            {isShowPassword ? <FaEyeSlash /> : <FaEye />}
-          </button>
-
-          <div className=''>
-            <a href="#">Esqueci minha senha</a>
-          </div>
-
-        </div>
-
-        <div className=''>
-          <button
-            className=''
-            type="button"
-            onClick={Enter}
-          >
-            Entrar
-          </button>
-        </div>
-
-        <div className=''>
-
-          <p>Ainda não tem uma conta?</p>
-
-          <div className=''>
+          <label htmlFor="senha" className="p-1">Sua senha</label>
+          <div className="relative">
+            <Input
+              id="senha"
+              type={isShowPassword ? "text" : "password"}
+              placeholder="Senha"
+              autoComplete="on"
+              addClassName="items-center w-[22rem]"
+              
+            />
             <button
-              className=''
               type="button"
-              onClick={navigateToTypeRegister}
+              className="absolute right-2 top-1/2 transform -translate-y-1/2"
+              onClick={() => setIsShowPassword(!isShowPassword)}
             >
-              Cadastrar-se
+              {isShowPassword ? <FaEyeSlash /> : <FaEye />}
             </button>
           </div>
-
         </div>
 
-      </form>
+        <PrimaryButton addClassName="w-[22rem]" name="Entrar" onClick={Enter} />
 
+        <div className="flex items-center justify-between w-[22rem]">
+          <a className="text-primary hover:underline transition duration-500" href="#">
+            Esqueci minha senha
+          </a>
+        </div>
+
+          <div className="flex items-center gap-2.5">
+          <p>Não tem uma conta?</p>
+           
+           <PrimaryButton addClassName="w-[12rem]" name="Cadastrar-se" onClick={navigateToTypeRegister} />
+          </div>
+
+      </form>
     </div>
   );
-};
+}
+
 

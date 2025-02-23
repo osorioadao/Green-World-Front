@@ -18,7 +18,7 @@ export default function PrimaryButton({ onClick, name, addClassName }: PrimaryBu
 }
 
 PrimaryButton.propTypes = {
-  onClick: PropTypes.any,
+  onClick: PropTypes.func,
   addClassName: PropTypes.string,
   name: PropTypes.string.isRequired,
 }
