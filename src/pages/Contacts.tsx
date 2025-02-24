@@ -1,6 +1,5 @@
 import { FiPhone } from 'react-icons/fi';
 import { MdOutlineEmail } from 'react-icons/md';
-import image from '../assets/Abre-PERFIL-BRASIL-17.jpg';
 import PrimaryButton from '../components/PrimaryButton';
 import Input from '../components/Input';
 import TextArea from '../components/TextArea';
@@ -19,19 +18,19 @@ export default function Contacts() {
           <p>greenworld70@gmail.com</p>
         </div>
       </div>
-      <div className='flex flex-col justify-center items-center gap-10 '>
+      <div className='flex flex-col justify-center items-center gap-10'>
         <div className='flex flex-col justify-center items-center gap-3 p-5 '>
           <div className='flex flex-col justify-center items-center gap-3'>
             <h6 className='text-[20px] font-bold'>Entre em contacto conosco</h6>
             <p>
               Caso haja alguma dúvida, estamos aqui para esclarece-lo.
             </p>
-            <div className='flex gap-2' >
-              <span>acesse também nossa </span>
+            <div className='flex gap-2'>
+              <span>Acesse também nossa </span>
               <a href="#" target='_blank' className='text-primary font-bold'>Central de Ajuda.</a>
             </div>
           </div>
-          <form className='flex flex-col w-[50vw] gap-10' >
+          <form className='flex flex-col w-[50vw] gap-10'>
             <div className='flex gap-5'>
               <Input
                 id=''
@@ -45,20 +44,13 @@ export default function Contacts() {
                 type="email"
                 placeholder='Email'
                 autoComplete='on'
-                addClassName='flex-1 w-[33.7vw]'
+                addClassName='flex-1 w-[28vw]'
               />
             </div>
             <div className='flex flex-col w-full gap-5'>
-              <Input
-                id=''
-                type="text"
-                placeholder='Assunto'
-                autoComplete='on'
-                addClassName='flex w-full '
-              />
               <TextArea id={''} placeholder={'Mensagem'} />
               <div className='flex justify-center items-center ' >
-                <PrimaryButton name='Enviar' onClick={''} addClassName='w-[15vw]' />
+                <PrimaryButton name='Enviar' addClassName='w-[24vw]' />
               </div>
             </div>
           </form>

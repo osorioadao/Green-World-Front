@@ -32,10 +32,10 @@ export default function Footer() {
           className='flex justify-center items-center flex-col gap-[10px]'
           style={{ transition: '.5s ease' }}
         >
-        <div className="flex justify-center items-center bg-white w-[120px] h-[70px] p-2 rounded-[5px]" >
-          <Logo width={100} />
+        <div className="flex justify-center items-center bg-white w-32 h-[50px] p-2 rounded-[4px]" >
+          <Logo className="" />
         </div>
-        <PrimaryButton name="Relatar amontoados" addClassName="px-5" />
+        <PrimaryButton name="Relatar" addClassName="px-5" />
           <span>Siga-nos nas redes sociais</span>
           <div className="flex gap-4 mx-auto" >
             <a

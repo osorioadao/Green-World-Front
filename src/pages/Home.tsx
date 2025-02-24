@@ -47,27 +47,22 @@ export default function Home() {
 
       <div className='flex flex-col pt-[20vh] justify-center items-center top-[180px]'>
         <div className='flex flex-col justify-center items-center gap-[10px] '>
-          <div className='flex justify-center items-center'>
-            <img className='w-[26rem]' style={{ animation: 'moves 2s ease-in-out infinite alternate', }} src={image2} alt="mapa" />
-          </div>
-          
           <div className='flex flex-col justify-center items-center gap-[10px] '>
-            <h2 className='text-[40px] font-medium' >Localizamos com precisão os amontoados perto de si.</h2>
+            <h2 className='text-[40px] font-medium text-left p-5'>Luanda mais limpa começa com você!</h2>
             <div className='flex flex-col items-center' >
-              <p className='text-wrap text-center w-[75%]' >
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci qui minus atque nihil! Eaque dolorum, suscipit voluptatibus
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci qui minus atque nihil! Eaque dolorum, suscipit voluptatibus
+              <p className='text-wrap text-justify w-[75%]' >
+              Relate amontoados de lixo nas ruas e ajude a manter sua comunidade limpa. Empresas de reciclagem e recolha de lixo estão prontas para agir!
               </p>
             </div>
             <div className='m-5'>
-              <PrimaryButton onClick={() => navigate('/blog')} name={'Saiba mais'} addClassName='w-[13rem]' />
+              <PrimaryButton onClick={() => navigate('/blog')} name={'Comece a Relatar'} addClassName='w-[13rem]' />
             </div>
           </div>
         </div>
         <div
-          className='m-[5px] text-[40px] '
+          className='m-[5px] text-[40px]'
         >
-          <h3 className='font-bold' >Como actuamos ?</h3>
+          <h3 className='font-bold'>Como actuamos ?</h3>
         </div>
         <Card cards={cards} />
       </div>
