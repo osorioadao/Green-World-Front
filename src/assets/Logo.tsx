@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
 
 interface LogoProps {
-  width: number;
+  className: string;
 }
 
-export default function Logo({ width }: LogoProps) {
+export default function Logo({ className }: LogoProps) {
 
   return (
     <>
-      <svg width={width} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 288">
+      <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 288">
         <defs>
           <style>{`.cls-1 { fill: #86aa4d; }`}</style>
         </defs>

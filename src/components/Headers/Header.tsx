@@ -1,50 +1,108 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import PrimaryButton from '../PrimaryButton';
-import Logo from '../../assets/Logo';
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import PrimaryButton from "../PrimaryButton";
+import Logo from "../../assets/Logo";
 
 export default function Header() {
-
-
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-
-  const navigateToLogin = () => {
-    navigate('/Login');
+  const handleLoginClick = () => {
+    navigate("/Login");
   };
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
+    setIsMobileMenuOpen((prev) => !prev);
   };
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isMobileMenuOpen]);
+
+  const commonLinkStyles =
+    "text-black hover:text-primary text-[16px] font-medium";
+
   return (
-    <header className='flex fixed px-[5vw] w-full z-index-1 justify-between items-center bg-black/10'>
+    <header className="flex fixed px-[5vw] w-full z-index-1 justify-between items-center">
       <div>
-        <Logo width={130} />
+        <Logo className="w-16 md:w-32" />
       </div>
 
-      <div className='flex justify-between p-[8px] items-center gap-[210px] '>
-        {/* Menu Hamburguer */}
-        <div className='column gap-[4px] cursor-pointer' onClick={toggleMobileMenu}>
-          <span className='w-[25px] h-[3px] bg-black'></span>
-          <span className='w-[25px] h-[3px] bg-black'></span>
-          <span className='w-[25px] h-[3px] bg-black'></span>
-        </div>
+      {/* Botão de alternância do menu móvel */}
+      <div
+        className="flex flex-col md:hidden gap-1 cursor-pointer"
+        onClick={toggleMobileMenu}
+      >
+        <span className="w-[25px] h-[3px] bg-black"></span>
+        <span className="w-[25px] h-[3px] bg-black"></span>
+        <span className="w-[25px] h-[3px] bg-black"></span>
+      </div>
 
-        <nav className={`flex justify-center items-center gap-[28px] ${isMobileMenuOpen ? 'flex' : ''}`}>
-          <Link className='text-black hover:text-primary text-[16px] font-medium' to="/">Início</Link>
-          <Link className='text-black hover:text-primary text-[16px] font-medium' to="/blog">Blog</Link>
-          <Link className='text-black hover:text-primary text-[16px] font-medium' to="/enterprises">Empresas</Link>
-          <Link className='text-black hover:text-primary text-[16px] font-medium' to="/contacts">Contactos</Link>
-          
-          <PrimaryButton onClick={navigateToLogin} name={'Relatar Amontoados'} addClassName='w-full' />
+      {/* Navegação para desktop */}
+      <div className="hidden md:flex justify-between p-[8px] items-center gap-[210px]">
+        <nav className="flex justify-center items-center gap-[28px]">
+          <Link className={commonLinkStyles} to="/">
+            Início
+          </Link>
+          <Link className={commonLinkStyles} to="/blog">
+            Blog
+          </Link>
+          <Link className={commonLinkStyles} to="/enterprises">
+            Empresas
+          </Link>
+          <Link className={commonLinkStyles} to="/contacts">
+            Contactos
+          </Link>
+
+          <PrimaryButton
+            onClick={handleLoginClick}
+            name="Relatar Amontoados"
+            addClassName="w-full"
+          />
         </nav>
       </div>
 
+      {/* Menu móvel */}
+      {isMobileMenuOpen && (
+        <>
+          {/* Overlay para bloquear a interação com o fundo */}
+          <div
+            onClick={toggleMobileMenu}
+            className="fixed top-0 left-0 w-full h-full bg-black opacity-50 z-10"
+          />
+          <div className="fixed top-8 h-screen right-0 justify-between p-3 bg-black/70 md:hidden z-20">
+            <nav className="flex flex-col justify-center items-center gap-[28px] p-3">
+              <Link className={commonLinkStyles} to="/">
+                Início
+              </Link>
+              <Link className={commonLinkStyles} to="/blog">
+                Blog
+              </Link>
+              <Link className={commonLinkStyles} to="/enterprises">
+                Empresas
+              </Link>
+              <Link className={commonLinkStyles} to="/contacts">
+                Contactos
+              </Link>
+
+              <PrimaryButton
+                onClick={handleLoginClick}
+                name="Relatar Amontoados"
+                addClassName="w-full"
+              />
+            </nav>
+          </div>
+        </>
+      )}
     </header>
   );
-};
-
-
+}

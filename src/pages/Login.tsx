@@ -29,7 +29,7 @@ export default function Login() {
 
   return (
     <div className="flex items-center justify-center h-screen gap-6 flex-wrap">
-      <div>
+      <div className="hidden sm:flex items-center justify-center w-[30rem] h-[30rem]">
         <img
           src={background}
           className="w-[30rem] h-[30rem]"
