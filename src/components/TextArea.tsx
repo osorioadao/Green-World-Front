@@ -18,5 +18,6 @@ export default function TextArea({ id, placeholder }: TextAreaProps) {
 
 TextArea.propTypes = {
   id: PropTypes.string.isRequired,
+  className: PropTypes.string,
   placeholder: PropTypes.string.isRequired,
 }

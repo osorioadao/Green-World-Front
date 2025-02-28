@@ -28,13 +28,15 @@ export default function Header() {
     };
   }, [isMobileMenuOpen]);
 
-  const commonLinkStyles =
-    "text-black hover:text-primary text-[16px] font-medium";
+  const commonLinkStylesBlack =
+    "text-white hover:text-primary text-[16px] font-medium";
+    const commonLinkStylesWhite =
+    "text-white hover:text-primary text-[16px] font-medium";
 
   return (
-    <header className="flex fixed px-[5vw] w-full z-index-1 justify-between items-center">
+    <header className="flex fixed px-[5vw] w-full h-max z-50 justify-between items-center bg-[#172815]">
       <div>
-        <Logo className="w-16 md:w-32" />
+        <Logo className="w-16  h-16 md:h-24 md:w-32" />
       </div>
 
       {/* Botão de alternância do menu móvel */}
@@ -48,18 +50,18 @@ export default function Header() {
       </div>
 
       {/* Navegação para desktop */}
-      <div className="hidden md:flex justify-between p-[8px] items-center gap-[210px]">
+      <div className="hidden md:flex justify-between p-[8px]  items-center gap-[210px]">
         <nav className="flex justify-center items-center gap-[28px]">
-          <Link className={commonLinkStyles} to="/">
+          <Link className={commonLinkStylesBlack} to="/">
             Início
           </Link>
-          <Link className={commonLinkStyles} to="/blog">
+          <Link className={commonLinkStylesBlack} to="/blog">
             Blog
           </Link>
-          <Link className={commonLinkStyles} to="/enterprises">
+          <Link className={commonLinkStylesBlack} to="/enterprises">
             Empresas
           </Link>
-          <Link className={commonLinkStyles} to="/contacts">
+          <Link className={commonLinkStylesBlack} to="/contacts">
             Contactos
           </Link>
 
@@ -81,16 +83,16 @@ export default function Header() {
           />
           <div className="fixed top-8 h-screen right-0 justify-between p-3 bg-black/70 md:hidden z-20">
             <nav className="flex flex-col justify-center items-center gap-[28px] p-3">
-              <Link className={commonLinkStyles} to="/">
+              <Link className={commonLinkStylesWhite} to="/">
                 Início
               </Link>
-              <Link className={commonLinkStyles} to="/blog">
+              <Link className={commonLinkStylesWhite} to="/blog">
                 Blog
               </Link>
-              <Link className={commonLinkStyles} to="/enterprises">
+              <Link className={commonLinkStylesWhite} to="/enterprises">
                 Empresas
               </Link>
-              <Link className={commonLinkStyles} to="/contacts">
+              <Link className={commonLinkStylesWhite} to="/contacts">
                 Contactos
               </Link>
 

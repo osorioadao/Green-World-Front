@@ -48,7 +48,7 @@ export default function Contacts() {
               />
             </div>
             <div className='flex flex-col w-full gap-5'>
-              <TextArea id={''} placeholder={'Mensagem'} />
+              <TextArea id={''} className="resize" placeholder={'Mensagem'} />
               <div className='flex justify-center items-center ' >
                 <PrimaryButton name='Enviar' addClassName='w-[24vw]' />
               </div>

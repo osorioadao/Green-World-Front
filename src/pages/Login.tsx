@@ -41,7 +41,7 @@ export default function Login() {
         className="flex items-center flex-col justify-center w-[30rem] h-[30rem] gap-6"
         onSubmit={(e) => e.preventDefault()}
       >
-        <h3 className="text-4xl font-semibold text-lime-800">Green World Login</h3>
+        <h3 className="text-4xl font-semibold text-[#4d953e]">Green World Login</h3>
 
         <div className="flex flex-col gap-1">
           <label htmlFor="email" className="p-1">Seu e-mail</label>
@@ -77,7 +77,7 @@ export default function Login() {
         <PrimaryButton addClassName="w-[22rem]" name="Entrar" onClick={Enter} />
 
         <div className="flex items-center justify-between w-[22rem]">
-          <a className="text-primary hover:underline transition duration-500" href="#">
+          <a className="text-[#4d953e] hover:underline transition duration-500" href="#">
             Esqueci minha senha
           </a>
         </div>

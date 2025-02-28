@@ -19,8 +19,8 @@ export default {
         }
       },
       colors: {
-        'primary': '#86aa4d',
-        'secondary': '#6ada0e',
+        'primary': '#4d953e',
+        'secondary': '#4d953e',
       },
       fontSize: {
         'title': '40px',

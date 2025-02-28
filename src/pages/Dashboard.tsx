@@ -45,6 +45,7 @@ const Dashboard: React.FC = () => {
           <p className="text-center text-lg text-red-500">Não foi possível encontrar a sua localização.</p>
         )}
       </div>
+      
     </div>
   );
 };
