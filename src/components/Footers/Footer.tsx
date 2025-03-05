@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { IoLogoInstagram } from "react-icons/io";
 import { CiFacebook } from "react-icons/ci";
 import Logo from "../../assets/Logo";
@@ -32,10 +32,10 @@ export default function Footer() {
           className='flex justify-center items-center flex-col gap-[10px]'
           style={{ transition: '.5s ease' }}
         >
-        <div className="flex justify-center items-center bg-white w-32 h-[50px] p-2 rounded-[4px]" >
-          <Logo className="" />
+        <div className="flex justify-center items-center w-32 h-[48px] p-2 rounded-[2px]" >
+          <Logo className="w-[90px] h-[90px]" />
         </div>
-        <PrimaryButton name="Relatar" addClassName="px-5" />
+
           <span>Siga-nos nas redes sociais</span>
           <div className="flex gap-4 mx-auto" >
             <a

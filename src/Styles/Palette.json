@@ -1,9 +1,10 @@
 
 
 {
-  "color1": "#347d27",
   "color2": "#408932",
   "color3": "#4d953e",
   "color4": "#59a149",
-  "color5": "#66ad54"
+  "global-color-primary":"#00160E",
+  "global-color-secondary":"#006943",
+  "global-plus":"#86aa4d" 
 }

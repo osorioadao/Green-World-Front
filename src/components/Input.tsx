@@ -13,7 +13,7 @@ export default function Input({ id, type, placeholder, autoComplete, addClassNam
     <div>
       <input
         id={id}
-        className={`text-body p-2 w-[20rem] outline-none border-[1px] rounded-[3px] ${addClassName} `}
+        className={`md:w-[21rem] text-body p-2 w-[8rem] outline-none border-[1px] rounded-[3px] ${addClassName} `}
         type={type}
         placeholder={placeholder}
         autoComplete={autoComplete} />

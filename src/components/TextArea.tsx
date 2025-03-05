@@ -8,7 +8,7 @@ interface TextAreaProps {
 export default function TextArea({ id, placeholder }: TextAreaProps) {
   return (
     <textarea
-      className="outline-none border-[1px] rounded-[3px] resize-none text-body w-full h-[30vh] p-3"
+      className="md:w-[45.3rem] outline-none border-[1px] rounded-[3px] resize-none text-body w-[14rem] h-[7rem] p-3"
       id={id}
       placeholder={placeholder}
     >

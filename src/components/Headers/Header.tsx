@@ -29,12 +29,12 @@ export default function Header() {
   }, [isMobileMenuOpen]);
 
   const commonLinkStylesBlack =
-    "text-white hover:text-primary text-[16px] font-medium";
+    "text-black hover:global-color-primary text-[16px] font-medium hover:text-[#006943]";
     const commonLinkStylesWhite =
-    "text-white hover:text-primary text-[16px] font-medium";
+    "text-white hover:global-color-primary text-[16px] font-bold hover:text-[#006943]";
 
   return (
-    <header className="flex fixed px-[5vw] w-full h-max z-50 justify-between items-center bg-[#172815]">
+    <header className="flex fixed px-[5vw] w-full h-max z-50 justify-between items-center shadow-lg">
       <div>
         <Logo className="w-16  h-16 md:h-24 md:w-32" />
       </div>
@@ -68,7 +68,7 @@ export default function Header() {
           <PrimaryButton
             onClick={handleLoginClick}
             name="Relatar Amontoados"
-            addClassName="w-full"
+            addClassName="w-full "
           />
         </nav>
       </div>
@@ -99,7 +99,7 @@ export default function Header() {
               <PrimaryButton
                 onClick={handleLoginClick}
                 name="Relatar Amontoados"
-                addClassName="w-full"
+                addClassName="w-full bg-global-color-secondary"
               />
             </nav>
           </div>

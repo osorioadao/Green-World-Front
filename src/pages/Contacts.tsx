@@ -6,7 +6,7 @@ import TextArea from '../components/TextArea';
 
 export default function Contacts() {
   return (
-    <div className='flex flex-col justify-center items-center gap-7 '>
+    <div className='h-screen flex flex-col justify-center items-center gap-7 '>
       <h2 className='text-title font-bold'>Contacte-nos</h2>
       <div className='flex justify-center items-center mt-[8ox] gap-10 '>
         <div className='flex flex-col justify-center items-center gap-3 '>
@@ -30,8 +30,8 @@ export default function Contacts() {
               <a href="#" target='_blank' className='text-primary font-bold'>Central de Ajuda.</a>
             </div>
           </div>
-          <form className='flex flex-col w-[50vw] gap-10'>
-            <div className='flex gap-5'>
+          <form className='flex flex-col justify-center items-center w-[50vw] gap-6'>
+            <div className='flex gap-4'>
               <Input
                 id=''
                 type="text"
@@ -44,13 +44,13 @@ export default function Contacts() {
                 type="email"
                 placeholder='Email'
                 autoComplete='on'
-                addClassName='flex-1 w-[28vw]'
+                addClassName='flex'
               />
             </div>
             <div className='flex flex-col w-full gap-5'>
               <TextArea id={''} className="resize" placeholder={'Mensagem'} />
               <div className='flex justify-center items-center ' >
-                <PrimaryButton name='Enviar' addClassName='w-[24vw]' />
+                <PrimaryButton name='Enviar' addClassName='w-[24rem]' />
               </div>
             </div>
           </form>

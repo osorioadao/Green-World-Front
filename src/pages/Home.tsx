@@ -1,43 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Headers/Header";
-//import Footer from "../components/Footers/Footer";
+import Footer from "../components/Footers/Footer";
 import image from "../assets/Address-bro.png";
-import imageDirector from '../assets/Navigation-cuate.png'
-//import Contacts from "./Contacts";
-import PrimaryButton from "../components/PrimaryButton";
+import imageFixed from '../assets/pexels-tomfisk-3174349.jpg'
+import Contacts from "./Contacts";
 import Card from "../components/Card";
+import PrimaryButton from "../components/PrimaryButton";
 
 export default function Home() {
-  const navigate = useNavigate();
-
-  const cards = [
-    {
-      image: imageDirector,
-      imageAlt: "image",
-      description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci qui minus atque nihil! Eaque dolorum, suscipit voluptatibus",
-      button: "Ver mais",
-    },
-    {
-      image: imageDirector,
-      imageAlt: "image",
-      description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci qui minus atque nihil! Eaque dolorum, suscipit voluptatibus",
-      button: "Ver mais",
-    },
-    {
-      image: imageDirector,
-      imageAlt: "image",
-      description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci qui minus atque nihil! Eaque dolorum, suscipit voluptatibus",
-      button: "Ver mais",
-    },
-  ];
+  const navigate = useNavigate()
 
   return (
-    <div className="flex flex-wrap flex-col">
+    <div className="h-screen">
       <Header />
-      <div className="pt-[14vh] flex md:flex-row flex-col gap-2 p-2 h-[460px]">
+      <div className="h-screen flex md:flex-row flex-col gap-2 p-2 h-[460px]">
         <div className="flex-1 m-auto">
           <h1 className="text-2xl font-medium text-center p-5">
             Luanda mais limpa começa com você!
@@ -49,9 +25,9 @@ export default function Home() {
           </p>
           <div className="flex justify-center my-4">
             <PrimaryButton
-              onClick={() => navigate("/blog")}
-              name={"Comece a Relatar"}
+              name="Comece a Relatar"
               addClassName="w-[13rem]"
+              onClick={() => navigate('/Login')}
             />
           </div>
         </div>
@@ -60,11 +36,22 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="justify-center flex ">
-      <Card cards={cards}/>
+      <div>
+        <Card />
       </div>
+
+      {/* Seção da imagem fixa com texto */}
+      <div className="relative w-full h-[60vh] bg-cover bg-fixed bg-center" style={{ backgroundImage: `url(${imageFixed})` }}>
+        <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-40">
+          <h2 className="text-white text-3xl font-semibold p-20">UM POR TODOS,E TODOS ACABANDO O LIXO!</h2>
+        </div>
+      </div>
+       
+      <Contacts />
+      <Footer />
     </div>
   );
 }
+
 
 

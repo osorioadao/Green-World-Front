@@ -19,8 +19,9 @@ export default {
         }
       },
       colors: {
-        'primary': '#4d953e',
-        'secondary': '#4d953e',
+        'global-color-primary': '#00160E',
+        'global-color-secondary': '#006943',
+        'global-color-three': '#007f5b'
       },
       fontSize: {
         'title': '40px',
@@ -35,7 +36,7 @@ export default {
     tailwindScrollbarHide,
     function ({ addUtilities }) {
       const newUtilities = {
-        '.text-shadow-black': {
+        'text-shadow-black': {
           textShadow: '2px 2px 4px rgba(0, 0, 0, 5)',
         },
       }
