@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IoMdArrowBack } from "react-icons/io";
-import { SiEnterprisedb } from "react-icons/si";
-import { GrBlog } from "react-icons/gr";
-import { MdOutlineSpaceDashboard } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoIosHelpCircleOutline } from "react-icons/io";
 

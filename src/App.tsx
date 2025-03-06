@@ -8,6 +8,7 @@ import Blog from './pages/Blog'
 import Dashboard from "./pages/Dashboard";
 import Relatar from './pages/Relatar'
 import ErrorPage from './pages/ErrorPage'
+import TypeRegister from './pages/Cadastros/TypeRegister'
 
  export default function App() {
 
@@ -21,7 +22,7 @@ import ErrorPage from './pages/ErrorPage'
       <Route path="blog" element={<Blog />} />
       <Route path="login" element={<Login />} />
       <Route path="relatar" element={<Relatar />} />
-
+      <Route path="typeregister" element={<TypeRegister />} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>
     </>

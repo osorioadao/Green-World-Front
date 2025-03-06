@@ -22,7 +22,7 @@ export default function FooterLinks({ data }: LinksProps) {
         <div key={groupIndex} className='flex flex-col gap-[16px]'>
           <h4 className='font-bold'>{group.title}</h4>
           {group.links.map((linkItem, linkIndex) => (
-            <Link key={linkIndex} className='flex column gap-[16px] hover:text-gray-400' to={`/${linkItem.link}`}>
+            <Link key={linkIndex} className='flex column gap-[16px] hover:text-green-400 hover:underline' to={`/${linkItem.link}`}>
               {linkItem.linkName}
             </Link>
           ))}

@@ -6,9 +6,9 @@ import TextArea from '../components/TextArea';
 
 export default function Contacts() {
   return (
-    <div className='h-screen flex flex-col justify-center items-center gap-7 '>
+    <div className='h-screen w-full flex flex-col justify-center items-center gap-3 '>
       <h2 className='text-title font-bold'>Contacte-nos</h2>
-      <div className='flex justify-center items-center mt-[8ox] gap-10 '>
+      <div className='flex justify-center items-center mt-[8ox] gap-6 '>
         <div className='flex flex-col justify-center items-center gap-3 '>
           <FiPhone color="primary" size={30} />
           <p>(+244) 934 156 335</p>
@@ -30,27 +30,27 @@ export default function Contacts() {
               <a href="#" target='_blank' className='text-primary font-bold'>Central de Ajuda.</a>
             </div>
           </div>
-          <form className='flex flex-col justify-center items-center w-[50vw] gap-6'>
-            <div className='flex gap-4'>
+          <form className='flex flex-col shadow-lg bg-white rounded-lg p-3 items-center w-[50vw] gap-2'>
+            <div className='flex gap-3'>
               <Input
                 id=''
                 type="text"
                 placeholder='Nome'
                 autoComplete='on'
-                addClassName='flex'
+                addClassName='flex border-2 focus:border-green-400'
               />
               <Input
                 id=''
                 type="email"
                 placeholder='Email'
                 autoComplete='on'
-                addClassName='flex'
+                addClassName='flex border-2 focus:border-green-400'
               />
             </div>
-            <div className='flex flex-col w-full gap-5'>
+            <div className='flex flex-col w-full gap-3'>
               <TextArea id={''} className="resize" placeholder={'Mensagem'} />
               <div className='flex justify-center items-center ' >
-                <PrimaryButton name='Enviar' addClassName='w-[24rem]' />
+                <PrimaryButton name='Enviar' addClassName='md:w-80 w-[8rem]' />
               </div>
             </div>
           </form>

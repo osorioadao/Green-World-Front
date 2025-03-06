@@ -28,67 +28,64 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen gap-6 flex-wrap">
-      <div className="hidden sm:flex items-center justify-center w-[30rem] h-[30rem]">
-        <img
-          src={background}
-          className="w-[30rem] h-[30rem]"
-          alt="loginImagem"
+    <div className="flex-row items-center justify-center h-screen gap-6">
+<div className="flex items-center justify-center h-screen gap-6 flex-wrap px-4">
+  <div className="hidden sm:flex items-center justify-center w-[60vh]">
+    <img src={background} className="w-[30rem] h-[30rem]" alt="loginImagem" />
+  </div>
+
+  <form
+    className="flex items-center flex-col justify-center w-full max-w-[30rem] min-w-[18rem] h-auto gap-6 p-6 bg-white shadow-md rounded-lg"
+    onSubmit={(e) => e.preventDefault()}
+  >
+    <h3 className="text-2xl font-semibold text-[#068a5b]">Green World Login</h3>
+
+    <div className="flex flex-col w-full gap-3">
+      <label htmlFor="email" className="p-1">Seu e-mail</label>
+      <Input
+        id="email"
+        type="email"
+        placeholder="Email"
+        autoComplete="on"
+        addClassName="w-full border-2 focus:border-green-400 p-2 rounded-md"
+      />
+
+      <label htmlFor="senha" className="p-1">Sua senha</label>
+      <div className="relative w-full">
+        <Input
+          id="senha"
+          type={isShowPassword ? "text" : "password"}
+          placeholder="Senha"
+          autoComplete="on"
+          addClassName="w-full border-2 focus:border-green-400 p-2 rounded-md"
         />
+        <button
+          type="button"
+          className="absolute right-2 top-1/3 transform -translate-y-1/2"
+          onClick={() => setIsShowPassword(!isShowPassword)}
+        >
+          {isShowPassword ? <FaEyeSlash /> : <FaEye />}
+        </button>
       </div>
+    </div>
 
-      <form
-        className="flex items-center flex-col justify-center w-[30rem] h-[30rem] gap-6"
-        onSubmit={(e) => e.preventDefault()}
-      >
-        <h3 className="text-4xl font-semibold text-[#4d953e]">Green World Login</h3>
+    {/* 🔹 Botão de Entrar corrigido */}
+    <PrimaryButton addClassName="w-[26rem] py-2 text-sm" name="Entrar" onClick={Enter} />
 
-        <div className="flex flex-col gap-1">
-          <label htmlFor="email" className="p-1">Seu e-mail</label>
-          <Input
-            id="email"
-            type="email"
-            placeholder="Email"
-            autoComplete="on"
-            addClassName="items-center w-[22rem]"
-            
-          />
+    <div className="w-full flex justify-end">
+  <a className="text-[#068a5b] hover:underline transition duration-500" href="#">
+    Esqueci minha senha
+  </a>
+</div>
 
-          <label htmlFor="senha" className="p-1">Sua senha</label>
-          <div className="relative">
-            <Input
-              id="senha"
-              type={isShowPassword ? "text" : "password"}
-              placeholder="Senha"
-              autoComplete="on"
-              addClassName="items-center w-[22rem]"
-              
-            />
-            <button
-              type="button"
-              className="absolute right-2 top-1/2 transform -translate-y-1/2"
-              onClick={() => setIsShowPassword(!isShowPassword)}
-            >
-              {isShowPassword ? <FaEyeSlash /> : <FaEye />}
-            </button>
-          </div>
-        </div>
 
-        <PrimaryButton addClassName="w-[22rem]" name="Entrar" onClick={Enter} />
+    <div className="flex items-center gap-4">
+      <p>Não tem uma conta?</p>
+      <PrimaryButton addClassName="w-[16rem] py-2 text-sm" name="Cadastrar-se" onClick={navigateToTypeRegister} />
+    </div>
+  </form>
+</div>
 
-        <div className="flex items-center justify-between w-[22rem]">
-          <a className="text-[#4d953e] hover:underline transition duration-500" href="#">
-            Esqueci minha senha
-          </a>
-        </div>
-
-          <div className="flex items-center gap-2.5">
-          <p>Não tem uma conta?</p>
-           
-           <PrimaryButton addClassName="w-[12rem]" name="Cadastrar-se" onClick={navigateToTypeRegister} />
-          </div>
-
-      </form>
     </div>
   );
 }
