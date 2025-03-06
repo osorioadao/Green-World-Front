@@ -70,7 +70,7 @@ export default function Login() {
     </div>
 
     {/* 🔹 Botão de Entrar corrigido */}
-    <PrimaryButton addClassName="w-[26rem] py-2 text-sm" name="Entrar" onClick={Enter} />
+    <PrimaryButton addClassName="w-[24rem] py-2 text-sm" name="Entrar" onClick={Enter} />
 
     <div className="w-full flex justify-end">
   <a className="text-[#068a5b] hover:underline transition duration-500" href="#">
@@ -81,7 +81,7 @@ export default function Login() {
 
     <div className="flex items-center gap-4">
       <p>Não tem uma conta?</p>
-      <PrimaryButton addClassName="w-[16rem] py-2 text-sm" name="Cadastrar-se" onClick={navigateToTypeRegister} />
+      <PrimaryButton addClassName="w-[10rem] py-2 text-sm" name="Cadastrar-se" onClick={navigateToTypeRegister} />
     </div>
   </form>
 </div>

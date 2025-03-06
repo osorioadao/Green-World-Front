@@ -10,7 +10,7 @@ export default function PrimaryButton({ onClick, name, addClassName }: PrimaryBu
   
   return (
     <div>
-      <button className={`w-full md:w-70 flex justify-center p-3 text-[16px] text-white cursor-pointer font-medium rounded-[4px] active:scale-95 shadow-lg bg-global-color-three hover:bg-[#068a5b] ${addClassName} `} onClick={onClick} style={{transition: '.2s ease-in-out' }} >
+      <button className={`w-full flex justify-center p-3 text-[16px] text-white cursor-pointer font-medium rounded-[4px] active:scale-95 shadow-lg bg-global-color-three hover:bg-[#068a5b] ${addClassName} `} onClick={onClick} style={{transition: '.2s ease-in-out' }} >
         {name}
       </button>
     </div>
