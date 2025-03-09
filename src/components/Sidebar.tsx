@@ -38,9 +38,9 @@ const Sidebar: React.FC = () => {
           <ul className="space-y-7">
             <li
               className="flex items-center gap-3 p-2 hover:bg-green-700 rounded-md cursor-pointer transition"
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/dashboard")}
             >
-              <FiHome size={20} /> {isOpen && <span>Início</span>}
+              <FiHome size={20} /> {isOpen && <span>Dashboard</span>}
             </li>
             <li
               className="flex items-center gap-3 p-2 hover:bg-green-700 rounded-md cursor-pointer transition"
