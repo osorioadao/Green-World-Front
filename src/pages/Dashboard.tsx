@@ -1,12 +1,12 @@
-import { Routes, Route, Link } from "react-router-dom";
-import Relatar from "./Relatar"; 
-import News from "./News";
 import Sidebar from "../components/Sidebar";
 
 const Dashboard = () => {
     return (
-        <div className="dashboard-container">
+        <div className="">
             <Sidebar />
+            <div className="h-screen flex items-center justify-center">
+              <h1>DASHBOARD!</h1>
+            </div>
         </div>
     );
 };

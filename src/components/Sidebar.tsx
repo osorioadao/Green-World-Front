@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoMdArrowBack } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { FiHome, FiMessageSquare, FiSettings, FiLogOut } from "react-icons/fi";
+import { MdOutlineSpaceDashboard } from "react-icons/md";
+import { FiMessageSquare, FiSettings, FiLogOut } from "react-icons/fi";
 import { GoReport } from "react-icons/go";
 import { VscFeedback } from "react-icons/vsc";
 import Avatar from "./Avatar";
@@ -40,7 +41,7 @@ const Sidebar: React.FC = () => {
               className="flex items-center gap-3 p-2 hover:bg-green-700 rounded-md cursor-pointer transition"
               onClick={() => navigate("/dashboard")}
             >
-              <FiHome size={20} /> {isOpen && <span>Dashboard</span>}
+              <MdOutlineSpaceDashboard size={20} /> {isOpen && <span>Dashboard</span>}
             </li>
             <li
               className="flex items-center gap-3 p-2 hover:bg-green-700 rounded-md cursor-pointer transition"

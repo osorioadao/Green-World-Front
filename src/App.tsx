@@ -4,7 +4,6 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Empresas from './pages/Enterprises'
 import Contactos from './pages/Contacts'
-import Blog from './pages/Blog'
 import Dashboard from "./pages/Dashboard";
 import Relatar from './pages/Relatar'
 import ErrorPage from './pages/ErrorPage'
@@ -20,7 +19,6 @@ import News from './pages/News'
       <Route path="dashboard" element={<Dashboard />} />
       <Route path="empresas" element={<Empresas />} />
       <Route path="contactos" element={<Contactos />} />
-      <Route path="blog" element={<Blog />} />
       <Route path="news" element={<News />} />
       <Route path="login" element={<Login />} />
       <Route path="relatar" element={<Relatar />} />

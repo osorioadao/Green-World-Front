@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { IoLogoInstagram } from "react-icons/io";
-import { CiFacebook } from "react-icons/ci";
+import { CiLinkedin } from "react-icons/ci";
 import Logo from "../../assets/Logo";
 import Skeleton from "../../components/Skeleton";
 import FooterLinks from "../../components/FooterLinks";
@@ -18,7 +19,7 @@ export default function Footer() {
     title: 'Mapa do site',
     links: [
       { linkName: 'Inicio', link: '/' },
-      { linkName: 'Blog', link: '/blog' },
+      { linkName: 'Notícias', link: '/news' },
       { linkName: 'Empresas', link: '/empresas' },
       { linkName: 'Contactos', link: '/contactos' },
     ],
@@ -51,7 +52,7 @@ export default function Footer() {
             </a>
 
             <a href="#">
-              <CiFacebook size={40} color="white" />
+              <CiLinkedin size={40} color="white" />
             </a>
           </div>
         </div>
