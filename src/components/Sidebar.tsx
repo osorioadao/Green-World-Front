@@ -1,90 +1,82 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { IoMdArrowBack } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { IoIosHelpCircleOutline } from "react-icons/io";
+import { FiHome, FiMessageSquare, FiSettings, FiLogOut } from "react-icons/fi";
+import { GoReport } from "react-icons/go";
+import { VscFeedback } from "react-icons/vsc";
+import Avatar from "./Avatar";
 
 const Sidebar: React.FC = () => {
-
-  const navigate = useNavigate()
-
-  // Estados para controle
-  const [itemAtivo, setItemAtivo] = useState<string>('Dashboard');
-  const [expandirMenu, setExpandirMenu] = useState<boolean>(true)
-
-  // Definindo o link activo
-  const selectLink = (route: string, item: string) => {
-    navigate(route)
-    setItemAtivo(item)
-  }    
-
-  const toggleMenu = () => {
-    setExpandirMenu(!expandirMenu)
-  }
-
+  const [isOpen, setIsOpen] = useState(true);
+  const navigate = useNavigate();
 
   return (
-  <div 
-  className={` ${
-    expandirMenu ? '' : ''
-  }`}>
- 
- <div className=''>
- <RxHamburgerMenu onClick={toggleMenu} size={30} className='' />
- <IoMdArrowBack size={30} className='hover: -[#4d953e] cursor-pointer' style={{transition: '.2 ease-in-out'}} onClick={() => navigate(-1)}  />
- </div>
+    <div className="flex">
+      {/* Botão para abrir/fechar */}
+      <button
+        className="fixed top-4 left-4 z-50 p-2 bg-green-800 text-white rounded-md"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {isOpen ? <IoMdArrowBack size={24} /> : <RxHamburgerMenu size={24} />}
+      </button>
 
+      {/* Sidebar */}
+      <div
+        className={`bg-green-900 h-screen fixed top-0 left-0 p-5 pt-20 text-white transition-all duration-300 ${
+          isOpen ? "w-64" : "w-20"
+        }`}
+      >
+        {/* Avatar */}
+        <div className={`transition-all duration-300 ${isOpen ? "block" : "hidden"}`}>
+          <Avatar name="Albertina" email="albertinasauimbo17@gmail.com" tipoUsuario="Cidadão Comum" />
+          <p className="text-center text-sm font-semibold">Albertina Sauimbo</p>
+        </div>
 
-<nav className=''>
-
- <ul>
-  <li
-   onClick={() => selectLink('/', 'Dashboard')}
-   className={itemAtivo === 'Dashboard' ? '' : ''}
-   >
-    <span className=''>
-    <MdOutlineSpaceDashboard size={30} />
-    </span>
-    {expandirMenu && <span className=''>Dashboard</span>}
-  </li>
-
-  <li 
-  onClick={() => selectLink('/Blog', 'Blog')}
-  className={itemAtivo === 'Blog' ? '' : ''}
-  >
-    <span className=''>
-    <GrBlog size={30} />
-    </span>
-    {expandirMenu && <span className=''>Blog</span>}
-  </li>
-
-  <li 
-    onClick={() => selectLink('/empresas', 'Empresas')}
-    className={itemAtivo === 'empresas' ? '' : ''}
-    >
-    <span className=''>
-    <SiEnterprisedb size={30} />
-    </span>
-    {expandirMenu && <span className=''>Empresas</span>}
-  </li>
-
-  <li className='item'>
-    <span className=''>
-    <IoIosHelpCircleOutline size={30} />
-    </span>
-    {expandirMenu && <span className=''>Ajuda</span>}
-  </li>
-
- </ul>
- 
-</nav>
-</div>
-
-
-
-    
+        {/* Menu */}
+        <nav className="mt-10">
+          <ul className="space-y-7">
+            <li
+              className="flex items-center gap-3 p-2 hover:bg-green-700 rounded-md cursor-pointer transition"
+              onClick={() => navigate("/")}
+            >
+              <FiHome size={20} /> {isOpen && <span>Início</span>}
+            </li>
+            <li
+              className="flex items-center gap-3 p-2 hover:bg-green-700 rounded-md cursor-pointer transition"
+              onClick={() => alert("Você ainda não tem notificação ⃠")}
+            >
+              <FiMessageSquare size={20} /> {isOpen && <span>Mensagens</span>}
+            </li>
+            <li
+              className="flex items-center gap-3 p-2 hover:bg-green-700 rounded-md cursor-pointer transition"
+              onClick={() => alert("Você fez seu 1ª reporte 👏")}
+            >
+              <GoReport size={20} /> {isOpen && <span>Relatar Amontoado</span>}
+            </li>
+            <li
+              className="flex items-center gap-3 p-2 hover:bg-green-700 rounded-md cursor-pointer transition"
+              onClick={() => navigate("/feedback")}
+            >
+              <VscFeedback size={20} /> {isOpen && <span>Feedback</span>}
+            </li>
+            <li
+              className="flex items-center gap-3 p-2 hover:bg-green-700 rounded-md cursor-pointer transition"
+              onClick={() => navigate("/settings")}
+            >
+              <FiSettings size={20} /> {isOpen && <span>Configurações</span>}
+            </li>
+            <li
+              className="flex items-center gap-3 p-2 hover:bg-red-700 rounded-md cursor-pointer transition"
+              onClick={() => alert("Logout")}
+            >
+              <FiLogOut size={20} /> {isOpen && <span>Sair</span>}
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   );
-}
-
+};
 
 export default Sidebar;

@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import Relatar from './pages/Relatar'
 import ErrorPage from './pages/ErrorPage'
 import TypeRegister from './pages/Cadastros/TypeRegister'
+import News from './pages/News'
 
  export default function App() {
 
@@ -20,6 +21,7 @@ import TypeRegister from './pages/Cadastros/TypeRegister'
       <Route path="empresas" element={<Empresas />} />
       <Route path="contactos" element={<Contactos />} />
       <Route path="blog" element={<Blog />} />
+      <Route path="news" element={<News />} />
       <Route path="login" element={<Login />} />
       <Route path="relatar" element={<Relatar />} />
       <Route path="typeregister" element={<TypeRegister />} />

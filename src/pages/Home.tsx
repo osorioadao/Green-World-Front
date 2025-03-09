@@ -11,7 +11,7 @@ import imageFixed from '../assets/pexels-tomfisk-3174349.jpg';
 import Contacts from "./Contacts";
 import Card from "../components/Card";
 import PrimaryButton from "../components/PrimaryButton";
-import { title } from "process";
+//import { title } from "process";
 
 export default function Home() {
   const navigate = useNavigate();
