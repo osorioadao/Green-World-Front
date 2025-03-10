@@ -51,7 +51,7 @@ const Sidebar: React.FC = () => {
             </li>
             <li
               className="flex items-center gap-3 p-2 hover:bg-green-700 rounded-md cursor-pointer transition"
-              onClick={() => alert("Você fez seu 1ª reporte 👏")}
+              onClick={() => alert("Você fez seu 1ª relato 👏")}
             >
               <GoReport size={20} /> {isOpen && <span>Relatar Amontoado</span>}
             </li>

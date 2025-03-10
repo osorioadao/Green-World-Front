@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "../components/Headers/Header";
 import Footer from "../components/Footers/Footer";
 
@@ -17,8 +18,7 @@ export default function ErrorPage() {
         <p className="text-center text-base">
           A página que está tentando acessar não existe.
         </p>
-
-        <a href="#" className="text-[#068a5b] hover:underline transition duration-500">Volte á página inicial.</a>
+        <Link to="/" className="text-[#068a5b] hover:underline transition duration-500">Volte á pagina inicial</Link>
       </div>
 
     </div>
