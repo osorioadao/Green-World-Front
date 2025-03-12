@@ -25,7 +25,7 @@ const Dashboard = () => {
   return (
     <div className="flex">
       <Sidebar />
-      <div className="flex-1 p-20 grid grid-cols-1 md:grid-cols-1 gap-4 place-items-center">
+      <div className="flex-1 p-20 grid grid-cols-1 md:grid-cols-1 gap-10 place-items-center">
         {/* Gráfico de Locais com Mais Relatos */}
         <div className="bg-white p-4 shadow rounded-xl w-full max-w-2xl">
           <h2 className="text-lg font-semibold mb-4 text-center">Locais com Mais Relatos</h2>
@@ -55,7 +55,7 @@ const Dashboard = () => {
         </div>
 
         {/* Gráfico de Tipos de Lixo Mais Retirados */}
-        <div className="bg-white p-4 shadow rounded-xl w-full max-w-2xl col-span-2">
+        <div className="bg-white p-4 shadow rounded-xl w-full max-w-2xl">
           <h2 className="text-lg font-semibold mb-4 text-center">Tipos de Lixo Mais Retirados</h2>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
@@ -75,5 +75,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
 

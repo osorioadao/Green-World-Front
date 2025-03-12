@@ -4,7 +4,7 @@ import { CiLinkedin } from "react-icons/ci";
 import { MdSunny } from "react-icons/md";
 import { RiMoonFill } from "react-icons/ri";
 import Logo from "../../assets/Logo";
-import Skeleton from "../../components/Skeleton";
+import Skeleton from "../ui/Skeleton";
 import FooterLinks from "../../components/FooterLinks";
 
 export default function Footer() {

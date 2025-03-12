@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Skeleton from "../components/Skeleton";
+import Skeleton from "../components/ui/Skeleton";
 import Header from "../components/Headers/Header";
 import Footer from "../components/Footers/Footer";
 

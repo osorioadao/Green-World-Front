@@ -5,10 +5,12 @@ import Login from './pages/Login'
 import Empresas from './pages/Enterprises'
 import Contactos from './pages/Contacts'
 import Dashboard from "./pages/Dashboard";
+import Feedback from './pages/Feedback'
 import Relatar from './pages/Relatar'
 import ErrorPage from './pages/ErrorPage'
 import TypeRegister from './pages/Cadastros/TypeRegister'
 import News from './pages/News'
+import RegisterPersonal from './pages/Cadastros/RegisterPersonal'
 
  export default function App() {
 
@@ -21,8 +23,10 @@ import News from './pages/News'
       <Route path="contactos" element={<Contactos />} />
       <Route path="news" element={<News />} />
       <Route path="login" element={<Login />} />
+      <Route path="feedback" element={<Feedback />} />
       <Route path="relatar" element={<Relatar />} />
       <Route path="typeregister" element={<TypeRegister />} />
+      <Route path="personal" element={<RegisterPersonal />} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>
     </>

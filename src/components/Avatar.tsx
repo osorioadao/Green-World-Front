@@ -50,7 +50,7 @@ const Avatar: React.FC<AvatarProps> = ({ name, email, tipoUsuario, size = 50 }) 
           ref={popUpRef}
           className="absolute right-0 mt-2 bg-white shadow-lg rounded-lg p-3 w-56 border z-50"
         >
-          <p className="text-lg font-semibold">{tipoUsuario}</p>
+          <p className="text-lg text-black font-semibold">{tipoUsuario}</p>
           <p className="text-gray-600 text-sm">{email}</p>
         </div>
       )}

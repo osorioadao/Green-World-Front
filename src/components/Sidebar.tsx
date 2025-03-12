@@ -30,7 +30,7 @@ const Sidebar: React.FC = () => {
       >
         {/* Avatar */}
         <div className={`transition-all duration-300 ${isOpen ? "block" : "hidden"}`}>
-          <Avatar name="Albertina" email="albertinasauimbo17@gmail.com" tipoUsuario="Cidadão Comum" />
+          <Avatar name="Albertina" email="albertinasauimbo17@gmail.com" tipoUsuario="Admin" />
           <p className="text-center text-sm font-semibold">Albertina Sauimbo</p>
         </div>
 
@@ -51,7 +51,7 @@ const Sidebar: React.FC = () => {
             </li>
             <li
               className="flex items-center gap-3 p-2 hover:bg-green-700 rounded-md cursor-pointer transition"
-              onClick={() => alert("Você fez seu 1ª relato 👏")}
+              onClick={() => navigate("/relatar")}
             >
               <GoReport size={20} /> {isOpen && <span>Relatar Amontoado</span>}
             </li>
