@@ -17,7 +17,7 @@ export default function Relatar() {
       
       {/* Conteúdo principal */}
       {sidebarUp()}
-      <div className="flex flex-col items-center justify-center w-full p-5 min-h-screen">
+      <div className="flex flex-col items-center justify-center w-full p-24 min-h-screen">
         <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
           <h2 className="text-2xl font-bold text-green-700 mb-4 text-center">
             Relate um Amontoado de Lixo

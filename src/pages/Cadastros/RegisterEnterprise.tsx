@@ -68,10 +68,8 @@ export default function UserForm() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 p-6">
       <div className="w-full max-w-3xl p-8 bg-white shadow-xl rounded-2xl">
-        <div>
-          <Logo className="w-20 h-20"/>
-        </div>
-        <div className="text-center mb-6">
+        <div className="text-center mb-6 flex items-center justify-center gap-4">
+        <Logo className="w-20 h-20"/>
           <h2 className="text-3xl font-bold text-gray-800">Cadastro de Empresa</h2>
         </div>
 
@@ -104,13 +102,14 @@ export default function UserForm() {
           </div>
           <InputField label="NIF" type="text" name="nif" value={formData.nif} onChange={handleChange} icon={<HiMiniIdentification />} />
           
-          <div className="md:flex md:gap-6 w-full">
-            <div className="w-full md:w-1/2">
+          <div className="flex gap-3 items-center">
+              <div className="">
               <InputField label="Endereço" type="text" name="endereco" value={formData.endereco} onChange={handleChange} icon={<FaAddressCard />} />
-            </div>
-            <div className="w-full md:w-1/2">
-              <label htmlFor="tipoEmpresa" className="block text-sm font-medium text-gray-700">Tipo de Empresa</label>
-              <CustomSelector 
+              </div>
+            <div className="">
+              <label htmlFor="tipoEmpresa" className="text-sm font-medium text-gray-700 mb-1 block">Tipo de Empresa</label>
+              <CustomSelector
+                className="mb-1 block w-full md:w-[14rem] h-12"
                 onChange={(e) => setSelectEnterprise(e)}
                 value={selectEnterprise}
                 items={[

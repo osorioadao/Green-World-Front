@@ -25,6 +25,11 @@ const Dashboard = () => {
   return (
     <div className="flex">
       <Sidebar />
+
+       <div className="">
+        
+       </div>
+
       <div className="flex-1 p-20 grid grid-cols-1 md:grid-cols-1 gap-10 place-items-center">
         {/* Gráfico de Locais com Mais Relatos */}
         <div className="bg-white p-4 shadow rounded-xl w-full max-w-2xl">

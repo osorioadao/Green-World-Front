@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { FaUser, FaEnvelope, FaLock, FaUserTag, FaUniversity, FaIdCard, FaEyeSlash, FaEye } from "react-icons/fa";
 import PrimaryButton from "../../components/PrimaryButton";
 import Logo from "../../assets/Logo";
+import axios from "axios";
 
 interface UserFormData {
   nome: string;
@@ -55,9 +56,18 @@ export default function UserForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Dados enviados:", formData);
+
+    try{
+      const response = await axios.post("",formData)
+     if (response.status === 200) {
+      navigate("/login")
+     }
+    } catch (error){
+      console.error("Erro ao enviar os dados de cadastro", error)
+    }
   };
 
   const navigate = useNavigate()
@@ -65,11 +75,9 @@ export default function UserForm() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 p-6">
       <div className="w-full max-w-3xl p-8 bg-white shadow-xl rounded-2xl">
-        <div>
-          <Logo className="w-20 h-20"/>
-        </div>
-        <div className="text-center mb-6">
-          <h2 className="text-3xl font-bold text-gray-800">Cadastro de Cidadão</h2>
+        <div className="text-center mb-6 flex items-center justify-center gap-4">
+        <Logo className="w-20 h-20"/>
+          <h2 className="text-3xl font-bold text-gray-800">Cadastro de Empresa</h2>
         </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-8">

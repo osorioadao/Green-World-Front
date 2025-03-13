@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 interface PrimaryButtonProps {
   onClick: any;
   addClassName: string;
+  disabled?: boolean;
   name: string;
 }
 
