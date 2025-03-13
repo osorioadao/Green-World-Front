@@ -43,7 +43,7 @@ export default function Login() {
           className="flex items-center flex-col justify-center w-full max-w-[30rem] min-w-[18rem] h-auto gap-6 p-6 bg-white shadow-md rounded-lg"
           onSubmit={(e) => e.preventDefault()}
         >
-          <h3 className="text-2xl font-semibold text-[#068a5b]">Green World Login</h3>
+          <h3 className="text-2xl font-semibold text-[#068a5b]">Login</h3>
 
           <div className="flex flex-col w-full gap-3">
             <label htmlFor="email" className="p-1">Seu e-mail</label>
@@ -74,19 +74,18 @@ export default function Login() {
             </div>
           </div>
 
-          <div className="w-full">
-            <PrimaryButton addClassName="w-[18rem] py-3 text-sm font-medium disabled:pointer-events-none" name="Entrar" onClick={Enter} />
-          </div>
-
           <div className="w-full flex justify-end">
             <a className="text-[#068a5b] hover:underline transition duration-500" href="#">
               Esqueci minha senha
             </a>
           </div>
 
-          <div className="w-full flex justify-center items-center gap-6">
-            <p>Não tem uma conta?</p>
-            <PrimaryButton addClassName="w-[11rem] py-3 text-sm" name="Cadastrar-se" onClick={() => {navigate("/personal")}} />
+          <div className="w-full">
+            <PrimaryButton addClassName="w-[18rem] py-3 text-sm font-medium disabled:pointer-events-none" name="Entrar" onClick={Enter} />
+          </div>
+
+          <div className="w-full">
+            <PrimaryButton addClassName="w-[18rem] py-3 text-sm font-medium disabled:pointer-events-none" name="Cadastrar-se" onClick={() => {navigate("/personal")}} />
           </div>
         </form>
       </div>

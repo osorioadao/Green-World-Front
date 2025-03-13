@@ -6,7 +6,6 @@ import { MdOutlineSpaceDashboard } from "react-icons/md";
 import { FiMessageSquare, FiSettings, FiLogOut } from "react-icons/fi";
 import { GoReport } from "react-icons/go";
 import { VscFeedback } from "react-icons/vsc";
-import Avatar from "./Avatar";
 
 const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -28,11 +27,7 @@ const Sidebar: React.FC = () => {
           isOpen ? "w-64" : "w-20"
         }`}
       >
-        {/* Avatar */}
-        <div className={`transition-all duration-300 ${isOpen ? "block" : "hidden"}`}>
-          <Avatar name="Albertina" email="albertinasauimbo17@gmail.com" tipoUsuario="Admin" />
-          <p className="text-center text-sm font-semibold">Albertina Sauimbo</p>
-        </div>
+
 
         {/* Menu */}
         <nav className="mt-10">
@@ -53,7 +48,7 @@ const Sidebar: React.FC = () => {
               className="flex items-center gap-3 p-2 hover:bg-green-700 rounded-md cursor-pointer transition"
               onClick={() => navigate("/relatar")}
             >
-              <GoReport size={20} /> {isOpen && <span>Relatar Amontoado</span>}
+              <GoReport size={20} /> {isOpen && <span>Ocorência de Amontoados</span>}
             </li>
             <li
               className="flex items-center gap-3 p-2 hover:bg-green-700 rounded-md cursor-pointer transition"

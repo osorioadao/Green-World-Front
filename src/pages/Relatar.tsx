@@ -1,17 +1,22 @@
 import UploadArea from "../components/upload-area/single";
+import { Button } from "@radix-ui/themes";
 import CustomSelector from "../components/custom/selector";
 import Sidebar from "../components/Sidebar";
-import PrimaryButton from "../components/PrimaryButton";
 import { useState } from "react";
+import sidebarUp from "../components/client/sidebarUp";
 
 export default function Relatar() {
   const [selectedProvince, setSelectedProvince] = useState<string>();
+  const [selectQuantity, setSelectQuantity] = useState<string>()
+  const [selectPriority, setSelectPriority] = useState<string>()
+  const [selectTypeGarbage, setSelectGarbage] = useState<string>()
 
   return (
     <div className="flex">
       <Sidebar />
-
+      
       {/* Conteúdo principal */}
+      {sidebarUp()}
       <div className="flex flex-col items-center justify-center w-full p-5 min-h-screen">
         <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
           <h2 className="text-2xl font-bold text-green-700 mb-4 text-center">
@@ -22,7 +27,9 @@ export default function Relatar() {
             <b className="text-red-600">*</b> Campos obrigatórios.
           </p>
 
-          <form className="space-y-5">
+         {/* Formulário de relatos */}
+          <form className="space-y-5 flex flex-col gap-5">
+            
             {/* Tipo de Lixo */}
             <div>
               <label
@@ -31,28 +38,47 @@ export default function Relatar() {
               >
                 Tipo de Lixo<b className="text-red-600">*</b>
               </label>
-              <select
-                id="categoria"
-                name="categoria"
-                className="mt-1 block w-full p-2 border rounded-md bg-gray-50"
-              >
-                <option value="1">Orgânico</option>
-                <option value="2">Reciclável</option>
-                <option value="3">Perigoso</option>
-                <option value="4">Eletrônico</option>
-                <option value="5">Outros</option>
-              </select>
+
+              <CustomSelector 
+              onChange={(e) => {
+                setSelectGarbage(e);
+              }}
+               value={selectTypeGarbage}
+               items={[
+                {
+                  label: "Orgânico",
+                  value: "organico",
+                },
+                {
+                  label: "Reciclável",
+                  value: "reciclavel",
+                },
+                {
+                  label: "Perigoso",
+                  value: "perigoso",
+                },
+                {
+                  label: "Electrónicos",
+                  value: "electronico",
+                },
+                {
+                  label: "Radioactivos",
+                  value: "radioactivo",
+                },
+               ]}              
+              />
             </div>
 
             {/* Localidade */}
+            
             <div>
-              <label
+            <label
                 htmlFor="localidade"
                 className="block text-sm font-medium text-gray-700"
               >
                 Sua Localidade
               </label>
-              {/* <CustomSelector
+              <CustomSelector
                 onChange={(e) => {
                   setSelectedProvince(e);
                 }}
@@ -63,87 +89,51 @@ export default function Relatar() {
                     value: "1",
                   },
                   {
-                    label: "Luanda",
+                    label: "Camama",
                     value: "2",
                   },
                   {
-                    label: "Luanda",
+                    label: "Rangel",
                     value: "3",
                   },
                   {
-                    label: "Luanda",
+                    label: "Maianga",
                     value: "4",
                   },
                   {
-                    label: "Luanda",
+                    label: "Mussulo",
                     value: "5",
                   },
                   {
-                    label: "Luanda",
+                    label: "Belas",
                     value: "6",
                   },
                   {
-                    label: "Luanda",
+                    label: "Viana",
                     value: "7",
                   },
                   {
-                    label: "Luanda",
+                    label: "Cazenga",
                     value: "8",
                   },
                   {
-                    label: "Luanda",
+                    label: "Hoji-Ya-Henda",
                     value: "9",
                   },
                   {
-                    label: "Luanda",
+                    label: "Samba",
                     value: "10",
                   },
                   {
-                    label: "Luanda",
+                    label: "Mutamba",
+                    value: "11",
+                  },
+                  {
+                    label: "Ngola Kiluange",
                     value: "11",
                   },
                 ]}
-              /> */}
-              <select
-                id="localidade"
-                name="localidade"
-                className="mt-1 block w-full p-2 border rounded-md bg-gray-50"
-              >
-                <option value="1">Luanda</option>
-                <option value="2">Cazenga</option>
-                <option value="3">Viana</option>
-                <option value="4">Rangel</option>
-                <option value="5">Hoji-Ya-Henda</option>
-                <option value="6">Quiçama</option>
-                <option value="7">Belas</option>
-                <option value="8">Ícolo e Bengo</option>
-                <option value="9">Camama</option>
-                <option value="10">Mussulo</option>
-                <option value="11">Calumbo</option>
-                <option value="12">Samba</option>
-                <option value="13">Maianga</option>
-                <option value="14">Mutamba</option>
-                <option value="15">Ngola Kiluanje</option>
-              </select>
-            </div>
-
-            {/* Quantidade de Lixo */}
-            <div>
-              <label
-                htmlFor="quantidade"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Quantidade de Lixo
-              </label>
-              <select
-                id="quantidade"
-                name="quantidade"
-                className="mt-1 block w-full p-2 border rounded-md bg-gray-50"
-              >
-                <option value="1">Pequeno (Até 1 saco de lixo)</option>
-                <option value="2">Médio (1 a 5 sacos de lixo)</option>
-                <option value="3">Grande (Muitos sacos de lixo)</option>
-              </select>
+              />
             </div>
 
             {/* Prioridade do acúmulo */}
@@ -154,14 +144,22 @@ export default function Relatar() {
               >
                 Prioridade
               </label>
-              <select
-                id="quantidade"
-                name="quantidade"
-                className="mt-1 block w-full p-2 border rounded-md bg-gray-50"
-              >
-                <option value="1">Baixa</option>
-                <option value="2">Elevada</option>
-              </select>
+              <CustomSelector 
+               onChange={(e) => {
+                setSelectPriority(e)
+               }}
+               value={selectPriority}
+               items={[
+                {
+                  label: "Baixa",
+                  value: "baixa",
+                },
+                {
+                  label: "Elevada",
+                  value: "elevada",
+                },
+               ]}
+              />
             </div>
 
             {/* Descrição */}
@@ -179,7 +177,8 @@ export default function Relatar() {
                 required
                 placeholder="Ex: A situação nesta localidade está crítica e precisa de resolução imediata."
                 className="mt-1 block w-full p-2 border rounded-md bg-gray-50"
-              ></textarea>
+              ></textarea> 
+
             </div>
 
             {/* Upload de Foto */}
@@ -188,25 +187,25 @@ export default function Relatar() {
                 htmlFor="foto"
                 className="block text-sm font-medium text-gray-700"
               >
-                Carregar Foto
+                Carregar Foto <b className="text-red-600">*</b>
               </label>
               <UploadArea />
-              {/* <input
-                type="file"
-                id="foto"
-                name="foto"
-                className="mt-1 block w-full p-2 border rounded-md bg-gray-50"
-              /> */}
             </div>
 
             {/* Botão de Relatar */}
-            <div className="flex justify-center">
+            {/* <div className="flex justify-center">
               <PrimaryButton
                 addClassName="w-[29rem] bg-green-700 hover:bg-green-800 text-white font-medium transition"
                 name="Relatar"
               />
-            </div>
+            </div> */}
+           
+           <Button variant="outline" color="orange" className="h-10 bg-red-600"> 
+ 	            Enviar
+           </Button>
+
           </form>
+
         </div>
       </div>
     </div>

@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { FaUser, FaEnvelope, FaLock, FaUserTag, FaUniversity, FaIdCard, FaEyeSlash, FaEye } from "react-icons/fa";
+import PrimaryButton from "../../components/PrimaryButton";
+import Logo from "../../assets/Logo";
 
 interface UserFormData {
   nome: string;
@@ -9,7 +13,35 @@ interface UserFormData {
   nome_titular: string;
 }
 
+const InputField = ({ label, type, name, value, onChange, icon, extraPaddingRight = false }: {
+  label: string;
+  type: string;
+  name: keyof UserFormData;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  icon: JSX.Element;
+  extraPaddingRight?: boolean; 
+}) => (
+  <div className="relative">
+    <label htmlFor={name} className="block text-gray-600 font-semibold mb-2">{label}</label>
+    <div className="relative">
+      <span className="absolute inset-y-0 left-3 flex items-center text-gray-500">
+        {icon}
+      </span>
+      <input
+        type={type}
+        name={name}
+        value={value}
+        onChange={onChange}
+        required
+        className={`w-full p-3 ${extraPaddingRight ? "pr-10" : "pr-3"} pl-10 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-700 focus:border-transparent`}
+      />
+    </div>
+  </div>
+);
+
 export default function UserForm() {
+  const [isShowPassword, setIsShowPassword] = useState(false);
   const [formData, setFormData] = useState<UserFormData>({
     nome: "",
     email: "",
@@ -28,36 +60,62 @@ export default function UserForm() {
     console.log("Dados enviados:", formData);
   };
 
+  const navigate = useNavigate()
+
   return (
-    <div className="max-w-lg mx-auto p-4 bg-white shadow-xl rounded-2xl">
-      <h2 className="text-2xl font-bold text-center mb-4">Cadastro de Usuário</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 p-6">
+      <div className="w-full max-w-3xl p-8 bg-white shadow-xl rounded-2xl">
         <div>
-          <label htmlFor="nome" className="block font-semibold">Nome</label>
-          <input type="text" name="nome" value={formData.nome} onChange={handleChange} required className="w-full p-2 border rounded-md" />
+          <Logo className="w-20 h-20"/>
         </div>
-        <div>
-          <label htmlFor="email" className="block font-semibold">Email</label>
-          <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full p-2 border rounded-md" />
+        <div className="text-center mb-6">
+          <h2 className="text-3xl font-bold text-gray-800">Cadastro de Cidadão</h2>
         </div>
-        <div>
-          <label htmlFor="senha" className="block font-semibold">Senha</label>
-          <input type="password" name="senha" value={formData.senha} onChange={handleChange} required className="w-full p-2 border rounded-md" />
-        </div>
-        <div>
-          <label htmlFor="tipoUser_id" className="block font-semibold">Tipo de Usuário</label>
-          <input type="text" name="tipoUser_id" value={formData.tipoUser_id} onChange={handleChange} required className="w-full p-2 border rounded-md" />
-        </div>
-        <div>
-          <label htmlFor="iban" className="block font-semibold">IBAN</label>
-          <input type="text" name="iban" value={formData.iban} onChange={handleChange} required className="w-full p-2 border rounded-md" />
-        </div>
-        <div>
-          <label htmlFor="nome_titular" className="block font-semibold">Nome do Titular</label>
-          <input type="text" name="nome_titular" value={formData.nome_titular} onChange={handleChange} required className="w-full p-2 border rounded-md" />
-        </div>
-        <button type="submit" className="w-full bg-green-800 text-white p-2 rounded-md hover:bg-green-700">Cadastrar</button>
-      </form>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-8">
+          <PrimaryButton name="Cidadão Comum" addClassName="w-full md:w-26 py-3 text-lg h-10 flex items-center justify-center" onClick={() => { navigate('/personal')}} />
+           <PrimaryButton name="Empresa" addClassName="w-full md:w-26 py-3 text-lg opacity-70 h-10 flex items-center justify-center" onClick={() => { navigate('/enterprise')}} />
+         </div>
+
+
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <InputField label="Nome" type="text" name="nome" value={formData.nome} onChange={handleChange} icon={<FaUser />} />
+          <InputField label="Email" type="email" name="email" value={formData.email} onChange={handleChange} icon={<FaEnvelope />} />
+
+          {/* Campo de senha com ajuste de padding */}
+          <div className="relative">
+            <InputField 
+              label="Senha" 
+              type={isShowPassword ? "text" : "password"} 
+              name="senha" 
+              value={formData.senha} 
+              onChange={handleChange} 
+              icon={<FaLock />} 
+              extraPaddingRight 
+            />
+          <button
+            type="button"
+            className="absolute inset-y-7 top-14 right-3 flex items-center text-gray-600 hover:text-gray-800"
+            onClick={() => setIsShowPassword(!isShowPassword)}
+          >
+            {isShowPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
+          </button>
+          </div>
+
+          <InputField label="Tipo de Usuário" type="text" name="tipoUser_id" value={formData.tipoUser_id} onChange={handleChange} icon={<FaUserTag />} />
+          <InputField label="IBAN" type="text" name="iban" value={formData.iban} onChange={handleChange} icon={<FaUniversity />} />
+          <InputField label="Nome do Titular" type="text" name="nome_titular" value={formData.nome_titular} onChange={handleChange} icon={<FaIdCard />} />
+
+          <div className="flex items-center justify-center col-span-1 md:col-span-2">
+          <Link to="/Login" className="text-[#068a5b] hover:underline transition duration-500">Já tem uma conta?</Link>
+          </div>
+
+          <div className="col-span-1 md:col-span-2 mt-4">
+            <PrimaryButton addClassName="" name="Cadastrar"/>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
+
