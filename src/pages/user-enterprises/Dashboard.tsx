@@ -1,7 +1,6 @@
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../../components/Sidebar";
 import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"; // Importação dos componentes do react-leaflet
-import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 const locationsData = [

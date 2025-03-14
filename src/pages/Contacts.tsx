@@ -26,7 +26,7 @@ export default function Contacts() {
             </p>
             <div className='flex gap-2'>
               <span>Acesse também nossa </span>
-              <a href="#" target='_blank' className='text-primary font-bold'>Central de Ajuda.</a>
+              <a href="terms" target='_blank' className='text-primary font-bold'>Central de Ajuda.</a>
             </div>
           </div>
           <form className='flex flex-col shadow-lg bg-white rounded-lg p-8 items-center w-[40vw] gap-2'>
@@ -60,4 +60,3 @@ export default function Contacts() {
     </div>
   );
 }
-
