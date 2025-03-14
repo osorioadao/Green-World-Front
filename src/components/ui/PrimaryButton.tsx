@@ -1,0 +1,25 @@
+import PropTypes from 'prop-types';
+
+interface PrimaryButtonProps {
+  onClick: any;
+  addClassName: string;
+  disabled?: boolean;
+  name: string;
+}
+
+export default function PrimaryButton({ onClick, name, addClassName }: PrimaryButtonProps) {
+  
+  return (
+    <div>
+      <button className={`w-full p-3 text-[16px] text-white cursor-pointer font-medium rounded-[4px] active:scale-95 shadow-lg bg-global-color-three hover:bg-[#068a5b] ${addClassName} `} onClick={onClick} style={{transition: '.2s ease-in-out' }} >
+        {name}
+      </button>
+    </div>
+  );
+}
+
+PrimaryButton.propTypes = {
+  onClick: PropTypes.func,
+  addClassName: PropTypes.string,
+  name: PropTypes.string.isRequired,
+}

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { IoLogoInstagram } from "react-icons/io";
 import { CiLinkedin } from "react-icons/ci";
 import { MdSunny } from "react-icons/md";
@@ -44,7 +45,7 @@ export default function Footer() {
   const groupLinks2 = {
     title: "Links úteis",
     links: [
-      { linkName: "Sites Greens", link: "/s" },
+      { linkName: "Sites Greens", link: "https://www.elisal.ao/" },
       { linkName: "Contacte-nos", link: "/" },
     ],
   };
@@ -83,7 +84,9 @@ export default function Footer() {
       {isLoading ? (
         <Skeleton width="100%" height="20px" />
       ) : (
-        <div className="w-full border-t border-white/30 mt-6 pt-4 text-center">
+        <div className="flex justify-center w-full border-t border-white/30 mt-6 pt-4 gap-2">
+          <Link to="" className="text-green-600 hover:underline transition duration-500">Termos e política de privacidade da Green World</Link>
+          <p>|</p>
           <p>Green World © 2025 - Direitos reservados</p>
         </div>
       )}

@@ -59,6 +59,3 @@ const Avatar: React.FC<AvatarProps> = ({ name, email, tipoUsuario, size = 50 }) 
 };
 
 export default Avatar;
-
-
-

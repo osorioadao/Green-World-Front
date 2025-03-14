@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
-import Input from "../components/Input";
-import PrimaryButton from "../components/PrimaryButton";
+import Input from "../components/ui/Input";
+import PrimaryButton from "../components/ui/PrimaryButton";
 import background from "../assets/Authentication-rafiki.png";
 
 export default function Login() {
@@ -50,19 +50,18 @@ export default function Login() {
         throw new Error("Credenciais inválidas");
       }
 
-            // Se a autenticação for bem-sucedida, redireciona para o dashboard
-
+      // Se a autenticação for bem-sucedida, redireciona para o dashboard
       const data = await response.json();
        if(data && data.token){
         navigate("/dashboard")
        }  
        else{
-        alert("Falha na autenticação,por favor tente novamente.")
+        alert("Falha na autenticação,por favor tente novamente. 🚨")
        }
 
     } catch (error: any) {
       console.error("Erro no login:",error)
-      alert("Erro no login: " + error.message);
+      alert("Erro no login: ⚠️" + error.message);
     } finally {
       setLoading(false); // Desativa o estado de carregamento
     }

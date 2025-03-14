@@ -29,10 +29,10 @@ export default function CardCarousel() {
   const prevCard = () => setIndex((prev) => (prev - 1 + cards.length) % cards.length);
 
   return (
-    <div className="flex md:flex-row flex-col items-center justify-center min-h-screen py-24 gap-10 px-4 md:px-0">
+    <div className="flex md:flex-row flex-col items-center justify-center min-h-screen py-24 gap-10 px-4 md:px-4 shadow-lg rounded-lg">
       {/* Texto */}
       <div className="max-w-md text-center md:text-left">
-        <h2 className="text-2xl font-bold text-green-800">Por que usar a Green World</h2>
+        <h2 className="text-3xl font-bold text-green-800">Por que usar a Green World</h2>
         <p className="mt-4 text-gray-700">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, ut vitae? Delectus aperiam adipisci debitis
           unde, odio eius a non commodi tenetur vel aut quod doloribus excepturi optio quam neque.

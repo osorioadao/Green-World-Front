@@ -1,17 +1,16 @@
 import './index.css'
 import "@radix-ui/themes/styles.css";
 import { Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
+import Home from './pages'
 import Login from './pages/Login'
-import Empresas from './pages/Enterprises'
-import Contactos from './pages/Contacts'
+import Empresas from './pages/user-enterprises/Enterprises'
 import Dashboard from "./pages/Dashboard"
-import Feedback from './pages/Feedback'
-import Relatar from './pages/Relatar'
-import ErrorPage from './pages/ErrorPage'
-import RegisterEnterprise from './pages/Cadastros/RegisterEnterprise'
+import Feedback from './components/Feedback'
+import Relatar from './pages/user-normal/Relatar'
+import NotFound from './pages/not-found'
+import RegisterEnterprise from './pages/Register/RegisterEnterprise'
 import News from './pages/News'
-import RegisterPersonal from './pages/Cadastros/RegisterPersonal'
+import RegisterPersonal from './pages/Register/RegisterPersonal'
 
  export default function App() {
 
@@ -21,14 +20,13 @@ import RegisterPersonal from './pages/Cadastros/RegisterPersonal'
       <Route path="/" element={<Home />} />
       <Route path="dashboard" element={<Dashboard />} />
       <Route path="empresas" element={<Empresas />} />
-      <Route path="contactos" element={<Contactos />} />
       <Route path="news" element={<News />} />
       <Route path="login" element={<Login />} />
       <Route path="feedback" element={<Feedback />} />
       <Route path="relatar" element={<Relatar />} />
       <Route path="enterprise" element={<RegisterEnterprise />} />
       <Route path="personal" element={<RegisterPersonal />} />
-      <Route path="*" element={<ErrorPage />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
     </>
   )
