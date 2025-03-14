@@ -84,7 +84,7 @@ export default function Home() {
         
         <Link to="news" className="hover:underline transition delay-50 hover:text-green-800">Ver mais Notícias</Link>
 
-        {/* Modal com animação */}
+        {/* Modal com animação,que aparece assim que a imagem é clicada */}
         {selectedItem && (
           <div
             className="fixed inset-0 bg-black/60 flex items-center justify-center p-6 animate-fadeIn"
