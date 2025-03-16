@@ -8,8 +8,9 @@ interface TextAreaProps {
 export default function TextArea({ id, placeholder }: TextAreaProps) {
   return (
     <textarea
-      className="md:w-full outline-none border-[1px] rounded-[3px] resize-none text-body p-4"
+      className="w-full md:w-full outline-none border-[1px] rounded-[3px] resize-none text-body py-2 px-3"
       id={id}
+      required
       placeholder={placeholder}
     >
     </textarea>

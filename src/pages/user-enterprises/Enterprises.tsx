@@ -17,7 +17,7 @@ export default function Enterprises() {
       <h2 className=' font-semibold text-4xl'>Página de Empresas</h2>
       <div className='text-center flex flex-col gap-2'>
         <p>A página que está tentando acessar encontra-se em estado de desenvolvimento.</p>
-        <p>Por favor, tente acessá-la mais tarde.</p>
+        <p>Por favor, tente acessá-la mais tarde</p>
       </div>
       <div className='py-5'>
         <button className='font-semibold rounded-sm text-white bg-[#408932] h-10 w-52 transition delay-75 hover:bg-[#66ad54]' onClick={Inicio}>Voltar à Página Inicial</button>

@@ -1,62 +1,76 @@
-import { FiPhone } from 'react-icons/fi';
-import { MdOutlineEmail } from 'react-icons/md';
-import PrimaryButton from '../components/ui/PrimaryButton';
-import TextArea from '../components/ui/TextArea';
+import Header from "../components/Headers/Header";
+import Footer from "../components/Footers/Footer";
+import image from '../assets/contactos.jpg'
+import { FiPhone } from "react-icons/fi";
+import { MdOutlineEmail } from "react-icons/md";
+import PrimaryButton from "../components/ui/PrimaryButton";
+import TextArea from "../components/ui/TextArea";
 
 export default function Contacts() {
   return (
-    <div className='h-screen bg-gray-50 w-full flex flex-col justify-center items-center gap-3 '>
-      <h2 className='text-title font-bold'>Contacte-nos</h2>
-      <div className='flex justify-center items-center gap-4 '>
-        <div className='flex flex-col justify-center items-center gap-3 '>
-          <FiPhone color="primary" size={30} />
-          <p>(+244) 934 156 335</p>
+    <div className="max-h-screen">
+      <Header />
+
+      {/* Container da imagem e título */}
+      <div className="relative h-[60vh] w-full">
+        <img src={image} className="object-cover w-full h-full" alt="alguemFalandoAoTelemovél" />
+        <h1 className="absolute text-white top-1/4 left-1/2 transform -translate-x-1/2 text-4xl md:text-5xl font-bold whitespace-nowrap">Contactos</h1>
+      </div>
+
+      {/* Seção de contatos */}
+      <div className="flex justify-center gap-8 mt-14 flex-wrap">
+        {/* Card do telefone */}
+        <div className="flex flex-col justify-center items-center gap-3 p-10 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+          <FiPhone color="green" size={40} />
+          <p className="text-lg">(+244) 934 156 335</p>
         </div>
-        <div className='flex flex-col justify-center items-center gap-3 '>
-          <MdOutlineEmail color="primary" size={30} />
-          <p>greenworld70@gmail.com</p>
+
+        {/* Card do email */}
+        <div className="flex flex-col justify-center items-center gap-3 p-10 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+          <MdOutlineEmail color="green" size={40} />
+          <p className="text-lg">greenworld70@gmail.com</p>
         </div>
       </div>
-      <div className='flex flex-col justify-center items-center gap-10'>
-        <div className='flex flex-col justify-center items-center gap-3 p-5 '>
-          <div className='flex flex-col justify-center items-center gap-3'>
-            <h6 className='text-[20px] font-bold'>Entre em contacto conosco</h6>
-            <p>
-              Caso haja alguma dúvida, estamos aqui para esclarece-lo.
-            </p>
-            <div className='flex gap-2'>
-              <span>Acesse também nossa </span>
-              <a href="terms" target='_blank' className='text-primary font-bold'>Central de Ajuda.</a>
-            </div>
+
+      {/* Formulário de contato */}
+      <div className="flex items-center justify-center h-auto w-full mt-12 mb-12">
+        <div className="max-w-xl mx-auto px-6">
+          <div className="max-w-xl mt-6 mb-4">
+            <h2 className="text-3xl text-center md:text-3xl font-semibold">Entre em contacto connosco</h2>
+            <p className="text-center text-[14px] mt-2 md:text-lg text-gray-600">Envie suas dúvidas para nós</p>
           </div>
-          <form className='flex flex-col shadow-lg bg-white rounded-lg p-8 items-center w-[40vw] gap-2'>
-            <div className='flex gap-3'>
-              <input
-                id=''
-                value=''
-                type="text"
-                placeholder='Nome'
-                autoComplete='on'
-                className='w-full text-body p-2 outline-none border-[1px] rounded-[3px]'
-                
-              />
-              <input
-                type="email"
-                placeholder='Email'
-                value=''
-                autoComplete=''
-                className='w-full text-body p-2 outline-none border-[1px] rounded-[3px] resize'
-              />
-            </div>
-            <div className='flex flex-col w-full gap-3'>
-              <TextArea id={''} className="resize" placeholder={'Digite'} />
-              <div className='flex justify-center items-center ' >
-                <PrimaryButton name='Enviar' addClassName='md:w-80 w-[8rem]' />
+
+          <form action="" name="contact" className="gap-2 shadow-lg bg-white rounded-lg p-6">
+            <div className="flex flex-col items-center mb-4">
+              <div className="w-full">
+                <label htmlFor="fullName" className="block font-medium mb-2 required">Nome completo</label>
+                <input type="text" id="fullName" required maxLength={255} pattern="[a-zA-ZÀ-ÖØ-öø-ÿÑñáéíóúÁÉÍÓÚüÜ]+([ '-][a-zA-ZÀ-ÖØ-öø-ÿÑñáéíóúÁÉÍÓÚüÜ]+)*" placeholder="Nome completo" className="w-full py-2 px-3 outline-none border-[1px] rounded-[3px]" />
               </div>
+            </div>
+
+            <div className="flex flex-col items-center mb-4">
+              <div className="w-full">
+                <label htmlFor="email" className="block font-medium mb-2 required">Email</label>
+                <input type="email" id="email" required maxLength={255} pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" placeholder="Email" className="w-full py-2 px-3 outline-none border-[1px] rounded-[3px]" />
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center mb-4">
+              <div className="w-full">
+                <label htmlFor="mensagem" className="block font-medium mb-2 required">Mensagem</label>
+                <TextArea id={""} className="w-full py-2 px-3 outline-none border-[1px] rounded-[3px]" placeholder={"Mensagem"} />
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center mb-8">
+              <PrimaryButton name="Enviar" addClassName="md:w-80 w-[16rem]" />
             </div>
           </form>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
+

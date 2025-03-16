@@ -3,6 +3,8 @@ import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, Legend, Resp
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"; // Importação dos componentes do react-leaflet
 import "leaflet/dist/leaflet.css";
 
+ //https://www.google.com/maps/@-8.8333099,13.2571516,15z?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D
+
 const locationsData = [
   { name: "Centro da Cidade", relatos: 120, lat: -8.864, lon: 13.56 },
   { name: "Mutamba", relatos: 85, lat: -8.864, lon: 13.56 },
@@ -25,14 +27,14 @@ const COLORS = ["#FF0000", "#964B00", "#FFBB28"];
 
 const Dashboard = () => {
   return (
-    <div className="flex h-screen">
+    <div className="h-screen">
       <Sidebar />
 
       {/* Conteúdo principal ocupando o restante da tela */}
-      <div className="grid p-4 grid-cols-1 gap-4">
+      <div className="flex justify-center items-center flex-col">
         {/* Mapa Interativo */}
-        <div className="w-10 h-96 mb-14"> 
-          <MapContainer center={[-8.838, 13.234]} zoom={13} style={{ width: "100%", height: "100%" }}>
+        <div className="w-full md:w-[50rem] h-80 mb-16 mt-14"> 
+          <MapContainer center={[-8.83833, 13.2571]} zoom={13} style={{ width: "100%", height: "100%" }}>
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -43,13 +45,17 @@ const Dashboard = () => {
                   <strong>{location.name}</strong>
                   <p>Relatos: {location.relatos}</p>
                 </Popup>
+                <Popup>
+                  <strong>{location.name}</strong>
+                  <p>Relatos: {location.relatos}</p>
+                </Popup>
               </Marker>
             ))}
           </MapContainer>
         </div>
 
         {/* Gráficos organizados em grid responsivo */}
-        <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
           {/* Gráfico de Locais com Mais Relatos */}
           <div className="bg-white p-4 shadow rounded-xl w-full">
             <h2 className="text-lg font-semibold mb-4 text-center">Locais com Mais Relatos</h2>

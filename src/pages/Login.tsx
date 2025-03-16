@@ -133,7 +133,7 @@ export default function Login() {
               name="Cadastrar-se"
               onClick={(e) => {
                 e.preventDefault();
-                navigate("/personal");
+                navigate("/register-personal");
               }}
             />
           </div>

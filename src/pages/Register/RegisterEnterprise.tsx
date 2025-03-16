@@ -74,8 +74,8 @@ export default function UserForm() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-8">
-          <PrimaryButton name="Empresa" addClassName="w-full md:w-26 py-3 text-sm font-medium h-10 flex items-center justify-center" onClick={() => navigate('/enterprise')} />
-          <PrimaryButton name="Cidadão Comum" addClassName="w-full md:w-26 py-3 text-sm font-medium h-10 flex opacity-70 items-center justify-center" onClick={() => navigate('/personal')} />
+          <PrimaryButton name="Empresa" addClassName="w-full md:w-26 py-3 text-sm font-medium h-10 flex items-center justify-center" onClick={() => navigate('/register-enterprise')} />
+          <PrimaryButton name="Cidadão Comum" addClassName="w-full md:w-26 py-3 text-sm font-medium h-10 flex opacity-70 items-center justify-center" onClick={() => navigate('/register-personal')} />
         </div>
 
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
