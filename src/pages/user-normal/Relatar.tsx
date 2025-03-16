@@ -20,8 +20,8 @@ export default function Relatar() {
             Relate um Amontoado de Lixo
           </h2>
           <p className="text-gray-600 text-sm text-center mb-6">
-            Preencha os campos abaixo para reportar um acúmulo de lixo.{" "}
-            <b className="text-red-600">*</b> Campos obrigatórios.
+            Preencha os campos abaixo para reportar um acúmulo de lixo.
+            Campos obrigatórios. <b className="text-red-600">*</b> 
           </p>
 
          {/* Formulário de relatos */}
@@ -188,14 +188,6 @@ export default function Relatar() {
               </label>
               <UploadArea />
             </div>
-
-            {/* Botão de Relatar */}
-            {/* <div className="flex justify-center">
-              <PrimaryButton
-                addClassName="w-[29rem] bg-green-700 hover:bg-green-800 text-white font-medium transition"
-                name="Relatar"
-              />
-            </div> */}
            
            <Button variant="outline" color="orange" className="h-10 bg-red-600"> 
  	            Enviar
