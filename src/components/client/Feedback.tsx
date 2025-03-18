@@ -1,5 +1,5 @@
-import Sidebar from "./Sidebar"
-import image from '../assets/growing.png';
+import Sidebar from "../Sidebar"
+import image from '../../assets/growing.png'
 
 function Feedback() {
   return (

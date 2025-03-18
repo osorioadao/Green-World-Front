@@ -1,21 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/Headers/Header";
 import Footer from "../components/Footers/Footer";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import { useNavigate, Link } from "react-router-dom";
-import image from "../assets/map.webp";
 import video from '../assets/video/coletaSelectiva.mp4';
 import image2 from '../assets/coleta.jpg';
 import video2 from '../assets/video/catadores.mp4';
 import image4 from '../assets/carta.jpg';
 import imageFixed from '../assets/pexels-tomfisk-3174349.jpg';
-import Contacts from "./Contacts";
 import Card from "../components/Card";
+import Map from "../components/Map";
+import { motion } from "framer-motion"; // Importando framer-motion
+
+// Importando componentes do react-leaflet
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css"; // Estilo do Leaflet
+import L from 'leaflet'; // Importando para personalizar os ícones do marcador
 
 export default function Home() {
   const navigate = useNavigate();
   const [selectedItem, setSelectedItem] = useState(null);
-  const [selectedFAQ, setSelectedFAQ] = useState(null); // Estado para controle das perguntas frequentes
+  const [selectedFAQ, setSelectedFAQ] = useState(null);
+  const [scrolling, setScrolling] = useState(false);
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    setScrolling(scrollPosition > 0);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Lista de FAQs
   const faqs = [
@@ -44,12 +60,23 @@ export default function Home() {
     { type: "video", src: video2, title: "História dos Catadores", description: "A luta diária dos catadores de lixo.", time: "3 dias atrás" },
   ];
 
+  const locationsData = [
+    { name: "Centro da Cidade", relatos: 120, lat: -8.864, lon: 13.56 },
+    { name: "Mutamba", relatos: 85, lat: -8.764, lon: 9.56 },
+    { name: "Viana", relatos: 65, lat: -8.564, lon: 10.56 },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       
       {/* Seção Inicial */}
-      <div className="min-h-screen inset-shadow-sm rounded-sm flex md:flex-row flex-col items-center gap-6 px-4 pt-20 md:pt-32">
+      <motion.div 
+        className="min-h-screen inset-shadow-sm rounded-sm flex md:flex-row flex-col items-center gap-6 px-4 pt-20 md:pt-32"
+        initial={{ opacity: 0, y: 50 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 1 }}
+      >
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-4xl font-bold text-center p-5">
             Luanda mais limpa começa com você!
@@ -61,13 +88,20 @@ export default function Home() {
             <PrimaryButton name="Comece a Relatar" addClassName="w-[22rem]" onClick={() => navigate('/Login')} />
           </div>
         </div>
-        <div className="flex flex-1 justify-center items-center">
-          <img className="w-full h-auto" src={image} />
+
+        <div className="">
+            {/* Mapa Interativo */}
+              <Map />
         </div>
-      </div>
+      </motion.div>
 
       {/* Seção Notícias */}
-      <div className="min-h-screen flex flex-col items-center justify-center gap-6 p-6">
+      <motion.div
+        className="min-h-screen flex flex-col items-center justify-center gap-6 p-6"
+        initial={{ opacity: 0, y: 50 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 1, delay: 0.2 }}
+      >
         <div className="text-center">
           <h2 className="text-2xl font-bold">Estado do saneamento em Luanda</h2>
           <p className="text-gray-600">
@@ -77,40 +111,22 @@ export default function Home() {
 
         <section className="columns-2 md:columns-2 gap-4 space-y-4">
           {midiaItens.map((item, index) => (
-            <div
+            <motion.div
               key={index}
               className="relative overflow-hidden rounded-md transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer"
               onClick={() => setSelectedItem(item)}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: index * 0.3 }}
             >
               {item.type === "image" ? (
                 <img className="w-full md:w-96 rounded-md" src={item.src} alt={item.title} />
               ) : (
                 <video className="w-full md:w-96 rounded-md" src={item.src} autoPlay muted loop playsInline />
               )}
-            </div>
+            </motion.div>
           ))}
         </section>
-
-        {selectedItem && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
-            <div className="relative bg-white p-6 rounded-lg max-w-3xl w-full">
-              <button
-                className="absolute top-2 right-2 text-gray-500 hover:text-black"
-                onClick={() => setSelectedItem(null)}
-              >
-                ✕
-              </button>
-              {selectedItem.type === "image" ? (
-                <img className="w-full" src={selectedItem.src} alt={selectedItem.title} />
-              ) : (
-                <video className="w-full" src={selectedItem.src} controls autoPlay />
-              )}
-              <h3 className="text-xl font-semibold mt-4">{selectedItem.title}</h3>
-              <p className="text-gray-600 mt-2">{selectedItem.description}</p>
-              <span className="text-sm text-gray-400">{selectedItem.time}</span>
-            </div>
-          </div>
-        )}
 
         <Link to="news" className="hover:underline transition delay-50 hover:text-green-800">Ver mais Notícias</Link>
 
@@ -123,30 +139,40 @@ export default function Home() {
             <h2 className="text-white text-3xl font-semibold p-20">UM POR TODOS, E TODOS ACABANDO O LIXO!</h2>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* FAQ Seção */}
-      <div className="p-6 md:px-16 flex flex-col items-center mt-14 mb-16">
-        <h2 className="text-2xl font-bold text-center mb-6">Perguntas Frequentes</h2>
+      <motion.div
+        className="p-6 md:px-16 flex flex-col md:flex-row justify-center items-center mt-14 mb-16 gap-8"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <div className="text-start w-full max-w-xl md:max-w-2xl">
+          <p className="text-gray-600 font-semibold text-lg sm:text-xl">FAQ</p>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Perguntas e Respostas Mais Frequentes</h2>
+        </div>
+        
         <div className="w-full max-w-2xl space-y-4">
           {faqs.map((faq, index) => (
             <div key={index} className="border-b border-gray-300">
               <div
-                className="py-4 text-xl font-medium cursor-pointer hover:text-green-600"
+                className="py-4 text-lg sm:text-xl font-medium cursor-pointer hover:text-green-600"
                 onClick={() => setSelectedFAQ(selectedFAQ === index ? null : index)}
               >
                 {faq.question}
               </div>
               {selectedFAQ === index && (
-                <p className="text-gray-600 mt-2">{faq.answer}</p>
+                <p className="text-gray-600 mt-2 text-sm sm:text-base">{faq.answer}</p>
               )}
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       <Footer />
     </div>
   );
 }
+
 

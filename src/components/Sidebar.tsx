@@ -15,7 +15,7 @@ const Sidebar: React.FC = () => {
     <div className="flex">
       {/* Botão para abrir/fechar */}
       <button
-        className="fixed top-4 left-4 z-50 p-2 bg-green-800 text-white rounded-md"
+        className="fixed top-4 left-4 z-50 p-2 bg-[#20ca8d] text-white rounded-md"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <IoMdArrowBack size={24} /> : <RxHamburgerMenu size={24} />}
@@ -23,7 +23,7 @@ const Sidebar: React.FC = () => {
 
       {/* Sidebar */}
       <div
-        className={`bg-green-900 h-screen fixed top-0 left-0 p-5 pt-20 text-white transition-all duration-300 ${
+        className={`bg-[#82ca9d] h-screen fixed top-0 left-0 p-5 pt-20 text-white transition-all duration-300 ${
           isOpen ? "w-64" : "w-20"
         }`}
       >

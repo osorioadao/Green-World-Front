@@ -72,14 +72,14 @@ export default function Footer() {
         <FooterLinks data={[groupLinks1, groupLinks2]} />
       </div>
 
-      {/* Botão de alternância de tema com ícones */}
+      {/* Botão de alternância de tema com ícones
       <button
         onClick={toggleTheme}
         className="mt-6 px-4 py-2 flex items-center gap-2 border rounded text-white bg-gray-700 hover:bg-gray-600 transition"
       >
         {darkMode ? <MdSunny size={20} /> : <RiMoonFill size={20} />}
         {darkMode ? "Modo Claro" : "Modo Escuro"}
-      </button>
+      </button> */}
 
       {isLoading ? (
         <Skeleton width="100%" height="20px" />

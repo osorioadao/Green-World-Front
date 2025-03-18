@@ -23,41 +23,36 @@ function News() {
   return (
     <div>
       <Header />
-      <div className="min-h-screen flex flex-col justify-center items-center">
-        <h1 className="text-center text-2xl font-bold my-4">NEWS</h1>
+      <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100 py-8">
+        <h1 className="text-center text-4xl font-bold text-blue-600 mb-10 p-20">
+          Últimas Notícias
+        </h1>
 
         {isLoading ? (
-          // Exibe 3 skeletons enquanto carrega
-          <div className="flex flex-col gap-4 w-full max-w-2xl">
-            <div className="flex gap-6 items-center">
-            <Skeleton width="30%" height="100px" className="rounded-2xl" />
-            <Skeleton width="100%" height="100px" />
-            </div>
-            <div className="flex gap-6 items-center">
-            <Skeleton width="30%" height="100px" className="rounded-2xl" />
-            <Skeleton width="100%" height="100px" />
-            </div>
-            <div className="flex gap-6 items-center">
-            <Skeleton width="30%" height="100px" className="rounded-2xl" />
-            <Skeleton width="100%" height="100px" />
-            </div>
-            <div className="flex gap-6 items-center">
-            <Skeleton width="30%" height="100px" className="rounded-2xl" />
-            <Skeleton width="100%" height="100px" />
-            </div>
+          // Exibe 4 skeletons com animação em 2 colunas responsivas
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-6xl animate-pulse">
+            {[...Array(4)].map((_, index) => (
+              <div key={index} className="flex flex-col gap-4 bg-white p-4 rounded-lg shadow-lg">
+                <div className="flex gap-6 items-center">
+                  <Skeleton width="30%" height="20px" className="rounded-full" />
+                </div>
+                <Skeleton width="100%" height="120px" className="rounded-lg" />
+                <Skeleton width="100%" height="80px" className="rounded-lg" />
+              </div>
+            ))}
           </div>
         ) : (
-          // Renderiza as notícias reais
-          <div className="w-full max-w-2xl">
+          // Renderiza as notícias reais em 2 colunas responsivas
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-6xl">
             {news.length > 0 ? (
               news.map((item, index) => (
-                <div key={index} className="p-4 border-b border-gray-300">
-                  <h2 className="text-lg font-semibold">{item.title}</h2>
-                  <p>{item.description}</p>
+                <div key={index} className="p-6 bg-white rounded-lg shadow-lg border border-gray-300">
+                  <h2 className="text-xl font-semibold text-blue-700 mb-2">{item.title}</h2>
+                  <p className="text-gray-600">{item.description}</p>
                 </div>
               ))
             ) : (
-              <p>Nenhuma notícia disponível no momento.</p>
+              <p className="text-center text-gray-600 py-6">Nenhuma notícia disponível no momento.</p>
             )}
           </div>
         )}
@@ -68,3 +63,4 @@ function News() {
 }
 
 export default News;
+

@@ -1,6 +1,7 @@
 import Sidebar from "../../components/Sidebar";
 import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"; // Importação dos componentes do react-leaflet
+import Map from "../../components/Map";
+import Relatos from "../../components/Relatos";
 import "leaflet/dist/leaflet.css";
 
  //https://www.google.com/maps/@-8.8333099,13.2571516,15z?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D
@@ -30,29 +31,11 @@ const Dashboard = () => {
     <div className="h-screen">
       <Sidebar />
 
-      {/* Conteúdo principal ocupando o restante da tela */}
+      {/* Conteúdo principal */}
       <div className="flex justify-center items-center flex-col">
-        {/* Mapa Interativo */}
-        <div className="w-full md:w-[50rem] h-80 mb-16 mt-14"> 
-          <MapContainer center={[-8.83833, 13.2571]} zoom={13} style={{ width: "100%", height: "100%" }}>
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            />
-            {locationsData.map((location, index) => (
-              <Marker key={index} position={[location.lat, location.lon]}>
-                <Popup>
-                  <strong>{location.name}</strong>
-                  <p>Relatos: {location.relatos}</p>
-                </Popup>
-                <Popup>
-                  <strong>{location.name}</strong>
-                  <p>Relatos: {location.relatos}</p>
-                </Popup>
-              </Marker>
-            ))}
-          </MapContainer>
-        </div>
+          <div>
+            <Map />
+          </div>
 
         {/* Gráficos organizados em grid responsivo */}
         <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
@@ -99,6 +82,9 @@ const Dashboard = () => {
               </PieChart>
             </ResponsiveContainer>
           </div>
+        </div>
+        <div className="">
+        <Relatos />
         </div>
       </div>
     </div>

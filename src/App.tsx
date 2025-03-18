@@ -6,7 +6,7 @@ import Contacts from './pages/Contacts';
 import Login from './pages/Login'
 import Empresas from './pages/user-enterprises/Enterprises'
 import Dashboard from './pages/user-enterprises/Dashboard';
-import Feedback from './components/Feedback'
+import Feedback from './components/client/Feedback';
 import Relatar from './pages/user-normal/Relatar'
 import NotFound from './pages/Not-found'
 import RegisterEnterprise from './pages/Register/RegisterEnterprise'
