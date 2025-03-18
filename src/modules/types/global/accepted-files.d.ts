@@ -6,5 +6,6 @@ type AcceptedFiles =
   | "image/gif"
   | "application/pdf"
   | "application/csv"
+  | ".csv"
   | "image/svg+xml"
   | "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
