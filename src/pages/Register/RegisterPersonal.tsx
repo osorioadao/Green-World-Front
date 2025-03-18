@@ -1,23 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { FaUser, FaEnvelope, FaLock, FaUserTag, FaUniversity, FaIdCard, FaEyeSlash, FaEye } from "react-icons/fa";
 import PrimaryButton from "../../components/ui/PrimaryButton";
 import Logo from "../../assets/Logo";
-import axios from "axios";
+import { userService } from "../../modules/service/api/user";
+import { useQuery } from "@tanstack/react-query";
+import { typeUserService } from "../../modules/service/api/typeUser";
 
-interface UserFormData {
-  nome: string;
-  email: string;
-  senha: string;
-  tipoUser_id: string;
-  iban: string;
-  nome_titular: string;
-}
 
 const InputField = ({ label, type, name, value, onChange, icon, extraPaddingRight = false }: {
   label: string;
   type: string;
-  name: keyof UserFormData;
+  name: keyof user;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   icon: JSX.Element;
@@ -42,8 +36,9 @@ const InputField = ({ label, type, name, value, onChange, icon, extraPaddingRigh
 );
 
 export default function UserForm() {
+  const navigate = useNavigate();
   const [isShowPassword, setIsShowPassword] = useState(false);
-  const [formData, setFormData] = useState<UserFormData>({
+  const [formData, setFormData] = useState<user>({
     nome: "",
     email: "",
     senha: "",
@@ -59,18 +54,18 @@ export default function UserForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Dados enviados:", formData);
-
+    
     try{
-      const response = await axios.post("",formData)
-     if (response.status === 200) {
+      const typeId = await typeUserService.getTypeIdByDeafault();
+      formData.tipoUser_id = typeId;
+      const response = await userService.craete(formData);
+     if (response.status === 201) {
       navigate("/login")
      }
     } catch (error){
       console.error("Erro ao enviar os dados de cadastro", error)
     }
   };
-
-  const navigate = useNavigate()
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 p-6">
@@ -86,7 +81,7 @@ export default function UserForm() {
          </div>
 
 
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <InputField label="Nome" type="text" name="nome" value={formData.nome} onChange={handleChange} icon={<FaUser />} />
           <InputField label="Email" type="email" name="email" value={formData.email} onChange={handleChange} icon={<FaEnvelope />} />
 
@@ -110,7 +105,7 @@ export default function UserForm() {
           </button>
           </div>
 
-          <InputField label="Tipo de Usuário" type="text" name="tipoUser_id" value={formData.tipoUser_id} onChange={handleChange} icon={<FaUserTag />} />
+          {/* <InputField label="Tipo de Usuário" type="text" name="tipoUser_id" value={formData.tipoUser_id} onChange={handleChange} icon={<FaUserTag />} /> */}
           <InputField label="IBAN" type="text" name="iban" value={formData.iban} onChange={handleChange} icon={<FaUniversity />} />
           <InputField label="Nome do Titular" type="text" name="nome_titular" value={formData.nome_titular} onChange={handleChange} icon={<FaIdCard />} />
 
@@ -120,7 +115,9 @@ export default function UserForm() {
           </div>
 
           <div className="col-span-1 md:col-span-2 mt-4">
-            <PrimaryButton addClassName="" name="Cadastrar"/>
+            <PrimaryButton 
+            onClick={handleSubmit}
+            addClassName="" name="Cadastrar"/>
           </div>
 
           <div className="flex items-center justify-start col-span-1 md:col-span-2 gap-3">
