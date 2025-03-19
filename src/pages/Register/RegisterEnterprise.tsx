@@ -70,12 +70,12 @@ export default function UserForm() {
       <div className="w-full max-w-3xl p-8 bg-white shadow-xl rounded-2xl">
         <div className="text-center mb-6 flex flex-col items-center justify-center gap-4">
         <Logo className="w-20 h-20"/>
-          <h2 className="text-2xl font-bold text-gray-800">Cadastro de Empresa</h2>
+          <h2 className="text-2xl font-bold text-gray-800">Cadastro da Empresa</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-8">
-          <PrimaryButton name="Empresa" addClassName="w-full md:w-26 py-3 text-sm font-medium h-10 flex items-center justify-center" onClick={() => navigate('/register-enterprise')} />
-          <PrimaryButton name="Cidadão Comum" addClassName="w-full md:w-26 py-3 text-sm font-medium h-10 flex opacity-70 items-center justify-center" onClick={() => navigate('/register-personal')} />
+          <Link to='/register-enterprise' className="text-lg font-semibold flex items-center justify-center underline hover:text-green-800">Empresa</Link>
+          <Link to='/register-personal' className="text-lg font-semibold flex items-center justify-center hover:text-green-800">Cidadão Comum</Link>
         </div>
 
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">

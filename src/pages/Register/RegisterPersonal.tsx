@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { FaUser, FaEnvelope, FaLock, FaUserTag, FaUniversity, FaIdCard, FaEyeSlash, FaEye } from "react-icons/fa";
 import PrimaryButton from "../../components/ui/PrimaryButton";
@@ -48,7 +48,8 @@ export default function UserForm() {
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((formData) => ({ ...formData, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -57,13 +58,14 @@ export default function UserForm() {
     
     try{
       const typeId = await typeUserService.getTypeIdByDeafault();
-      formData.tipoUser_id = typeId;
-      const response = await userService.craete(formData);
+      const userData = {...formData, tipoUser_id: typeId}
+
+      const response = await userService.craete(userData);
      if (response.status === 201) {
       navigate("/login")
      }
     } catch (error){
-      console.error("Erro ao enviar os dados de cadastro", error)
+      console.error("Erro ao enviar os dados de cadastro ❌", error)
     }
   };
 
@@ -72,12 +74,12 @@ export default function UserForm() {
       <div className="w-full max-w-3xl p-8 bg-white shadow-xl rounded-2xl">
         <div className="text-center mb-6 flex flex-col items-center justify-center gap-4">
         <Logo className="w-20 h-20"/>
-          <h2 className="text-2xl font-bold text-gray-800">Cadastro de Empresa</h2>
+          <h2 className="text-2xl font-bold text-gray-800">Cadastro do Cidadão Comum</h2>
         </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-8">
-          <PrimaryButton name="Cidadão Comum" addClassName="w-full md:w-26 py-3 text-sm font-medium h-10 flex items-center justify-center" onClick={() => { navigate('/register-personal')}} />
-           <PrimaryButton name="Empresa" addClassName="w-full md:w-26 py-3 text-sm font-medium opacity-70 h-10 flex items-center justify-center" onClick={() => { navigate('/register-enterprise')}} />
+          <Link to='/register-enterprise' className="text-lg font-semibold flex items-center justify-center hover:text-green-800">Empresa</Link>
+          <Link to='/register-personal' className="text-lg font-semibold flex items-center justify-center underline hover:text-green-800">Cidadão Comum</Link>
          </div>
 
 
@@ -105,7 +107,6 @@ export default function UserForm() {
           </button>
           </div>
 
-          {/* <InputField label="Tipo de Usuário" type="text" name="tipoUser_id" value={formData.tipoUser_id} onChange={handleChange} icon={<FaUserTag />} /> */}
           <InputField label="IBAN" type="text" name="iban" value={formData.iban} onChange={handleChange} icon={<FaUniversity />} />
           <InputField label="Nome do Titular" type="text" name="nome_titular" value={formData.nome_titular} onChange={handleChange} icon={<FaIdCard />} />
 

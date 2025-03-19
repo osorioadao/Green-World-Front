@@ -1,7 +1,6 @@
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from 'leaflet'; // Importando o Leaflet para personalizar os ícones
-import { IoArrowRedoCircle } from "react-icons/io5";
 
 // Dados das localizações com mais informações para estados de lixo
 const locationsData = [
@@ -51,7 +50,7 @@ const Map = () => {
       <MapContainer center={[-8.83833, 13.2571]} zoom={13} style={{ width: "100%", height: "100%" }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>contributors'
         />
         {locationsData.map((location, index) => (
           <Marker

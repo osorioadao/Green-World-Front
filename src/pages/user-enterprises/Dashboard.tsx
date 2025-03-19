@@ -7,9 +7,9 @@ import "leaflet/dist/leaflet.css";
  //https://www.google.com/maps/@-8.8333099,13.2571516,15z?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D
 
 const locationsData = [
-  { name: "Centro da Cidade", relatos: 120, lat: -8.864, lon: 13.56 },
-  { name: "Mutamba", relatos: 85, lat: -8.864, lon: 13.56 },
-  { name: "Viana", relatos: 65, lat: -8.864, lon: 13.56 },
+  { name: "Centro da Cidade", relatos: 120 },
+  { name: "Mutamba", relatos: 85 },
+  { name: "Viana", relatos: 65 },
 ];
 
 const monthsData = [

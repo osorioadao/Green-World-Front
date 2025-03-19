@@ -12,11 +12,6 @@ import Card from "../components/Card";
 import Map from "../components/Map";
 import { motion } from "framer-motion"; // Importando framer-motion
 
-// Importando componentes do react-leaflet
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css"; // Estilo do Leaflet
-import L from 'leaflet'; // Importando para personalizar os ícones do marcador
-
 export default function Home() {
   const navigate = useNavigate();
   const [selectedItem, setSelectedItem] = useState(null);
@@ -60,14 +55,9 @@ export default function Home() {
     { type: "video", src: video2, title: "História dos Catadores", description: "A luta diária dos catadores de lixo.", time: "3 dias atrás" },
   ];
 
-  const locationsData = [
-    { name: "Centro da Cidade", relatos: 120, lat: -8.864, lon: 13.56 },
-    { name: "Mutamba", relatos: 85, lat: -8.764, lon: 9.56 },
-    { name: "Viana", relatos: 65, lat: -8.564, lon: 10.56 },
-  ];
-
   return (
     <div className="min-h-screen flex flex-col">
+
       <Header />
       
       {/* Seção Inicial */}
@@ -90,8 +80,8 @@ export default function Home() {
         </div>
 
         <div className="">
-            {/* Mapa Interativo */}
-              <Map />
+        {/* Mapa Interativo */}
+          <Map />
         </div>
       </motion.div>
 
@@ -130,6 +120,7 @@ export default function Home() {
 
         <Link to="news" className="hover:underline transition delay-50 hover:text-green-800">Ver mais Notícias</Link>
 
+         {/* Seção Card */}
         <div className="min-h-screen w-full bg-gray-50">
           <Card />
         </div>
